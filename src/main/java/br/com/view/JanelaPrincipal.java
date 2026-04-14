@@ -13,6 +13,7 @@ import javax.swing.*;
 
 import br.com.view.funcionario.addfuncionario;
 import br.com.view.funcionario.deleteFuncionario;
+import br.com.view.funcionario.listFuncionario;
 
 public class JanelaPrincipal extends JFrame {
 
@@ -97,15 +98,15 @@ public class JanelaPrincipal extends JFrame {
         
        OptionFunc.put("CreateFuncionario",new JButton("Adicionar Funcionario"));
        OptionFunc.put("DeleteFunc",new JButton("Deletar Funcionario"));
-       OptionFunc.put("ReadFunc",new JButton("Lista Funcionario"));
+       OptionFunc.put("ReadFunc",new JButton("Listar Funcionario"));
        
 
         JPanel botaoPainel = new JPanel();
         botaoPainel.setPreferredSize(new Dimension(500,300));
-        botaoPainel.setBackground(Color.decode("#D9D9D9"));
+        botaoPainel.setBackground(Color.decode("#fcf9f9"));
         botaoPainel.setLayout(new GridLayout(0,1,10,10));
         JLabel Func = new JLabel("Funcionario");
-        Func.setFont(new Font("Arial",Font.BOLD,20));
+        Func.setFont(new Font("Segoe UI",Font.BOLD,20));
         //Adicionando Botoes dentro do painel
         botaoPainel.add(Func); 
 
@@ -122,6 +123,7 @@ public class JanelaPrincipal extends JFrame {
         
 
         PAINELFuncionario.add(botaoPainel);
+        
 
         centerpanel.add(PAINELFuncionario,BorderLayout.CENTER);
         centerpanel.revalidate();
@@ -170,5 +172,21 @@ public class JanelaPrincipal extends JFrame {
             }
         });
 
+        OptionFunc.get("ReadFunc").addActionListener(e ->{
+            try {
+                listFuncionario list = new listFuncionario();
+                list.setVisible(true);
+            } catch (Exception k) {
+                System.err.println("Error de :"+k.getMessage());
+                 
+            }
+
+        });
+
+
+
+
     }
+
+
 }

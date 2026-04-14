@@ -29,6 +29,14 @@
     <scope>compile</scope>
 </dependency>
 
+<!-- Source: https://mvnrepository.com/artifact/org.jdatepicker/jdatepicker -->
+<dependency>
+    <groupId>org.jdatepicker</groupId>
+    <artifactId>jdatepicker</artifactId>
+    <version>2.0.1</version>
+    <scope>compile</scope>
+</dependency>
+
 </dependencies>
 
 </project>
