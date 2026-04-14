@@ -9,7 +9,7 @@ public class Main {
 
     public static void main(String[] args) {
         
-                try {
+            try {
             // Tenta configurar o Look and Feel Nimbus
             for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {

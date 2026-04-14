@@ -2,13 +2,17 @@ package br.com.view;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.GridBagLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionListener;
 import java.util.HashMap;
 import java.util.Map;
 
 import javax.swing.*;
+
+import br.com.view.funcionario.addfuncionario;
+import br.com.view.funcionario.deleteFuncionario;
 
 public class JanelaPrincipal extends JFrame {
 
@@ -28,14 +32,16 @@ public class JanelaPrincipal extends JFrame {
 
         //Adicionando efito no botoes
         Baction();
+        
     }
 
     private void CriarPanel() {
 
         JPanel painel = new JPanel();
-        painel.setLayout(new BoxLayout(painel, BoxLayout.Y_AXIS));
+        painel.setLayout(new GridLayout(0,1,10,10));
         add(painel, BorderLayout.WEST);
-        painel.setBackground(Color.BLUE);
+        painel.setBackground(Color.decode("#0D2EFF"));
+        painel.setBorder(BorderFactory.createEmptyBorder(20, 10, 20, 10));
         CriandoBotoes(painel);
     }
 
@@ -44,9 +50,9 @@ public class JanelaPrincipal extends JFrame {
     private void CriarCenterPanel() {
 
          centerpanel = new JPanel();
-        centerpanel.setLayout(new BoxLayout(centerpanel, BoxLayout.Y_AXIS));
+        centerpanel.setLayout(new BorderLayout());
         add(centerpanel, BorderLayout.CENTER);
-        centerpanel.setBackground(Color.RED);
+       
     }
 
     private Map<String, JButton> LISTADBOTOES;
@@ -68,10 +74,10 @@ public class JanelaPrincipal extends JFrame {
 
         for (JButton botao : LISTADBOTOES.values()) {
             botao.setHorizontalAlignment(SwingConstants.CENTER);
-            botao.setContentAreaFilled(false);
-            botao.setOpaque(false);
-            botao.setFont(new Font("Arial", Font.BOLD, 20));
+            botao.setFont(new Font("Segoe UI", Font.BOLD, 16));
             botao.setForeground(Color.WHITE);
+            botao.setBackground(new Color(25,25,112));
+
             painel.add(botao);
         
         }
@@ -79,27 +85,48 @@ public class JanelaPrincipal extends JFrame {
     }
 
     
-
+      private Map<String,JButton> OptionFunc;
     public void panelFuncionario() {
+
+        OptionFunc = new HashMap<>();
 
         centerpanel.removeAll();
 
         JPanel PAINELFuncionario = new JPanel();
-
-        JButton CreateFuncionario = new JButton("Adicionar Funcionario");
-        JButton deleteFuncionario = new JButton("Excluir Funcionario");
-        JButton ListaFuncionarios = new JButton("Lista Funcionario");
+    
+        
+       OptionFunc.put("CreateFuncionario",new JButton("Adicionar Funcionario"));
+       OptionFunc.put("DeleteFunc",new JButton("Deletar Funcionario"));
+       OptionFunc.put("ReadFunc",new JButton("Lista Funcionario"));
+       
 
         JPanel botaoPainel = new JPanel();
-        botaoPainel.add(CreateFuncionario);
-        botaoPainel.add(deleteFuncionario);
-        botaoPainel.add(ListaFuncionarios);
+        botaoPainel.setPreferredSize(new Dimension(500,300));
+        botaoPainel.setBackground(Color.decode("#D9D9D9"));
+        botaoPainel.setLayout(new GridLayout(0,1,10,10));
+        JLabel Func = new JLabel("Funcionario");
+        Func.setFont(new Font("Arial",Font.BOLD,20));
+        //Adicionando Botoes dentro do painel
+        botaoPainel.add(Func); 
+
+        for(JButton botao:OptionFunc.values()){
+            botao.setBackground(Color.decode("#000000"));
+            botao.setForeground(Color.decode("#FFFFFF"));
+            botao.setFont(new Font("Segoe UI", Font.BOLD, 16));
+            botaoPainel.add(botao);
+            
+           
+            
+        };
+   
+        
 
         PAINELFuncionario.add(botaoPainel);
 
         centerpanel.add(PAINELFuncionario,BorderLayout.CENTER);
         centerpanel.revalidate();
         centerpanel.repaint();
+        BactionFuncionario();
     }
 
 
@@ -120,4 +147,28 @@ public class JanelaPrincipal extends JFrame {
 
     }
 
+
+    public void BactionFuncionario(){
+
+        OptionFunc.get("CreateFuncionario").addActionListener(e->{
+            try {
+                System.out.println("HALOHA");
+                addfuncionario adicionarfunctionariowindow = new addfuncionario();
+                adicionarfunctionariowindow.setVisible(true);
+            } catch (Exception f) {
+                System.err.println("Erro de : "+f.getMessage());
+            }
+        });
+
+        OptionFunc.get("DeleteFunc").addActionListener(e ->{
+            try {
+                deleteFuncionario delfunc = new deleteFuncionario();
+                delfunc.setVisible(true);
+            } catch (Exception d) {
+                System.err.print("Error de : "+d.getMessage());
+                
+            }
+        });
+
+    }
 }
