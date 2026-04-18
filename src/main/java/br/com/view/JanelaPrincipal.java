@@ -133,7 +133,7 @@ public class JanelaPrincipal extends JFrame {
 
 
     public void Baction() {
-        // TODO - ADICIONA EFEITO NO BOTAO FUNCIONARIO
+        // TODO - ADICIONA EFEITO NOS BOTOES
       
 
         LISTADBOTOES.get("BFuncionario").addActionListener(e->{
@@ -182,9 +182,6 @@ public class JanelaPrincipal extends JFrame {
             }
 
         });
-
-
-
 
     }
 

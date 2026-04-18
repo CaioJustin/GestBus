@@ -51,6 +51,7 @@ public class addfuncionario extends JFrame {
         JLabel datadenascFuncionario= new JLabel("Data de nascimento do funcionario");
         JLabel cpfFuncionario= new JLabel("Cpf do funcionario");
         JLabel cargoFuncionario =new JLabel("Cargo do Funcionaro");
+         JLabel statusFuncionario =new JLabel("Status do Funcionaro");
 
         ArrayList<JLabel> texts = new ArrayList<>();
         texts.add(nomeFuncionario);
@@ -58,7 +59,8 @@ public class addfuncionario extends JFrame {
         texts.add(datadenascFuncionario);
         texts.add(cpfFuncionario);
         texts.add(cargoFuncionario);
-        
+         texts.add(statusFuncionario);
+
         for (JLabel txt : texts) {
              txt.setFont(styleFont);
         }
@@ -68,6 +70,7 @@ public class addfuncionario extends JFrame {
         JTextField sobrenomeInputFuncionario = new JTextField();
         JTextField cpfInputFuncionario = new JTextField();
         JTextField cargoInputFuncionario = new JTextField();
+         JTextField statusInputFuncionario = new JTextField();
         
         JDatePicker datepicker = new JDatePicker();
 
@@ -93,6 +96,9 @@ public class addfuncionario extends JFrame {
 
          dadosPessoa.add(cargoFuncionario);
         dadosPessoa.add(cargoInputFuncionario);
+
+         dadosPessoa.add(statusFuncionario);
+        dadosPessoa.add(statusInputFuncionario);
 
         dadosPessoa.add(adicionar);
 

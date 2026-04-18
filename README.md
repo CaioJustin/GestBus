@@ -6,12 +6,12 @@ esse e um projeto
  o Maven para importa os 
 
  ## Ferramentas Utilizadas
- -Linguagem java
- -Java Swing
- -Maven
- -JDBC
- -MYSQL
- -Padrões DAO
+ - Linguagem java
+ - Java Swing
+ - Maven
+ - JDBC
+ - MYSQL
+ - Padrões DAO
 
  ## Funcionalidades
  fazendo
