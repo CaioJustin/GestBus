@@ -1,5 +1,7 @@
 package br.com.view.escala;
 
-public class deleteEscala {
+import javax.swing.JFrame;
+
+public class deleteEscala extends JFrame{
     
 }

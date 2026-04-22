@@ -1,5 +1,7 @@
 package br.com.view.linha;
 
-public class addLinha {
+import javax.swing.JFrame;
+
+public class addLinha extends JFrame{
     
 }

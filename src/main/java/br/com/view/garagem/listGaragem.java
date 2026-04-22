@@ -1,5 +1,7 @@
 package br.com.view.garagem;
 
-public class listGaragem {
+import javax.swing.JFrame;
+
+public class listGaragem extends JFrame{
     
 }

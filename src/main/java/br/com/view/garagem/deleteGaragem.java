@@ -1,5 +1,7 @@
 package br.com.view.garagem;
 
-public class deleteGaragem {
+import javax.swing.JFrame;
+
+public class deleteGaragem extends JFrame{
     
 }

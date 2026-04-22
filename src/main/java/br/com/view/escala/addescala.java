@@ -1,5 +1,7 @@
 package br.com.view.escala;
 
-public class addescala {
+import javax.swing.JFrame;
+
+public class addescala extends JFrame{
     
 }

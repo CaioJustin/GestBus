@@ -1,5 +1,7 @@
 package br.com.view.onibus;
 
-public class deleteOnibus {
+import javax.swing.JFrame;
+
+public class deleteOnibus extends JFrame{
     
 }

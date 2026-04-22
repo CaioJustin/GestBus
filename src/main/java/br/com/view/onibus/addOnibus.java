@@ -1,5 +1,7 @@
 package br.com.view.onibus;
 
-public class addOnibus {
+import javax.swing.JFrame;
+
+public class addOnibus extends JFrame{
     
 }

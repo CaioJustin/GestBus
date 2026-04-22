@@ -1,5 +1,7 @@
 package br.com.view.linha;
 
-public class deleteLinha {
+import javax.swing.JFrame;
+
+public class deleteLinha extends JFrame{
     
 }

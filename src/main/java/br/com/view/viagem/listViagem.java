@@ -1,5 +1,7 @@
 package br.com.view.viagem;
 
-public class listViagem {
+import javax.swing.JFrame;
+
+public class listViagem extends JFrame {
     
 }

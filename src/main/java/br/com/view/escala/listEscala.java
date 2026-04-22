@@ -1,5 +1,7 @@
 package br.com.view.escala;
 
-public class listEscala {
+import javax.swing.JFrame;
+
+public class listEscala extends JFrame{
     
 }

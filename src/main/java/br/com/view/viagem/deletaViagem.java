@@ -1,5 +1,7 @@
 package br.com.view.viagem;
 
-public class deletaViagem {
+import javax.swing.JFrame;
+
+public class deletaViagem extends JFrame{
     
 }
