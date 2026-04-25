@@ -15,12 +15,12 @@ import org.jdatepicker.JDatePicker;
 
 public class addfuncionario extends JFrame {
 
-    private JPanel display;
+    
     private JPanel form;
 
     public addfuncionario(){
         super("GestBus :: Adicionar Funcionario");
-        setSize(400,600);
+        setSize(400,800);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         jpanel();
@@ -52,6 +52,7 @@ public class addfuncionario extends JFrame {
         JLabel cpfFuncionario= new JLabel("Cpf do funcionario");
         JLabel cargoFuncionario =new JLabel("Cargo do Funcionaro");
          JLabel statusFuncionario =new JLabel("Status do Funcionaro");
+         JLabel EscalaFuncionario =new JLabel("Escala do Funcionaro");
 
         ArrayList<JLabel> texts = new ArrayList<>();
         texts.add(nomeFuncionario);
@@ -60,6 +61,7 @@ public class addfuncionario extends JFrame {
         texts.add(cpfFuncionario);
         texts.add(cargoFuncionario);
          texts.add(statusFuncionario);
+         texts.add(EscalaFuncionario);
 
         for (JLabel txt : texts) {
              txt.setFont(styleFont);
@@ -71,6 +73,7 @@ public class addfuncionario extends JFrame {
         JTextField cpfInputFuncionario = new JTextField();
         JTextField cargoInputFuncionario = new JTextField();
          JTextField statusInputFuncionario = new JTextField();
+         JTextField escalaInputFuncionario = new JTextField();
         
         JDatePicker datepicker = new JDatePicker();
 
@@ -99,6 +102,9 @@ public class addfuncionario extends JFrame {
 
          dadosPessoa.add(statusFuncionario);
         dadosPessoa.add(statusInputFuncionario);
+
+         dadosPessoa.add(EscalaFuncionario);
+        dadosPessoa.add(escalaInputFuncionario);
 
         dadosPessoa.add(adicionar);
 

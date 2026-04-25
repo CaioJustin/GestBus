@@ -11,7 +11,6 @@ import java.util.Map;
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 
-import java.awt.event.ActionListener;
 
 import br.com.view.cargo.addCargo;
 import br.com.view.cargo.deleteCargo;
@@ -219,8 +218,10 @@ public class JanelaPrincipal extends JFrame {
         CargoButtonPanel.setBackground(Color.decode("#0D2EFF"));
         CargoButtonPanel.setBorder(new LineBorder(Color.BLACK,2,true));
 
-        JLabel textCargo = new JLabel("Menu de Cargo");
+        JLabel textCargo = new JLabel("Menu de Cargo",JLabel.CENTER);
+        textCargo.setFont(new Font("Segoi UI",Font.BOLD,20));
         textCargo.setForeground(Color.white);
+        CargoButtonPanel.add(textCargo);
 
         for (JButton botao : optionCargo.values()) {
                 botao.setBackground(Color.decode("#000000"));
@@ -256,8 +257,11 @@ public class JanelaPrincipal extends JFrame {
         OnibusButtonPanel.setBackground(Color.decode("#0D2EFF"));
         OnibusButtonPanel.setBorder(new LineBorder(Color.BLACK,2,true));
 
-        JLabel textOnibus = new JLabel("Menu de Onibus");
+        JLabel textOnibus = new JLabel("Menu de Onibus",JLabel.CENTER);
         textOnibus.setForeground(Color.white);
+        textOnibus.setFont(new Font("Segoi UI",Font.BOLD,20));
+        OnibusButtonPanel.add(textOnibus);
+
 
         for (JButton botao : optionOnibus.values()) {
                 botao.setBackground(Color.decode("#000000"));
@@ -293,8 +297,10 @@ public class JanelaPrincipal extends JFrame {
         ViagemButtonPanel.setBackground(Color.decode("#0D2EFF"));
         ViagemButtonPanel.setBorder(new LineBorder(Color.BLACK,2,true));
 
-        JLabel textViagem = new JLabel("Menu de Viagem");
+        JLabel textViagem = new JLabel("Menu de Viagem",JLabel.CENTER);
+        textViagem.setFont(new Font("Segoi UI",Font.BOLD,20));
         textViagem.setForeground(Color.white);
+        ViagemButtonPanel.add(textViagem);
 
         for (JButton botao : optionViagem.values()) {
                 botao.setBackground(Color.decode("#000000"));
@@ -324,14 +330,16 @@ public class JanelaPrincipal extends JFrame {
         optionGaragem.put("ExcluirGarage",new JButton("Excluir Garage"));
         optionGaragem.put("ListarGarage",new JButton("Listar Garage"));
 
-        JButton GarageButtonPanel= new JButton();
+        JPanel GarageButtonPanel= new JPanel();
         GarageButtonPanel.setPreferredSize(new Dimension(500,300));
         GarageButtonPanel.setLayout(new GridLayout(0,1,10,10));
         GarageButtonPanel.setBackground(Color.decode("#0D2EFF"));
         GarageButtonPanel.setBorder(new LineBorder(Color.BLACK,2,true));
 
-        JLabel textGaragem = new JLabel("Menu de Cor");
+        JLabel textGaragem = new JLabel("Menu de Cor",JLabel.CENTER);
+        textGaragem.setFont(new Font("Segoi UI",Font.BOLD,20));
         textGaragem.setForeground(Color.white);
+        GarageButtonPanel.add(textGaragem);
 
         for (JButton botao : optionGaragem.values()) {
                 botao.setBackground(Color.decode("#000000"));
@@ -367,8 +375,10 @@ public class JanelaPrincipal extends JFrame {
         LinhasButtonPanel.setBackground(Color.decode("#0D2EFF"));
         LinhasButtonPanel.setBorder(new LineBorder(Color.BLACK,2,true));
 
-        JLabel textLinhas = new JLabel("Menu de Linhas");
+        JLabel textLinhas = new JLabel("Menu de Linhas",JLabel.CENTER);
         textLinhas.setForeground(Color.white);
+        textLinhas.setFont(new Font("Segoi UI",Font.BOLD,20));
+        LinhasButtonPanel.add(textLinhas);
 
         for (JButton botao : optionLinhas.values()) {
                 botao.setBackground(Color.decode("#000000"));
@@ -403,7 +413,8 @@ public class JanelaPrincipal extends JFrame {
         EscalaButtonPanel.setBackground(Color.decode("#0D2EFF"));
         EscalaButtonPanel.setBorder(new LineBorder(Color.BLACK,2,true));
 
-        JLabel textEscala = new JLabel("Menu de Escala");
+        JLabel textEscala = new JLabel("Menu de Escala",JLabel.CENTER);
+        textEscala.setFont(new Font("Segoi UI",Font.BOLD,20));
         textEscala.setForeground(Color.white);
         EscalaButtonPanel.add(textEscala);
 
@@ -434,17 +445,18 @@ public class JanelaPrincipal extends JFrame {
         optionCor.put("ExcluirCor",new JButton("Excluir Cor"));
         optionCor.put("ListarCor",new JButton("Listar Cor"));
 
-        JButton CorButtonPanel= new JButton();
+        JPanel CorButtonPanel= new JPanel();
         CorButtonPanel.setPreferredSize(new Dimension(500,300));
         CorButtonPanel.setLayout(new GridLayout(0,1,10,10));
         CorButtonPanel.setBackground(Color.decode("#0D2EFF"));
         CorButtonPanel.setBorder(new LineBorder(Color.BLACK,2,true));
 
-        JLabel textCor = new JLabel("Menu de Cor");
+        JLabel textCor = new JLabel("Menu de Cor",JLabel.CENTER);
+        textCor.setFont(new Font("Segoi UI",Font.BOLD,20));
         textCor.setForeground(Color.white);
         CorButtonPanel.add(textCor);
 
-        for (JButton botao : optionEscala.values()) {
+        for (JButton botao : optionCor.values()) {
                 botao.setBackground(Color.decode("#000000"));
                 botao.setForeground(Color.decode("#FFFFFF"));
                 botao.setFont(new Font("Segoi UI",Font.BOLD,20));
@@ -463,7 +475,7 @@ public class JanelaPrincipal extends JFrame {
 
     //Adiciona efeito nos botoes  no panel a esquerda
     public void Baction() {
-        // TODO - ADICIONA EFEITO NOS BOTOES
+       
       
 
         LISTADBOTOES.get("BFuncionario").addActionListener(e->{
@@ -554,6 +566,14 @@ public class JanelaPrincipal extends JFrame {
                 System.out.println("Error : "+d.getMessage());
             }
 
+        });
+
+        LISTADBOTOES.get("BGaragem").addActionListener(e ->{
+            try {
+                panelGaragem();
+            } catch (Exception u) {
+                System.err.println("Error : "+u.getMessage());
+            }
         });
 
     }
