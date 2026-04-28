@@ -43,6 +43,9 @@ public class addfuncionario extends JFrame {
     private void CreateForm(){
         JPanel dadosPessoa =new JPanel();
 
+         JLabel NC = new JLabel("Adicionar Garagem",JLabel.CENTER);
+        NC.setFont(new Font("Segoe UI",Font.BOLD,20));
+
         Font styleFont = new Font("Segoi UI",Font.BOLD,16);
 
         //Criando os texto
@@ -84,6 +87,8 @@ public class addfuncionario extends JFrame {
         adicionar.setForeground(Color.WHITE);
 
         dadosPessoa.setLayout(new GridLayout(0,1,10,10));
+
+        dadosPessoa.add(NC);
       
         dadosPessoa.add(nomeFuncionario);
         dadosPessoa.add(nomeInputFuncionario);

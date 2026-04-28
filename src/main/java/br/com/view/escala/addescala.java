@@ -33,7 +33,7 @@ public class addescala extends JFrame{
  }
 
  public void Carg(){
-  JLabel Vi = new JLabel("Adicionar Viagem",JLabel.CENTER);
+  JLabel Vi = new JLabel("Adicionar Escala",JLabel.CENTER);
    JLabel HI = new JLabel("Horario Inicio",JLabel.CENTER);
    JLabel HF =new JLabel("Horario Fim",JLabel.CENTER);
    HI.setFont(new Font("Segoe UI",Font.BOLD,20));

@@ -34,7 +34,7 @@ JTextField carField;
 
 
  public void Carg(){
-   JLabel Vi = new JLabel("Excluir Viagem",JLabel.CENTER);
+   JLabel Vi = new JLabel("Id da Escala",JLabel.CENTER);
      Vi.setFont(new Font("Segoe UI",Font.BOLD,20));
    JLabel NC = new JLabel("Id da escala",JLabel.CENTER);
    NC.setFont(new Font("Segoe UI",Font.BOLD,20));

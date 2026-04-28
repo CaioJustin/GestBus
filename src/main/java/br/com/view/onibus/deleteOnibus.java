@@ -28,7 +28,7 @@ public class deleteOnibus extends JFrame{
  }
 
  public void Carg(){
-   JLabel NC = new JLabel("Nome da Cor",JLabel.CENTER);
+   JLabel NC = new JLabel("ID do Onibus ",JLabel.CENTER);
    NC.setFont(new Font("Segoe UI",Font.BOLD,20));
     corField = new JTextField();
     JButton BEnviar = new JButton("Enviar");

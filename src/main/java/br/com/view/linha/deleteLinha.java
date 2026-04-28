@@ -29,7 +29,7 @@ public class deleteLinha extends JFrame{
  }
 
  public void Carg(){
-   JLabel NC = new JLabel("Nome da Cor",JLabel.CENTER);
+   JLabel NC = new JLabel("Id da linha",JLabel.CENTER);
    NC.setFont(new Font("Segoe UI",Font.BOLD,20));
     corField = new JTextField();
     JButton BEnviar = new JButton("Enviar");

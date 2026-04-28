@@ -38,7 +38,7 @@ public class addOnibus extends JFrame{
  }
 
  public void Carg(){
-   JLabel NC = new JLabel("Nome da Cor",JLabel.CENTER);
+   JLabel NC = new JLabel("Adicione o Onibus",JLabel.CENTER);
    NC.setFont(new Font("Segoe UI",Font.BOLD,20));
     
    placaField = new JTextField();
