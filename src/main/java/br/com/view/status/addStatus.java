@@ -6,18 +6,26 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
+
+import br.com.dao.statusDao;
+import br.com.model.status;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
 public class addStatus extends JFrame {
      JTextField corField;
    JPanel form;
+   JButton BEnviar;
+JLabel NC;
     public addStatus(){
         super("GestBus :: Adicionar Status");
         setSize(400,600);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        criarPanel();
     }
+
  public void criarPanel(){
    JPanel painel = new  JPanel();
    painel.setLayout(new GridLayout(0,1,10,10));
@@ -27,11 +35,12 @@ public class addStatus extends JFrame {
    
  }
 
+
  public void Carg(){
-   JLabel NC = new JLabel("Nome do Status",JLabel.CENTER);
+    NC = new JLabel("Nome do Status",JLabel.CENTER);
    NC.setFont(new Font("Segoe UI",Font.BOLD,20));
     corField = new JTextField();
-    JButton BEnviar = new JButton("Adicionar");
+     BEnviar = new JButton("Adicionar");
     BEnviar.setBackground(Color.blue);
     BEnviar.setForeground(Color.WHITE);
     BEnviar.setFont(new Font("Segoe UI",Font.BOLD,20));
@@ -43,5 +52,29 @@ public class addStatus extends JFrame {
    dadospes.add(corField);
    dadospes.add(BEnviar);
    form.add(dadospes);
+  
+
+  
+
+   statusDao StatusDao = new statusDao();
+
+  BEnviar.addActionListener(e ->{
+      String nomeStats = corField.getText();
+    status stats = new status(nomeStats);
+    
+    try {
+      StatusDao.Salvar(stats); 
+      System.err.println("Salvo com Sucesso no banco de dados!! ");
+    } catch (Exception d) {
+      System.err.println("Error ao salvar :  "+d.getMessage());
+    }
+
+
+  });
+
+   corField.setText("");
  }
+
+
+
 }

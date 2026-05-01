@@ -6,7 +6,6 @@ public class status {
 
     public status(String n){
         this.nome=n;
-
     }
 
     public String GetNome(){
