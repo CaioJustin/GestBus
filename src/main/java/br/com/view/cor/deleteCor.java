@@ -6,9 +6,13 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
+
+
+import br.com.dao.corDao;
 
 public class deleteCor extends JFrame{
 
@@ -32,12 +36,12 @@ JTextField carField;
  }
 
 
-
+JButton BEnviar;
  public void Corex(){
    JLabel NC = new JLabel("Id da Cor",JLabel.CENTER);
    NC.setFont(new Font("Segoe UI",Font.BOLD,20));
     carField = new JTextField();
-    JButton BEnviar = new JButton("Deletar");
+     BEnviar = new JButton("Deletar");
     BEnviar.setBackground(Color.RED);
     BEnviar.setForeground(Color.WHITE);
     BEnviar.setFont(new Font("Segoe UI",Font.BOLD,20));
@@ -49,6 +53,20 @@ JTextField carField;
    dadospes.add(carField);
    dadospes.add(BEnviar);
    form.add(dadospes);
+
+
+      corDao CD =new corDao();
+    BEnviar.addActionListener(e ->{
+      int CN = Integer.parseInt(carField.getName().trim());
+      if(CN !=0){
+          CD.Deletar(CN);
+          JOptionPane.showMessageDialog(null,"Adicionado com Sucesso !!");
+      }else{
+        JOptionPane.showMessageDialog(null,"Erro no input  !!");
+      }
+
+    });
+
    }
 
 

@@ -7,9 +7,13 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
+
+import br.com.dao.cargoDao;
+import br.com.model.cargo;
 
 public class addCargo extends JFrame{
     
@@ -31,12 +35,12 @@ public class addCargo extends JFrame{
    painel.add(form);
    
  }
-
+ JButton BEnviar;
  public void Carg(){
    JLabel NC = new JLabel("Nome do Cargo",JLabel.CENTER);
    NC.setFont(new Font("Segoe UI",Font.BOLD,20));
     carField = new JTextField();
-    JButton BEnviar = new JButton("Enviar");
+     BEnviar = new JButton("Enviar");
     BEnviar.setBackground(Color.blue);
     BEnviar.setForeground(Color.WHITE);
     BEnviar.setFont(new Font("Segoe UI",Font.BOLD,20));
@@ -48,7 +52,29 @@ public class addCargo extends JFrame{
    dadospes.add(carField);
    dadospes.add(BEnviar);
    form.add(dadospes);
+
+      cargoDao cD=new cargoDao();
+    BEnviar.addActionListener(e ->{
+      String CN = carField.getName().trim();
+      cargo car = new cargo(CN);
+      if(CN .isEmpty()){
+        JOptionPane.showMessageDialog(null,"Erro no input  !!");
+      }else{
+          cD.Salvar(car);
+          JOptionPane.showMessageDialog(null,"Adicionado com Sucesso !!");
+      }
+
+    });
+
+
+
  }
+
+
+
+
+
+
 
 
 }

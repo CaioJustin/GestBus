@@ -59,7 +59,7 @@ JLabel NC;
    statusDao StatusDao = new statusDao();
 
   BEnviar.addActionListener(e ->{
-      String nomeStats = corField.getText();
+      String nomeStats = corField.getText().trim();
     status stats = new status(nomeStats);
     
     try {
@@ -73,6 +73,7 @@ JLabel NC;
   });
 
    corField.setText("");
+
  }
 
 

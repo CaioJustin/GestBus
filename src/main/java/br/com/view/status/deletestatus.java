@@ -3,9 +3,12 @@ package br.com.view.status;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
+import br.com.dao.statusDao;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -17,6 +20,7 @@ public class deletestatus extends JFrame {
         setSize(400,300);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        criarPanel();
     }
      public void criarPanel(){
    JPanel painel = new  JPanel();
@@ -26,12 +30,12 @@ public class deletestatus extends JFrame {
    painel.add(form);
    
  }
-
+JButton BDeletar;
  public void Carg(){
    JLabel NC = new JLabel("Excluir Status",JLabel.CENTER);
    NC.setFont(new Font("Segoe UI",Font.BOLD,20));
     corField = new JTextField();
-    JButton BDeletar = new JButton("Deletar");
+     BDeletar = new JButton("Deletar");
     BDeletar.setBackground(Color.RED);
     BDeletar.setForeground(Color.WHITE);
     BDeletar.setFont(new Font("Segoe UI",Font.BOLD,20));
@@ -43,5 +47,20 @@ public class deletestatus extends JFrame {
    dadospes.add(corField);
    dadospes.add(BDeletar);
    form.add(dadospes);
+
+
+         statusDao statsD =new statusDao();
+    BDeletar.addActionListener(e ->{
+      int CN = Integer.parseInt(BDeletar.getName().trim());
+      if(CN !=0){
+          statsD.Deletar(CN);
+          JOptionPane.showMessageDialog(null,"Adicionado com Sucesso !!");
+      }else{
+        JOptionPane.showMessageDialog(null,"Erro no input  !!");
+      }
+
+    });
+
+
  }
 }
