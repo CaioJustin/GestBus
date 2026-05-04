@@ -8,9 +8,13 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
+
+import br.com.dao.funcionarioDao;
+import br.com.dao.garagemDao;
 
 public class deleteFuncionario extends JFrame{
     
@@ -33,7 +37,7 @@ public class deleteFuncionario extends JFrame{
         painel.add(form);
         
     }
-
+JButton excluir;
     public void CreatInput(){
 
         form =new JPanel();
@@ -43,7 +47,7 @@ public class deleteFuncionario extends JFrame{
 
         JTextField Input = new JTextField();
 
-        JButton excluir =new JButton("Excluir Funcionario");
+         excluir =new JButton("Excluir Funcionario");
         excluir.setFont(new Font("Segoe UI",Font.BOLD,20));
         excluir.setBackground(Color.BLUE);
         excluir.setForeground(Color.white);
@@ -58,6 +62,22 @@ public class deleteFuncionario extends JFrame{
         pnDel.add(Input);
         pnDel.add(excluir);
         form.add(pnDel);
+
+
+          funcionarioDao funfDao =new funcionarioDao();
+    excluir.addActionListener(e ->{
+      int F_id = Integer.parseInt(Input.getName().trim());
+      if(F_id !=0){
+          funfDao.Deletar(F_id);
+          JOptionPane.showMessageDialog(null,"Funcionario Deletado com Sucesso !!");
+      }else{
+        JOptionPane.showMessageDialog(null,"Erro no input  !!");
+      }
+
+    });
+
+
+
     }
 
 }

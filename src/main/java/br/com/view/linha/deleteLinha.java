@@ -3,9 +3,13 @@ package br.com.view.linha;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
+
+import br.com.dao.garagemDao;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -44,5 +48,25 @@ public class deleteLinha extends JFrame{
    dadospes.add(corField);
    dadospes.add(BEnviar);
    form.add(dadospes);
+
+
+
+
+    garagemDao garaD =new garagemDao();
+    BEnviar.addActionListener(e ->{
+      int GD = Integer.parseInt(corField.getName().trim());
+      if(GD !=0){
+          garaD.Deletar(GD);
+          JOptionPane.showMessageDialog(null,"Adicionado com Sucesso !!");
+      }else{
+        JOptionPane.showMessageDialog(null,"Erro no input  !!");
+      }
+
+    });
+
+
+
+
+
  }
 }

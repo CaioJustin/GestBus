@@ -9,9 +9,15 @@ import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
+
+
+import br.com.dao.garagemDao;
+
+import br.com.model.garagem;
 
 public class addGaragem extends JFrame{
        JTextField nomeField;
@@ -104,6 +110,35 @@ public class addGaragem extends JFrame{
 
    dadospes.add(BEnviar);
    form.add(dadospes);
+
+
+
+       garagemDao garaDao=new garagemDao();
+    BEnviar.addActionListener(e ->{
+      String n = nomeField.getName().trim();
+      String c = cidadeField.getName().trim();
+      String r = ruaField.getName().trim();
+      String b = bairroField.getName().trim();
+      String ceps = cepField.getName().trim();
+      int vags =Integer.parseInt(vagasField.getName().trim());
+      
+      garagem ga = new garagem(n,c,r,b,ceps,vags);
+      if((n.isEmpty())||(c.isEmpty())||(r.isEmpty())||(b.isEmpty())||(ceps.isEmpty())|| (vags==0)){
+        JOptionPane.showMessageDialog(null,"Erro no input  !!");
+      }else{
+          garaDao.Salvar(ga);
+          JOptionPane.showMessageDialog(null,"Adicionado com Sucesso !!");
+      }
+
+    });
+
+
+
+
+
+
+
+
  }
 
 }

@@ -6,7 +6,7 @@ import br.com.model.onibus;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import br.com.view.onibus.*;
+
 
 public class onibusDao {
     

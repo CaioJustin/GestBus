@@ -3,6 +3,7 @@ package br.com.view.funcionario;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
@@ -13,10 +14,16 @@ import java.awt.GridLayout;
 import java.util.ArrayList;
 import org.jdatepicker.JDatePicker;
 
+import br.com.dao.funcionarioDao;
+
+import br.com.model.funcionario;
+
+
 public class addfuncionario extends JFrame {
 
     
     private JPanel form;
+    JButton BEnviar;
 
     public addfuncionario(){
         super("GestBus :: Adicionar Funcionario");
@@ -37,7 +44,7 @@ public class addfuncionario extends JFrame {
     }
 
 
-  
+  JButton adicionar;
     /*Funcionario deve ter nome,sobrenome,data de nascimento,cpf,cargo	 */
 
     private void CreateForm(){
@@ -81,7 +88,7 @@ public class addfuncionario extends JFrame {
         JDatePicker datepicker = new JDatePicker();
 
 
-        JButton adicionar = new JButton("Adicionar Funcionario");
+         adicionar = new JButton("Adicionar Funcionario");
         adicionar.setFont(styleFont);
         adicionar.setBackground(Color.blue);
         adicionar.setForeground(Color.WHITE);
@@ -116,6 +123,26 @@ public class addfuncionario extends JFrame {
         form = new JPanel();
         form.add(dadosPessoa);
         
+
+           funcionarioDao FuncDao=new funcionarioDao();
+         adicionar.addActionListener(e ->{
+
+      String nom = nomeInputFuncionario.getName().trim();
+      String sob = sobrenomeInputFuncionario.getName().trim();
+      String cpfs = cpfInputFuncionario.getName().trim();
+      int EscId = Integer.parseInt(cargoInputFuncionario.getName().trim());
+      int StsId = Integer.parseInt(statusInputFuncionario.getName().trim());
+      int CarId =Integer.parseInt(escalaInputFuncionario.getName().trim());
+      
+      funcionario funf = new funcionario(nom,sob,cpfs,EscId,StsId,CarId);
+      if((nom.isEmpty())||(sob.isEmpty())||(cpfs.isEmpty())||(EscId==0)||(StsId==0)||(CarId==0)){
+        JOptionPane.showMessageDialog(null,"Erro no input  !!");
+      }else{
+          FuncDao.Salvar(funf);
+          JOptionPane.showMessageDialog(null,"Funcionario Adicionado com Sucesso !!");
+      }
+
+    });
        
     }
 

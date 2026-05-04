@@ -16,31 +16,31 @@ Projeto feito tem java(Swing) Conectado ao MYSQL utilizando o JDBC Usando
 
  ## Funcionalidades
  - [x] Adicionar Status
- - [] Deletar Status
+ - [x] Deletar Status
  - [] Listar Status
 
- - [] Adicionar Cor
- - [] Deletar Cor
+ - [x] Adicionar Cor
+ - [x] Deletar Cor
  - [] Listar Cor
 
- - [] Adicionar Cargo
- - [] Deletar Cargo
+ - [x] Adicionar Cargo
+ - [x] Deletar Cargo
  - [] Listar Cargo
 
- - [] Adicionar Escala
- - [] Deletar Escala
+ - [x] Adicionar Escala
+ - [x] Deletar Escala
  - [] Listar Escala
 
  - [] Adicionar Funcionario
  - [] Deletar Funcionario
  - [] Listar Funcionario
 
- - [] Adicionar Garagem
- - [] Deletar Garagem
+ - [x] Adicionar Garagem
+ - [x] Deletar Garagem
  - [] Listar Garagem
 
- - [] Adicionar Linha
- - [] Deletar Linha
+ - [x] Adicionar Linha
+ - [x] Deletar Linha
  - [] Listar Linha
 
  - [] Adicionar Onibus

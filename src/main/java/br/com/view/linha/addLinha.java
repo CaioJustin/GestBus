@@ -3,9 +3,16 @@ package br.com.view.linha;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
+
+
+import br.com.dao.linhaDao;
+
+import br.com.model.linha;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -78,5 +85,25 @@ public class addLinha extends JFrame{
 
    dadospes.add(BEnviar);
    form.add(dadospes);
+
+  linhaDao lindao=new linhaDao();
+    BEnviar.addActionListener(e ->{
+      String no = nomeField.getName().trim();
+      String or= origemField.getName().trim();
+      String ds = destinoField.getName().trim();
+     
+      
+      linha lin = new linha(no,or,ds);
+      if((no.isEmpty())||(or.isEmpty())||(ds.isEmpty())){
+        JOptionPane.showMessageDialog(null,"Erro no input  !!");
+      }else{
+          lindao.Salvar(lin);
+          JOptionPane.showMessageDialog(null,"Adicionado com Sucesso !!");
+      }
+
+    });
+
+
+
  }
 }

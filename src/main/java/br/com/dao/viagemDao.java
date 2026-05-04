@@ -2,6 +2,7 @@ package br.com.dao;
 
 import br.com.conexao.connect;
 import br.com.model.status;
+import br.com.model.viagem;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

@@ -13,11 +13,10 @@ public class funcionario {
     private int Cargo_id;
     private int Escala_id;
 
-    public funcionario(String n,String s ,String cpf,String datanasc,int sta,int car,int esc){
+    public funcionario(String n,String s ,String cpf,int sta,int car,int esc){
         this.nome=n;
         this.sobrenome=s;
         this.cpf=cpf;
-        this.dataNascimento=datanasc;
         this.Status_id=sta;
         this.Cargo_id=car;
         this.Escala_id=esc;

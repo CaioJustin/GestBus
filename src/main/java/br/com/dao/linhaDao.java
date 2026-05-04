@@ -2,7 +2,8 @@ package br.com.dao;
 
 
 import br.com.conexao.connect;
-import br.com.model.status;
+import br.com.model.linha;
+
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,12 +12,14 @@ import java.sql.SQLException;
 
 public class linhaDao {
     
-    public void Salvar(status stats){
-         String sql = "Insert into linha(nome) values (?) ";
+    public void Salvar(linha lin){
+         String sql = "Insert into linha(nome,origem,destino) values (?,?,?) ";
 
         try(Connection conexao =connect.obterConexao(); PreparedStatement stmt =conexao.prepareStatement(sql)){
             
-            stmt.setString(1,stats.GetNome());
+            stmt.setString(1,lin.getNome());
+            stmt.setString(2,lin.getOrigem());
+            stmt.setString(3,lin.getDestino());
             stmt.executeUpdate();
             
 
@@ -28,7 +31,7 @@ public class linhaDao {
     }
 
     public void Deletar(int d){
-         String sql = "Delete from viagem where id_linha=?";
+         String sql = "Delete from linha where id_linha=?";
 
         try(Connection conexao =connect.obterConexao(); PreparedStatement stmt =conexao.prepareStatement(sql)){
             
