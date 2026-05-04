@@ -15,31 +15,31 @@ Projeto feito tem java(Swing) Conectado ao MYSQL utilizando o JDBC Usando
  - Padrões DAO
 
  ## Funcionalidades
- - [x] Adicionar Status
- - [] Deletar Status
+ - [x] Adicionar Status -Feito
+ - [x] Deletar Status   -Feito
  - [] Listar Status
 
- - [] Adicionar Cor
- - [] Deletar Cor
+ - [x] Adicionar Cor    -Feito
+ - [x] Deletar Cor      -Feito
  - [] Listar Cor
 
- - [] Adicionar Cargo
- - [] Deletar Cargo
+ - [x] Adicionar Cargo   -Feito
+ - [x] Deletar Cargo     -Feito
  - [] Listar Cargo
 
- - [] Adicionar Escala
- - [] Deletar Escala
+ - [x] Adicionar Escala  -Feito
+ - [x] Deletar Escala    -Feito
  - [] Listar Escala
 
  - [] Adicionar Funcionario
  - [] Deletar Funcionario
  - [] Listar Funcionario
 
- - [] Adicionar Garagem
+ - [x] Adicionar Garagem  -Feito
  - [] Deletar Garagem
  - [] Listar Garagem
 
- - [] Adicionar Linha
+ - [X] Adicionar Linha    -Feito
  - [] Deletar Linha
  - [] Listar Linha
 
@@ -53,10 +53,10 @@ Projeto feito tem java(Swing) Conectado ao MYSQL utilizando o JDBC Usando
 
  
 ## Status
- Em Construção 70%
+ Esse Sistema ainda esta em Construção 70% 
 
 ## Observação
  Este projeto está sendo desenvolvido com foco em portfólio e para
- juntar as tecnologia de java e mysql 
+ juntar as tecnologia de java e mysql usando o JDBC 
 
 

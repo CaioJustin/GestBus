@@ -6,15 +6,19 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
+
+import br.com.dao.escalaDao;
+import br.com.model.escala;
 
 public class addescala extends JFrame{
    JTextField InputHorarioInicio;
    JTextField InputHorarioFim;
    JPanel form;
-
+  JButton BEnviar ;
         public addescala(){
         super("GestBus :: Adicionar Escala ");
         setSize(400,400);
@@ -42,7 +46,7 @@ public class addescala extends JFrame{
     InputHorarioInicio = new JTextField();
     InputHorarioFim = new JTextField();
 
-    JButton BEnviar = new JButton("Enviar");
+     BEnviar = new JButton("Enviar");
    
     BEnviar.setBackground(Color.blue);
     BEnviar.setForeground(Color.WHITE);
@@ -65,6 +69,26 @@ public class addescala extends JFrame{
 
    dadospes.add(BEnviar);
    form.add(dadospes);
+
+
+    escalaDao escDao = new escalaDao();
+
+  
+
+   BEnviar.addActionListener(e ->{
+      String Hf = InputHorarioFim.getText().trim();
+    String Hi = InputHorarioInicio.getText().trim();
+    escala esc = new escala(Hf,Hi);
+      if((Hf.isEmpty())||(Hi.isEmpty())){
+          JOptionPane.showMessageDialog(null,"Algum Input vazio");
+      }else{
+        JOptionPane.showMessageDialog(null,"ESCALA ADICIONADA");
+        escDao.Salvar(esc);
+      }
+
+
+   });
+
  }
 
 }

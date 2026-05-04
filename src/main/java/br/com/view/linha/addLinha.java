@@ -3,9 +3,15 @@ package br.com.view.linha;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
+
+import br.com.dao.linhaDao;
+import br.com.model.escala;
+import br.com.model.linha;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -15,7 +21,7 @@ public class addLinha extends JFrame{
   JTextField nomeField;
    JTextField origemField;
    JTextField destinoField;
-
+JButton BEnviar;
    JPanel form;
         public addLinha(){
         super("GestBus :: Adicionar Linha ");
@@ -24,6 +30,7 @@ public class addLinha extends JFrame{
         setLocationRelativeTo(null);
         criarPanel();
     }
+
      public void criarPanel(){
    JPanel painel = new  JPanel();
    painel.setLayout(new GridLayout(0,1,10,10));
@@ -54,7 +61,7 @@ public class addLinha extends JFrame{
     origemField= new JTextField();
     nomeField= new JTextField();
 
-    JButton BEnviar = new JButton("Enviar");
+     BEnviar = new JButton("Enviar");
     BEnviar.setBackground(Color.blue);
     BEnviar.setForeground(Color.WHITE);
     BEnviar.setFont(new Font("Segoe UI",Font.BOLD,20));
@@ -78,5 +85,24 @@ public class addLinha extends JFrame{
 
    dadospes.add(BEnviar);
    form.add(dadospes);
+  
+   
+    linhaDao linhaDAO= new linhaDao();
+
+   BEnviar.addActionListener(e ->{
+      String names = nomeField.getText().trim();
+    String or = origemField.getText().trim();
+    String df = destinoField.getText().trim();
+    linha esc = new linha(names,or,df);
+      if((names.isEmpty())||(or.isEmpty())||(df.isEmpty())){
+          JOptionPane.showMessageDialog(null,"Algum Input vazio");
+      }else{
+        JOptionPane.showMessageDialog(null,"ESCALA ADICIONADA");
+        linhaDAO.Salvar(esc);
+      }
+
+
+   });
+
  }
 }

@@ -6,7 +6,6 @@ public class cargo {
 
     public cargo(String n){
         this.nome=n;
-
     }
 
     public String GetNome(){

@@ -7,14 +7,19 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
+
+import br.com.dao.cargoDao;
+import br.com.model.cargo;
 
 public class addCargo extends JFrame{
     
    JTextField carField;
    JPanel form;
+   JButton BEnviar;
  public  addCargo(){
     super("GestBus :: Adicionar Cargo");
     setSize(400,200);
@@ -36,7 +41,7 @@ public class addCargo extends JFrame{
    JLabel NC = new JLabel("Nome do Cargo",JLabel.CENTER);
    NC.setFont(new Font("Segoe UI",Font.BOLD,20));
     carField = new JTextField();
-    JButton BEnviar = new JButton("Enviar");
+     BEnviar = new JButton("Enviar");
     BEnviar.setBackground(Color.blue);
     BEnviar.setForeground(Color.WHITE);
     BEnviar.setFont(new Font("Segoe UI",Font.BOLD,20));
@@ -48,6 +53,34 @@ public class addCargo extends JFrame{
    dadospes.add(carField);
    dadospes.add(BEnviar);
    form.add(dadospes);
+
+
+
+   cargoDao CargoDao = new cargoDao();
+
+   BEnviar.addActionListener(e ->{
+      String cargoNome =carField.getText();
+      cargo cargs= new cargo(cargoNome);
+       
+   if(cargoNome.isEmpty()){
+    JOptionPane.showMessageDialog(null,"Input vazio");
+   }else{
+    
+     try {
+      CargoDao.Salvar(cargs);
+       JOptionPane.showMessageDialog(null,"Adicionado Com Sucesso!!");  
+       carField.setText("");
+    } catch (Exception d) {
+      System.out.println("Cargo adicionado com sucesso : "+d.getMessage());
+    }
+    
+   }
+
+      carField.setText("");
+
+   });
+
+
  }
 
 

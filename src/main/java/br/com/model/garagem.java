@@ -69,4 +69,8 @@ public class garagem {
         return this.vagas;
     }
 
+      public void setVagas(int s ){
+        this.vagas=s;
+    }
+
 }

@@ -7,9 +7,12 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
+
+import br.com.dao.cargoDao;
 
 public class deleteCargo extends JFrame{
 
@@ -34,12 +37,12 @@ public class deleteCargo extends JFrame{
  }
 
 
-
+JButton BEnviar;
  public void Carg(){
    JLabel NC = new JLabel("Id do Cargo",JLabel.CENTER);
    NC.setFont(new Font("Segoe UI",Font.BOLD,20));
     carField = new JTextField();
-    JButton BEnviar = new JButton("Deletar");
+     BEnviar = new JButton("Deletar");
     BEnviar.setBackground(Color.RED);
     BEnviar.setForeground(Color.WHITE);
     BEnviar.setFont(new Font("Segoe UI",Font.BOLD,20));
@@ -51,6 +54,22 @@ public class deleteCargo extends JFrame{
    dadospes.add(carField);
    dadospes.add(BEnviar);
    form.add(dadospes);
+
+   cargoDao cd = new cargoDao();
+
+  BEnviar.addActionListener(e->{
+     int idC= Integer.parseInt(carField.getText().trim());
+    if(idC !=0){
+       cd.Deletar(idC);
+       JOptionPane.showMessageDialog(null,"Deletado com Sucesso");
+    } else{
+      JOptionPane.showMessageDialog(null,"Error ao deletar");
+    }
+  
+  });
+
+
+
    }
 
 

@@ -6,9 +6,12 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
+
+import br.com.dao.escalaDao;
 
 public class deleteEscala extends JFrame{
 JTextField carField;
@@ -32,14 +35,14 @@ JTextField carField;
  }
 
 
-
+JButton BEnviar;
  public void Carg(){
    JLabel Vi = new JLabel("Id da Escala",JLabel.CENTER);
      Vi.setFont(new Font("Segoe UI",Font.BOLD,20));
    JLabel NC = new JLabel("Id da escala",JLabel.CENTER);
    NC.setFont(new Font("Segoe UI",Font.BOLD,20));
     carField = new JTextField();
-    JButton BEnviar = new JButton("Deletar");
+     BEnviar = new JButton("Deletar");
     BEnviar.setBackground(Color.RED);
     BEnviar.setForeground(Color.WHITE);
     BEnviar.setFont(new Font("Segoe UI",Font.BOLD,20));
@@ -52,6 +55,21 @@ JTextField carField;
    dadospes.add(carField);
    dadospes.add(BEnviar);
    form.add(dadospes);
+
+   escalaDao escD = new escalaDao();
+   BEnviar.addActionListener(e ->{
+      int idE =Integer.parseInt(carField.getText().trim());
+    if(idE !=0){
+       escD.Deletar(idE);
+      JOptionPane.showMessageDialog(null,"Deletado com Sucesso !!");
+    }else{
+      JOptionPane.showMessageDialog(null,"Erroar ao enviar !!");
+    }
+
+
+   });  
+
+
    }
 
 }

@@ -6,7 +6,7 @@ import br.com.model.status;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import br.com.view.status.*;
+
 
 public class statusDao {
     
@@ -26,5 +26,15 @@ public class statusDao {
 
     }
 
+    
+    public void Deletar(int id_Deleter){
+        String sql="Delete from status where id_status =? ";
+        try(Connection conn =connect.obterConexao(); PreparedStatement stmt = conn.prepareStatement(sql)){
+           stmt.setInt(1,id_Deleter);
+           stmt.executeUpdate();
+        } catch (Exception e) {
+            System.out.println("na hora de deletar error !!");
+        }
 
+    }
 }

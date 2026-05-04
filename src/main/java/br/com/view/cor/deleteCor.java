@@ -6,12 +6,15 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
-public class deleteCor extends JFrame{
+import br.com.dao.corDao;
 
+public class deleteCor extends JFrame{
+ JButton BEnviar;
 JTextField carField;
    JPanel form;
      public deleteCor(){
@@ -37,7 +40,7 @@ JTextField carField;
    JLabel NC = new JLabel("Id da Cor",JLabel.CENTER);
    NC.setFont(new Font("Segoe UI",Font.BOLD,20));
     carField = new JTextField();
-    JButton BEnviar = new JButton("Deletar");
+     BEnviar = new JButton("Deletar");
     BEnviar.setBackground(Color.RED);
     BEnviar.setForeground(Color.WHITE);
     BEnviar.setFont(new Font("Segoe UI",Font.BOLD,20));
@@ -49,7 +52,19 @@ JTextField carField;
    dadospes.add(carField);
    dadospes.add(BEnviar);
    form.add(dadospes);
+
+      corDao cd = new corDao();
+   BEnviar.addActionListener(e->{
+      int del = Integer.parseInt(carField.getText().trim());
+      if (del !=0){
+         cd.Deletar(del);
+         JOptionPane.showMessageDialog(null,"Deletado com Sucesso cor");
+      } else {
+         JOptionPane.showMessageDialog(null,"Erro na hora de envia");
+      }
+
+   });
    }
 
-
+   
 }

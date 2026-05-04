@@ -9,9 +9,13 @@ import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
+
+import br.com.dao.garagemDao;
+import br.com.model.garagem;
 
 public class addGaragem extends JFrame{
        JTextField nomeField;
@@ -21,6 +25,15 @@ public class addGaragem extends JFrame{
            JTextField cepField;
             JTextField vagasField;
      JPanel form;
+ JButton BEnviar;
+
+    
+         String Nome ;
+     String Cidade;
+     String Rua;
+     String Bairro;
+     String Cep;
+     int Vagas;
 
     public addGaragem(){
         super("GstBus :: Garagem");
@@ -58,25 +71,28 @@ public class addGaragem extends JFrame{
     names.add(cep);
     names.add(vagas);
 
-
-    for (JLabel n : names) {
-        n.setFont(new Font("Segoi UI",Font.BOLD,20));
-    }
-
-
-    nomeField = new JTextField();
+     nomeField = new JTextField();
     cidadeField = new JTextField();
     ruaField = new JTextField();
     bairroField = new JTextField();
     cepField = new JTextField();
     vagasField = new JTextField();
 
+
+
+    for (JLabel n : names) {
+        n.setFont(new Font("Segoi UI",Font.BOLD,20));
+    }
+
+
+   
+
     
 
    JPanel dadospes = new  JPanel(new GridLayout(0,1,10,10));
 
 
-   JButton BEnviar = new JButton("Enviar");
+    BEnviar = new JButton("Enviar");
     BEnviar.setBackground(Color.blue);
     BEnviar.setForeground(Color.WHITE);
     BEnviar.setFont(new Font("Segoe UI",Font.BOLD,20));
@@ -104,6 +120,31 @@ public class addGaragem extends JFrame{
 
    dadospes.add(BEnviar);
    form.add(dadospes);
+
+
+
+   
+     garagemDao GaragemDao = new garagemDao();
+
+     BEnviar.addActionListener(e ->{
+
+      Nome =nomeField.getText().trim();
+      Cidade=cidadeField.getText().trim();
+      Rua=ruaField.getText().trim();
+      Bairro=bairroField.getText().trim();
+      Cep=cepField.getText().trim();
+      Vagas= Integer.parseInt(vagasField.getText().trim());
+        garagem gam = new garagem(Nome,Cidade,Rua,Bairro,Cep,Vagas);
+      
+       try {
+         GaragemDao.Salvar(gam);
+         JOptionPane.showMessageDialog(null,"Informações da Garagem Adicionada");
+       } catch (Exception d) {
+        JOptionPane.showMessageDialog(null,"Error de : "+d.getMessage());
+       }
+
+     });
+
  }
 
 }
