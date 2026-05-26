@@ -3,9 +3,15 @@ package br.com.view.onibus;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
+
+
+import br.com.dao.onibusDao;
+import br.com.model.onibus;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -105,5 +111,26 @@ public class addOnibus extends JFrame{
 
    dadospes.add(BEnviar);
    form.add(dadospes);
+
+
+   onibusDao lindao=new onibusDao();
+    BEnviar.addActionListener(e ->{
+      int PF = Integer.parseInt(placaField.getText().trim());
+      String mF= modeloField.getText().trim();
+      String aF = anoField.getText().trim();
+      int cap = Integer.parseInt(capacidadeField.getText().trim());
+      int SIF = Integer.parseInt(statusIdField.getText().trim());
+      int CIF = Integer.parseInt(corIdField.getText().trim());
+      int GIF = Integer.parseInt(garagemIdField.getText().trim());
+
+ 
+
+      
+      onibus lin = new onibus(PF,mF,aF,cap,SIF,CIF,GIF); 
+      lindao.Salvar(lin);
+      JOptionPane.showMessageDialog(null,"Adicionado com Sucesso !!");
+      
+
+    });
  }
 }

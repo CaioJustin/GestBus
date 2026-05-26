@@ -5,6 +5,7 @@ import br.com.model.status;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 
@@ -42,6 +43,23 @@ public class statusDao {
 
     }
     
+    public status ListarInformacao(int idC){
+        String sql = "Select * from status where id_status=?";
+        try(Connection conn = connect.obterConexao(); PreparedStatement stmt =conn.prepareStatement(sql)){
+            stmt.setInt(1, idC);
+            ResultSet rs = stmt.executeQuery();
 
+            if(rs.next()){
+                int statsid=rs.getInt("id_status");
+                String statsname=rs.getString("nome");
+                return new status(statsid,statsname);
+            }
+
+
+        } catch (Exception e) {
+            System.out.println("Error d : "+e.getMessage());
+        }
+        return null;
+    }
 
 }

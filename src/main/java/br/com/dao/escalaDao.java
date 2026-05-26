@@ -7,6 +7,7 @@ import br.com.model.escala;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 
@@ -45,6 +46,27 @@ public class escalaDao {
 
     }
     
+     public escala ListarInformacao(int idC){
+        String sql = "Select * from escala where id_escala =?";
 
+        try(Connection conexao = connect.obterConexao(); PreparedStatement stmt = conexao.prepareStatement(sql)){
+            stmt.setInt(1, idC);
+            ResultSet rs = stmt.executeQuery();
+
+            if(rs.next()){
+                int id =rs.getInt("id_escala");
+                String Hi=rs.getString("horario_inicio");
+                String Hf=rs.getString("horario_fim");
+                String date=rs.getString("data_criar");
+                return new escala(id,Hf,Hi,date);
+               
+            }
+            
+
+        }catch(SQLException e ){
+            System.err.println("Error de : "+e.getMessage());
+        }
+         return null;
+    }
 
 }

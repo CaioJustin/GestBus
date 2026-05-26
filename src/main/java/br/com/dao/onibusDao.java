@@ -5,6 +5,7 @@ import br.com.model.onibus;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 
@@ -42,6 +43,29 @@ public class onibusDao {
 
     }
     
+     public onibus ListarInformacao(int idC){
+        String sql = "Select * from onibus where placa=?";
+        try(Connection conn = connect.obterConexao(); PreparedStatement stmt =conn.prepareStatement(sql)){
+            stmt.setInt(1, idC);
+            ResultSet rs = stmt.executeQuery();
 
+            if(rs.next()){
+                int placaOni=rs.getInt("placa");
+                String modeloOni=rs.getString("modelo");
+                String anoFabricOni=rs.getString("anoDeFabric");
+                int capacidadeOni=rs.getInt("capacidade");
+                String dataCriacaoOni=rs.getString("dataCriação");
+                int statusidOni=rs.getInt("Status_id");
+                int coridOni=rs.getInt("Cor_id");
+                int garagemidOni=rs.getInt("Garagem_id");
+                return new onibus(placaOni,modeloOni,anoFabricOni,capacidadeOni,statusidOni,coridOni,garagemidOni,dataCriacaoOni);
+            }
+
+
+        } catch (Exception e) {
+            System.out.println("Error d : "+e.getMessage());
+        }
+        return null;
+    }
 
 }

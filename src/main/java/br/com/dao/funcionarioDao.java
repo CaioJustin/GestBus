@@ -8,6 +8,7 @@ import br.com.model.funcionario;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 
@@ -48,6 +49,33 @@ public class funcionarioDao {
         }
 
 
+    }
+
+      public funcionario ListarInformacao(int idC){
+        String sql = "Select * from funcionario where id =?";
+
+        try(Connection conexao = connect.obterConexao(); PreparedStatement stmt = conexao.prepareStatement(sql)){
+            stmt.setInt(1, idC);
+            ResultSet rs = stmt.executeQuery();
+
+            if(rs.next()){
+                int id =rs.getInt("id");
+                String nome=rs.getString("nome");
+                String sobrenome=rs.getString("sobrenome");
+                String cpf=rs.getString("cpf");
+                String data=rs.getString("datanascimento");
+                int Cargo=rs.getInt("Cargo_id");
+                int Status=rs.getInt("Status_id");
+                int Escala=rs.getInt("Escala_id");
+                return new funcionario(id,nome,sobrenome,cpf,Status,Cargo,Escala,data);
+               
+            }
+            
+
+        }catch(SQLException e ){
+            System.err.println("Error de : "+e.getMessage());
+        }
+         return null;
     }
     
 

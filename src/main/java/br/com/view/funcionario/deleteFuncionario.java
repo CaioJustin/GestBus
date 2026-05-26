@@ -14,7 +14,7 @@ import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
 import br.com.dao.funcionarioDao;
-import br.com.dao.garagemDao;
+
 
 public class deleteFuncionario extends JFrame{
     

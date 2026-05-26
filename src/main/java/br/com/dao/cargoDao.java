@@ -4,7 +4,9 @@ import br.com.conexao.connect;
 import br.com.model.cargo;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+
 
 
 public class cargoDao {
@@ -41,6 +43,27 @@ public class cargoDao {
 
     }
     
+    public cargo ListarInformacao(int idC){
+        String sql = "Select * from cargo where id_cargo =?";
 
+        try(Connection conexao = connect.obterConexao(); PreparedStatement stmt = conexao.prepareStatement(sql)){
+            stmt.setInt(1, idC);
+            ResultSet rs = stmt.executeQuery();
+
+            if(rs.next()){
+                int id =rs.getInt("ID_Cargo");
+                String nome=rs.getString("nome");
+                return new cargo(id,nome);
+               
+            }
+            
+
+        }catch(SQLException e ){
+            System.err.println("Error de : "+e.getMessage());
+        }
+         return null;
+    }
+
+    
 
 }

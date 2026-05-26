@@ -3,9 +3,13 @@ package br.com.view.onibus;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
+
+import br.com.dao.onibusDao;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -43,5 +47,20 @@ public class deleteOnibus extends JFrame{
    dadospes.add(corField);
    dadospes.add(BEnviar);
    form.add(dadospes);
+
+
+ onibusDao garaD =new onibusDao();
+    BEnviar.addActionListener(e ->{
+      int GD = Integer.parseInt(corField.getName().trim());
+      if(GD !=0){
+          garaD.Deletar(GD);
+          JOptionPane.showMessageDialog(null,"Deletado com Sucesso !!");
+      }else{
+        JOptionPane.showMessageDialog(null,"Erro no input  !!");
+      }
+
+    });
+
+
  }
 }

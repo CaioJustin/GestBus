@@ -202,7 +202,7 @@ public class JanelaPrincipal extends JFrame {
 
     private Map <String,JButton> optionCargo;
     public void panelCargo(){
-        optionCargo=new HashMap();
+        optionCargo=new HashMap<>();
 
         centerpanel.removeAll();
 
@@ -241,7 +241,7 @@ public class JanelaPrincipal extends JFrame {
 
     private Map <String,JButton> optionOnibus;
     public void panelOnibus(){
-        optionOnibus=new HashMap();
+        optionOnibus=new HashMap<>();
 
         centerpanel.removeAll();
 
@@ -281,7 +281,7 @@ public class JanelaPrincipal extends JFrame {
 
     private Map <String,JButton> optionViagem;
     public void panelViagem(){
-        optionViagem=new HashMap();
+        optionViagem=new HashMap<>();
 
         centerpanel.removeAll();
 
@@ -320,7 +320,7 @@ public class JanelaPrincipal extends JFrame {
 
     private Map <String,JButton> optionGaragem;
     public void panelGaragem(){
-        optionGaragem=new HashMap();
+        optionGaragem=new HashMap<>();
 
         centerpanel.removeAll();
 
@@ -359,7 +359,7 @@ public class JanelaPrincipal extends JFrame {
 
     private Map <String,JButton> optionLinhas;
     public void panelLinhas(){
-        optionLinhas=new HashMap();
+        optionLinhas=new HashMap<>();
 
         centerpanel.removeAll();
 
@@ -397,7 +397,7 @@ public class JanelaPrincipal extends JFrame {
 
     private Map <String,JButton> optionEscala;
     public void panelEscala(){
-        optionEscala=new HashMap();
+        optionEscala=new HashMap<>();
 
         centerpanel.removeAll();
 
@@ -435,7 +435,7 @@ public class JanelaPrincipal extends JFrame {
 
     private Map <String,JButton> optionCor;
     public void panelCor(){
-        optionCor=new HashMap();
+        optionCor=new HashMap<>();
 
         centerpanel.removeAll();
 

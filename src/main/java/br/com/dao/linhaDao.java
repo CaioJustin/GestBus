@@ -7,6 +7,7 @@ import br.com.model.linha;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 
@@ -46,6 +47,25 @@ public class linhaDao {
 
     }
     
+    public linha ListarInformacao(int idC){
+        String sql = "Select * from linha where id_linha=?";
+        try(Connection conn = connect.obterConexao(); PreparedStatement stmt =conn.prepareStatement(sql)){
+            stmt.setInt(1, idC);
+            ResultSet rs = stmt.executeQuery();
 
+            if(rs.next()){
+                int idl=rs.getInt("id_linha");
+                String nome=rs.getString("nome");
+                String origem=rs.getString("origem");
+                String destino=rs.getString("destino");
+                return new linha(idl,nome,origem,destino);
+            }
+
+
+        } catch (Exception e) {
+            System.out.println("Error d : "+e.getMessage());
+        }
+        return null;
+    }
 
 }

@@ -2,11 +2,13 @@ package br.com.dao;
 
 
 import br.com.conexao.connect;
+
 import br.com.model.cor;
 
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 
@@ -44,7 +46,26 @@ public class corDao {
 
     }
     
+     public cor ListarInformacao(int idC){
+        String sql = "Select * from cor where id_cor =?";
 
+        try(Connection conexao = connect.obterConexao(); PreparedStatement stmt = conexao.prepareStatement(sql)){
+            stmt.setInt(1, idC);
+            ResultSet rs = stmt.executeQuery();
+
+            if(rs.next()){
+                int id =rs.getInt("id_cor");
+                String nome=rs.getString("nome");
+                return new cor(id,nome);
+               
+            }
+            
+
+        }catch(SQLException e ){
+            System.err.println("Error de : "+e.getMessage());
+        }
+         return null;
+    }
 
 }
     

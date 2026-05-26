@@ -8,6 +8,7 @@ import br.com.model.garagem;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 
@@ -51,6 +52,29 @@ public class garagemDao {
     }
     
 
+    public garagem ListarInformacao(int idc){
+        String sql ="Select * from garagem where id_garagem=? ";
+
+        try(Connection conn = connect.obterConexao(); PreparedStatement stmt = conn.prepareStatement(sql)){
+            stmt.setInt(1,idc);
+            ResultSet rs =stmt.executeQuery();
+
+            if(rs.next()){
+                int id = rs.getInt("id_garagem");
+                String nome= rs.getString("nome");
+                String cidade= rs.getString("cidade");
+                String rua= rs.getString("rua");
+            String bairro= rs.getString("bairro");
+                String cep= rs.getString("cep");
+                int vagas= rs.getInt("vagas");
+                return new garagem(id,nome,cidade,rua,bairro,cep,vagas);
+            }
+
+        } catch (Exception e) {
+            System.out.println("Error de : "+e.getMessage());
+        }
+      return null;
+    }
 
 }
 

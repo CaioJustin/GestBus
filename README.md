@@ -3,8 +3,8 @@ Projeto feito tem java(Swing) Conectado ao MYSQL utilizando o JDBC Usando
  o Maven para importa os 
 
 ## Descrição do Projeto
- Projeto feito tem java(Swing) Conectado ao MYSQL utilizando o JDBC Usando
- o Maven para importa os 
+ Junção de 2 Atividades feito na sala de aula do senai de java swing e banco de dados eu reaproveitei e juntei os dois 
+ Projeto feito tem java(Swing) Conectado ao MYSQL utilizando o JDBC Usando o Maven para importa os 
 
  ## Ferramentas Utilizadas
  - Linguagem java
@@ -17,40 +17,48 @@ Projeto feito tem java(Swing) Conectado ao MYSQL utilizando o JDBC Usando
  ## Funcionalidades
  - [x] Adicionar Status
  - [x] Deletar Status
- - [] Listar Status
+ - [x] Listar Status
+ - [] Atualizar Status
 
  - [x] Adicionar Cor
  - [x] Deletar Cor
- - [] Listar Cor
+ - [x] Listar Cor
+- [] Atualizar Status
 
  - [x] Adicionar Cargo
  - [x] Deletar Cargo
- - [] Listar Cargo
+ - [x] Listar Cargo
+- [] Atualizar Status
 
  - [x] Adicionar Escala
  - [x] Deletar Escala
- - [] Listar Escala
+ - [x] Listar Escala
+- [] Atualizar Status
 
- - [] Adicionar Funcionario
- - [] Deletar Funcionario
- - [] Listar Funcionario
+ - [x] Adicionar Funcionario
+ - [x] Deletar Funcionario
+ - [x] Listar Funcionario
+- [] Atualizar Status
 
  - [x] Adicionar Garagem
  - [x] Deletar Garagem
- - [] Listar Garagem
+ - [x] Listar Garagem
+- [] Atualizar Status
 
  - [x] Adicionar Linha
  - [x] Deletar Linha
- - [] Listar Linha
+ - [x] Listar Linha
+- [] Atualizar Status
 
- - [] Adicionar Onibus
- - [] Deletar Onibus
- - [] Listar Onibus
+ - [x] Adicionar Onibus
+ - [x] Deletar Onibus
+ - [x] Listar Onibus
+- [] Atualizar Status
 
- - [] Adicionar Viagem
- - [] Deletar Viagem
- - [] Listar Viagem
-
+ - [x] Adicionar Viagem
+ - [x] Deletar Viagem
+ - [x] Listar Viagem
+- [] Atualizar Status
  
 ## Status
  Em Construção 70%

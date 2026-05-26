@@ -1,7 +1,7 @@
 package br.com.model;
 
 public class garagem {
-    
+    private int id;
     private String nome;
     private String cidade;
     private String rua;
@@ -10,6 +10,18 @@ public class garagem {
     private int vagas;
 
     public garagem(String n,String c,String r,String b,String cep,int vaga){
+            
+            this.nome=n;
+            this.cidade=c;
+            this.rua=r;
+            this.bairro=b;
+            this.cep=cep;
+            this.vagas=vaga;
+        
+    }
+
+     public garagem(int id,String n,String c,String r,String b,String cep,int vaga){
+           this.id=id;
             this.nome=n;
             this.cidade=c;
             this.rua=r;
@@ -67,6 +79,14 @@ public class garagem {
 
     public int getVagas(){
         return this.vagas;
+    }
+
+     public int Getid(){
+        return this.id;
+    }
+
+    public void Setid(int d){
+        this.id= d;
     }
 
 }

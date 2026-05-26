@@ -6,6 +6,10 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
+
+import br.com.dao.viagemDao;
+import br.com.model.viagem;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -36,7 +40,7 @@ public class addViagem  extends JFrame{
    painel.add(form);
    
  }
-
+JButton BEnviar;
  public void Carg(){
    JLabel NC = new JLabel("Adicionar Viagem",JLabel.CENTER);
    NC.setFont(new Font("Segoe UI",Font.BOLD,20));
@@ -67,7 +71,7 @@ public class addViagem  extends JFrame{
    JPanel dadospes = new  JPanel(new GridLayout(0,1,10,10));
 
 
-   JButton BEnviar = new JButton("Enviar");
+    BEnviar = new JButton("Enviar");
     BEnviar.setBackground(Color.blue);
     BEnviar.setForeground(Color.WHITE);
     BEnviar.setFont(new Font("Segoe UI",Font.BOLD,20));
@@ -94,5 +98,27 @@ public class addViagem  extends JFrame{
 
    dadospes.add(BEnviar);
    form.add(dadospes);
+
+    viagemDao vidao = new viagemDao();
+   BEnviar.addActionListener(e->{
+    String desc=descricaoField.getText();
+    String  par=dataPartidaField.getText().trim();
+    String che=dataChegadaField.getText().trim();
+    int escalid=Integer.parseInt(EscalaIdField.getText().trim());
+    int Lid =Integer.parseInt(LinhaIdField.getText().trim());
+
+     viagem via = new viagem(desc, par, che, escalid, Lid);
+
+      try {
+      vidao.Salvar(via);; 
+      System.err.println("Salvo com Sucesso no banco de dados!! ");
+    } catch (Exception d) {
+      System.err.println("Error ao salvar :  "+d.getMessage());
+    }
+
+   });
+
+
+   
  }
 }
