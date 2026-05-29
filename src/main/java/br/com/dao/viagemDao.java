@@ -71,5 +71,22 @@ public class viagemDao {
         return null;
     }
 
+    public void Atualizar(viagem idc){
+            String sql = "update viagem set descricao=?,data_partida=?,data_chegada=?,Escala_id,Linha_id where id_viagem =?";
+        try(Connection conn = connect.obterConexao(); PreparedStatement stmt =conn.prepareStatement(sql)){
+        
+            stmt.setString(1,idc.getDesc());
+            stmt.setString(2,idc.getDataPar());
+            stmt.setString(3,idc.getDataChe());
+            stmt.setInt(4,idc.getEscala());
+            stmt.setInt(5,idc.getLinha());
+            stmt.setInt(6,idc.Getid());
+            stmt.executeUpdate();
+        } catch (Exception e) {
+            System.err.println("Error de : "+e.getMessage());
+        }
 
+
+
+    }
 }

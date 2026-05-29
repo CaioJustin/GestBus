@@ -74,8 +74,8 @@ public class addescala extends JFrame{
 
        escalaDao escdao=new escalaDao();
     BEnviar.addActionListener(e ->{
-      String hi = InputHorarioInicio.getName().trim();
-      String hf = InputHorarioFim.getName().trim();
+      String hi = InputHorarioInicio.getText().trim();
+      String hf = InputHorarioFim.getText().trim();
       
       escala esc = new escala(hi,hf);
       if((hi.isEmpty())|| (hf.isEmpty())){

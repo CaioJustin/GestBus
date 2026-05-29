@@ -3,6 +3,7 @@ package br.com.dao;
 
 
 import br.com.conexao.connect;
+
 import br.com.model.garagem;
 
 
@@ -76,5 +77,23 @@ public class garagemDao {
       return null;
     }
 
+      public void Atualizar(garagem idc){
+            String sql = "update garagem set nome=?,cidade=?,rua=?,bairro=?,cep=?,vagas=? where id_garagem=?";
+        try(Connection conn = connect.obterConexao(); PreparedStatement stmt =conn.prepareStatement(sql)){
+            stmt.setString(1,idc.getNome());
+            stmt.setString(2,idc.getCidade());
+            stmt.setString(3,idc.getRua());
+            stmt.setString(4,idc.getBairro());
+            stmt.setString(5,idc.getCep());
+            stmt.setInt(6,idc.getVagas());
+            stmt.setInt(8,idc.Getid());
+            stmt.executeUpdate();
+        } catch (Exception e) {
+            System.err.println("Error de : "+e.getMessage());
+        }
+
+
+
+    }
 }
 

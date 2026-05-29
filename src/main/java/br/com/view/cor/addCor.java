@@ -58,7 +58,7 @@ JButton BEnviar;
 
        corDao cD=new corDao();
     BEnviar.addActionListener(e ->{
-      String CN = corField.getName().trim();
+      String CN = corField.getText().trim();
       cor car = new cor(CN);
       if(CN.isEmpty()){
         JOptionPane.showMessageDialog(null,"Erro no input  !!");

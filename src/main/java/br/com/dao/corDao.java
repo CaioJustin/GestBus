@@ -2,7 +2,6 @@ package br.com.dao;
 
 
 import br.com.conexao.connect;
-
 import br.com.model.cor;
 
 
@@ -65,6 +64,21 @@ public class corDao {
             System.err.println("Error de : "+e.getMessage());
         }
          return null;
+    }
+
+
+    public void Atualizar(cor idc){
+            String sql = "update cor set nome=? where id_cor =?";
+        try(Connection conn = connect.obterConexao(); PreparedStatement stmt =conn.prepareStatement(sql)){
+            stmt.setString(1,idc.GetNome());
+            stmt.setInt(2,idc.Getid());
+            stmt.executeUpdate();
+        } catch (Exception e) {
+            System.err.println("Error de : "+e.getMessage());
+        }
+
+
+
     }
 
 }

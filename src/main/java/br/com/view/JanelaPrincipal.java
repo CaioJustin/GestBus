@@ -13,6 +13,7 @@ import javax.swing.border.LineBorder;
 
 
 import br.com.view.cargo.addCargo;
+import br.com.view.cargo.attCargo;
 import br.com.view.cargo.deleteCargo;
 import br.com.view.cargo.listCargo;
 import br.com.view.cor.addCor;
@@ -211,6 +212,7 @@ public class JanelaPrincipal extends JFrame {
         optionCargo.put("AdicionarCargo",new JButton("Adicionar Cargo"));
         optionCargo.put("ExcluirCargo",new JButton("Excluir Cargo"));
         optionCargo.put("ListarCargo",new JButton("Listar Cargo"));
+        optionCargo.put("AtualizarCargo",new JButton("Atualizar Cargo"));
 
         JButton CargoButtonPanel= new JButton();
         CargoButtonPanel.setPreferredSize(new Dimension(500,300));
@@ -859,7 +861,14 @@ public class JanelaPrincipal extends JFrame {
             }
         });
 
-
+        optionCargo.get("AtualizarCargo").addActionListener(e ->{
+            try {
+                attCargo atualizarCargo = new attCargo();
+                atualizarCargo.setVisible(true);
+            } catch (Exception m) {
+                System.out.println("Error de : "+m.getMessage());
+            }
+        });
 
 
 

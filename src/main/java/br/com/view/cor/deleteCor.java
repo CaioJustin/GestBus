@@ -57,7 +57,7 @@ JButton BEnviar;
 
       corDao CD =new corDao();
     BEnviar.addActionListener(e ->{
-      int CN = Integer.parseInt(carField.getName().trim());
+      int CN = Integer.parseInt(carField.getText().trim());
       if(CN !=0){
           CD.Deletar(CN);
           JOptionPane.showMessageDialog(null,"Adicionado com Sucesso !!");

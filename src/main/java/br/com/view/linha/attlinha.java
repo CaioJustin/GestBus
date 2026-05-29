@@ -1,5 +1,7 @@
 package br.com.view.linha;
 
+import java.util.ArrayList;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -10,26 +12,26 @@ import javax.swing.WindowConstants;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
-
 import br.com.dao.linhaDao;
-
 import br.com.model.linha;
 
-import java.util.ArrayList;
-public class addLinha extends JFrame{
- 
+public class attlinha extends JFrame{
+    
   JTextField nomeField;
    JTextField origemField;
    JTextField destinoField;
+  JTextField IdInputlinha;
+
 
    JPanel form;
-        public addLinha(){
-        super("GestBus :: Adicionar Linha ");
+        public attlinha(){
+        super("GestBus :: Atualizar  Linha ");
         setSize(400,500);
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
         criarPanel();
     }
+
      public void criarPanel(){
    JPanel painel = new  JPanel();
    painel.setLayout(new GridLayout(0,1,10,10));
@@ -40,16 +42,18 @@ public class addLinha extends JFrame{
  }
 
  public void Carg(){
-   JLabel NC = new JLabel("Adicionar Linha",JLabel.CENTER);
+   JLabel NC = new JLabel("Atualizar Linha",JLabel.CENTER);
    NC.setFont(new Font("Segoe UI",Font.BOLD,20));
 
    ArrayList<JLabel> na = new ArrayList<>();
    JLabel Destino = new JLabel("Destino",JLabel.CENTER);
    JLabel Origem = new JLabel("Origem",JLabel.CENTER);
    JLabel Nome = new JLabel("Nome",JLabel.CENTER);
+   JLabel ids = new JLabel("iD",JLabel.CENTER);
    na.add(Destino);
    na.add(Origem);
    na.add(Nome);
+   na.add(ids);
 
    for (JLabel j : na) {
         j.setFont(new Font("Segoe UI",Font.BOLD,20));
@@ -59,6 +63,7 @@ public class addLinha extends JFrame{
     destinoField = new JTextField();
     origemField= new JTextField();
     nomeField= new JTextField();
+    IdInputlinha= new JTextField();
 
     JButton BEnviar = new JButton("Enviar");
     BEnviar.setBackground(Color.blue);
@@ -71,6 +76,9 @@ public class addLinha extends JFrame{
 
 
    dadospes.add(NC);
+
+   dadospes.add(ids);
+    dadospes.add(IdInputlinha);
 
    dadospes.add(Nome);
     dadospes.add(nomeField);
@@ -90,13 +98,13 @@ public class addLinha extends JFrame{
       String no = nomeField.getText().trim();
       String or= origemField.getText().trim();
       String ds = destinoField.getText().trim();
-     
+     int idl = Integer.parseInt(IdInputlinha.getText().trim());
       
-      linha lin = new linha(no,or,ds);
+      linha lin = new linha(idl,no,or,ds);
       if((no.isEmpty())||(or.isEmpty())||(ds.isEmpty())){
         JOptionPane.showMessageDialog(null,"Erro no input  !!");
       }else{
-          lindao.Salvar(lin);
+          lindao.Atualizar(lin);
           JOptionPane.showMessageDialog(null,"Adicionado com Sucesso !!");
       }
 

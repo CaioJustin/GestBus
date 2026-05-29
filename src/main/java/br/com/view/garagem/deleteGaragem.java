@@ -53,7 +53,7 @@ public class deleteGaragem extends JFrame{
 
      garagemDao garaD =new garagemDao();
     BEnviar.addActionListener(e ->{
-      int GD = Integer.parseInt(corField.getName().trim());
+      int GD = Integer.parseInt(corField.getText().trim());
       if(GD !=0){
           garaD.Deletar(GD);
           JOptionPane.showMessageDialog(null,"Adicionado com Sucesso !!");

@@ -21,6 +21,12 @@ public class escala {
 
     }
 
+    public escala(int id,String hi,String hf){
+        this.id=id;
+        this.horario_inicio=hi;
+        this.horario_fim=hf;    
+    }
+
     public String getHorarioInicio(){
         return this.horario_inicio;
     }

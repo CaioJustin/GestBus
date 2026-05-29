@@ -1,6 +1,7 @@
 package br.com.dao;
 
 import br.com.conexao.connect;
+
 import br.com.model.status;
 
 import java.sql.Connection;
@@ -62,4 +63,18 @@ public class statusDao {
         return null;
     }
 
+
+    public void Atualizar(status idc){
+            String sql = "update status set nome=? where id_status =?";
+        try(Connection conn = connect.obterConexao(); PreparedStatement stmt =conn.prepareStatement(sql)){
+            stmt.setString(1,idc.GetNome());
+            stmt.setInt(2,idc.Getid());
+            stmt.executeUpdate();
+        } catch (Exception e) {
+            System.err.println("Error de : "+e.getMessage());
+        }
+
+
+
+    }
 }

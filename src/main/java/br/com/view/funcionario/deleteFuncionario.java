@@ -66,7 +66,7 @@ JButton excluir;
 
           funcionarioDao funfDao =new funcionarioDao();
     excluir.addActionListener(e ->{
-      int F_id = Integer.parseInt(Input.getName().trim());
+      int F_id = Integer.parseInt(Input.getText().trim());
       if(F_id !=0){
           funfDao.Deletar(F_id);
           JOptionPane.showMessageDialog(null,"Funcionario Deletado com Sucesso !!");

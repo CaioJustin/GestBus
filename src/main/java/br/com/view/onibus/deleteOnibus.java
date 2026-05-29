@@ -51,7 +51,7 @@ public class deleteOnibus extends JFrame{
 
  onibusDao garaD =new onibusDao();
     BEnviar.addActionListener(e ->{
-      int GD = Integer.parseInt(corField.getName().trim());
+      int GD = Integer.parseInt(corField.getText().trim());
       if(GD !=0){
           garaD.Deletar(GD);
           JOptionPane.showMessageDialog(null,"Deletado com Sucesso !!");

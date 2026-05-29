@@ -79,5 +79,23 @@ public class funcionarioDao {
     }
     
 
+    public void Atualizar(funcionario idc){
+            String sql = "update funcionario set nome=?,sobrenome=?,cpf=?,datanascimento=?,Cargo_id=?,Status=?,Escala_id where id=?";
+        try(Connection conn = connect.obterConexao(); PreparedStatement stmt =conn.prepareStatement(sql)){
+            stmt.setString(1,idc.getNome());
+            stmt.setString(2,idc.getSobrenome());
+            stmt.setString(3,idc.getCpf());
+            stmt.setString(4,idc.getDataNas());
+            stmt.setInt(5,idc.getCargo());
+            stmt.setInt(6,idc.getSta());
+            stmt.setInt(7,idc.getEscala());
+            stmt.setInt(8,idc.Getid());
+            stmt.executeUpdate();
+        } catch (Exception e) {
+            System.err.println("Error de : "+e.getMessage());
+        }
 
+
+
+    }
 }

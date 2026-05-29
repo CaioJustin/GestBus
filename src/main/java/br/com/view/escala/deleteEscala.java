@@ -61,7 +61,7 @@ JTextField carField;
   
       escalaDao escd =new escalaDao();
     BEnviar.addActionListener(e ->{
-      int CN = Integer.parseInt(carField.getName().trim());
+      int CN = Integer.parseInt(carField.getText().trim());
       if(CN !=0){
           escd.Deletar(CN);
           JOptionPane.showMessageDialog(null,"Adicionado com Sucesso !!");

@@ -52,7 +52,7 @@ public class deletaViagem extends JFrame{
     viagemDao vd = new viagemDao();
   BEnviar.addActionListener(e ->{
 
-      int id = Integer.parseInt(BEnviar.getName().trim());
+      int id = Integer.parseInt(BEnviar.getText().trim());
 
       if(id !=0){
           vd.Deletar(id);

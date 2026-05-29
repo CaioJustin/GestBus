@@ -51,7 +51,7 @@ JButton BDeletar;
 
          statusDao statsD =new statusDao();
     BDeletar.addActionListener(e ->{
-      int CN = Integer.parseInt(BDeletar.getName().trim());
+      int CN = Integer.parseInt(BDeletar.getText().trim());
       if(CN !=0){
           statsD.Deletar(CN);
           JOptionPane.showMessageDialog(null,"Adicionado com Sucesso !!");

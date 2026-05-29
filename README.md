@@ -18,50 +18,50 @@ Projeto feito tem java(Swing) Conectado ao MYSQL utilizando o JDBC Usando
  - [x] Adicionar Status
  - [x] Deletar Status
  - [x] Listar Status
- - [] Atualizar Status
+ - [x] Atualizar Status
 
  - [x] Adicionar Cor
  - [x] Deletar Cor
  - [x] Listar Cor
-- [] Atualizar Status
+- [x] Atualizar Status
 
  - [x] Adicionar Cargo
  - [x] Deletar Cargo
  - [x] Listar Cargo
-- [] Atualizar Status
+- [x] Atualizar Status
 
  - [x] Adicionar Escala
  - [x] Deletar Escala
  - [x] Listar Escala
-- [] Atualizar Status
+- [x] Atualizar Status
 
  - [x] Adicionar Funcionario
  - [x] Deletar Funcionario
  - [x] Listar Funcionario
-- [] Atualizar Status
+- [x] Atualizar Status
 
  - [x] Adicionar Garagem
  - [x] Deletar Garagem
  - [x] Listar Garagem
-- [] Atualizar Status
+- [x] Atualizar Status
 
  - [x] Adicionar Linha
  - [x] Deletar Linha
  - [x] Listar Linha
-- [] Atualizar Status
+- [x] Atualizar Status
 
  - [x] Adicionar Onibus
  - [x] Deletar Onibus
  - [x] Listar Onibus
-- [] Atualizar Status
+- [x] Atualizar Status
 
  - [x] Adicionar Viagem
  - [x] Deletar Viagem
  - [x] Listar Viagem
-- [] Atualizar Status
+- [x] Atualizar Status
  
 ## Status
- Em Construção 70%
+ Em Construção 90%
 
 ## Observação
  Este projeto está sendo desenvolvido com foco em portfólio e para

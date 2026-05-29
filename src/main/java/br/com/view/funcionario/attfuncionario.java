@@ -1,5 +1,11 @@
 package br.com.view.funcionario;
 
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -8,26 +14,19 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.GridLayout;
-//import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import org.jdatepicker.JDatePicker;
 
 import br.com.dao.funcionarioDao;
-
 import br.com.model.funcionario;
 
-
-public class addfuncionario extends JFrame {
-
+public class attfuncionario extends JFrame{
+    
     
     private JPanel form;
     JButton BEnviar;
 
-    public addfuncionario(){
-        super("GestBus :: Adicionar Funcionario");
+    public attfuncionario(){
+        super("GestBus :: Atualizar Funcionario");
         setSize(400,800);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
@@ -58,6 +57,7 @@ public class addfuncionario extends JFrame {
 
         //Criando os texto
         JLabel nomeFuncionario = new JLabel("Nome do Funcionario");
+        JLabel IdFuncionario = new JLabel("ID do Funcionario");
         JLabel sobrenomeFuncionario = new JLabel("Sobrenome do Funcionario");
         JLabel datadenascFuncionario= new JLabel("Data de nascimento do funcionario");
         JLabel cpfFuncionario= new JLabel("Cpf do funcionario");
@@ -73,12 +73,14 @@ public class addfuncionario extends JFrame {
         texts.add(cargoFuncionario);
          texts.add(statusFuncionario);
          texts.add(EscalaFuncionario);
+         texts.add(IdFuncionario);
 
         for (JLabel txt : texts) {
              txt.setFont(styleFont);
         }
 
         //Criando os Inputs
+        JTextField IdInputFuncionario = new JTextField();
         JTextField nomeInputFuncionario = new JTextField();
         JTextField sobrenomeInputFuncionario = new JTextField();
         JTextField cpfInputFuncionario = new JTextField();
@@ -89,7 +91,7 @@ public class addfuncionario extends JFrame {
         JDatePicker datepicker = new JDatePicker();
 
 
-         adicionar = new JButton("Adicionar Funcionario");
+         adicionar = new JButton("Alterar Funcionario");
         adicionar.setFont(styleFont);
         adicionar.setBackground(Color.blue);
         adicionar.setForeground(Color.WHITE);
@@ -127,6 +129,7 @@ public class addfuncionario extends JFrame {
 
            funcionarioDao FuncDao=new funcionarioDao();
          adicionar.addActionListener(e ->{
+      int idF = Integer.parseInt(IdInputFuncionario.getText().trim());
       String nom = nomeInputFuncionario.getText().trim();
       String sob = sobrenomeInputFuncionario.getText().trim();
       String cpfs = cpfInputFuncionario.getText().trim();
@@ -134,13 +137,11 @@ public class addfuncionario extends JFrame {
       int StsId = Integer.parseInt(statusInputFuncionario.getText().trim());
       int CarId =Integer.parseInt(escalaInputFuncionario.getText().trim());
 
-       // meche na data e coloca arruamar deposis
-       /*   
-           java.util.Date dataNascimento = (java.util.Date) datepicker.getModel().getValue();
+          java.util.Date dataNascimento = (java.util.Date) datepicker.getModel().getValue();
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-             String dataString = sdf.format(dataNascimento);*/
-      
-      funcionario funf = new funcionario(nom,sob,cpfs,EscId,StsId,CarId);
+            String dataString = sdf.format(dataNascimento);
+
+      funcionario funf = new funcionario(idF,nom,sob,cpfs,StsId,CarId,EscId,dataString);
       if((nom.isEmpty())||(sob.isEmpty())||(cpfs.isEmpty())||(EscId==0)||(StsId==0)||(CarId==0)){
         JOptionPane.showMessageDialog(null,"Erro no input  !!");
       }else{

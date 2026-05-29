@@ -64,6 +64,18 @@ public class cargoDao {
          return null;
     }
 
-    
+    public void Atualizar(cargo idc){
+            String sql = "update cargo set nome=? where id_Cargo =?";
+        try(Connection conn = connect.obterConexao(); PreparedStatement stmt =conn.prepareStatement(sql)){
+            stmt.setString(1,idc.GetNome());
+            stmt.setInt(2,idc.Getid());
+            stmt.executeUpdate();
+        } catch (Exception e) {
+            System.err.println("Error de : "+e.getMessage());
+        }
+
+
+
+    }
 
 }

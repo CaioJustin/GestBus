@@ -68,4 +68,19 @@ public class linhaDao {
         return null;
     }
 
+    public void Atualizar(linha idc){
+            String sql = "update linha set nome=?,origem=?,destino=? where id_linha =?";
+        try(Connection conn = connect.obterConexao(); PreparedStatement stmt =conn.prepareStatement(sql)){
+           stmt.setString(1, idc.getNome());
+           stmt.setString(2,idc.getOrigem());
+           stmt.setString(3, idc.getDestino());
+           stmt.setInt(4,idc.Getid());
+            stmt.executeUpdate();
+        } catch (Exception e) {
+            System.err.println("Error de : "+e.getMessage());
+        }
+
+
+
+    }
 }
