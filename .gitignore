@@ -2,3 +2,7 @@
 
 target/
 .vscode/
+
+hs_err_pid13024.log
+replay_pid13024.log
+
