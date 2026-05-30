@@ -21,6 +21,7 @@ public class deleteOnibus extends JFrame{
         setSize(400,400);
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
+        criarPanel();
     }
  public void criarPanel(){
    JPanel painel = new  JPanel();

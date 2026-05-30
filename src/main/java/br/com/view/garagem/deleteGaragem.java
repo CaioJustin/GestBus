@@ -22,6 +22,7 @@ public class deleteGaragem extends JFrame{
         setSize(400,300);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        criarPanel();
     }
      public void criarPanel(){
    JPanel painel = new  JPanel();

@@ -136,7 +136,7 @@ public class JanelaPrincipal extends JFrame {
        OptionFunc.put("CreateFuncionario",new JButton("Adicionar Funcionario"));
        OptionFunc.put("DeleteFunc",new JButton("Deletar Funcionario"));
        OptionFunc.put("ReadFunc",new JButton("Listar Funcionario"));
-       OptionFunc.put("AtualizarOnibus",new JButton("Atualizar Funcionario")); 
+       OptionFunc.put("AtualizarFunc",new JButton("Atualizar Funcionario")); 
        
        
 

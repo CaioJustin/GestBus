@@ -24,6 +24,7 @@ public class listFuncionario extends JFrame{
         setSize(700,700);
          setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        createpainel();
     }
 
     public void createpainel(){

@@ -24,6 +24,7 @@ public class listStatus extends JFrame{
         setSize(400,600);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        createpainel();
     }
 
 
