@@ -15,53 +15,19 @@ Projeto feito tem java(Swing) Conectado ao MYSQL utilizando o JDBC Usando
  - Padrões DAO
 
  ## Funcionalidades
- - [x] Adicionar Status
- - [x] Deletar Status
- - [x] Listar Status
- - [x] Atualizar Status
-
- - [x] Adicionar Cor
- - [x] Deletar Cor
- - [x] Listar Cor
-- [x] Atualizar Status
-
- - [x] Adicionar Cargo
- - [x] Deletar Cargo
- - [x] Listar Cargo
-- [x] Atualizar Status
-
- - [x] Adicionar Escala
- - [x] Deletar Escala
- - [x] Listar Escala
-- [x] Atualizar Status
-
- - [x] Adicionar Funcionario
- - [x] Deletar Funcionario
- - [x] Listar Funcionario
-- [x] Atualizar Status
-
- - [x] Adicionar Garagem
- - [x] Deletar Garagem
- - [x] Listar Garagem
-- [x] Atualizar Status
-
- - [x] Adicionar Linha
- - [x] Deletar Linha
- - [x] Listar Linha
-- [x] Atualizar Status
-
- - [x] Adicionar Onibus
- - [x] Deletar Onibus
- - [x] Listar Onibus
-- [x] Atualizar Status
-
- - [x] Adicionar Viagem
- - [x] Deletar Viagem
- - [x] Listar Viagem
-- [x] Atualizar Status
+ - [x] Crud Status
+ - [x] Crud Cor
+ - [x] Crud Cargo
+ - [x] Crud Escala
+ - [x] Crud Funcionario
+ - [x] Crud Garagem
+ - [x] Crud Linha
+ - [x] Crud Onibus
+ - [x] Crud Viagem
  
 ## Status
- Em Construção 90%
+ Em Construção 100%
+ Fase de Teste 30%
 
 ## Observação
  Este projeto está sendo desenvolvido com foco em portfólio e para
