@@ -122,8 +122,7 @@ public class JanelaPrincipal extends JFrame {
 
     //Criando o painel do centro
     
-      private Map<String,JButton> OptionFunc;
-
+    private Map<String,JButton> OptionFunc;
     public void panelFuncionario() {
 
         OptionFunc = new HashMap<>();
@@ -384,7 +383,7 @@ optionStatus.put("AtualizarStatus",new JButton("Atualizar Status"));
 
         optionLinhas.put("AdicionarLinhas",new JButton("Adicionar Linhas"));
         optionLinhas.put("ExcluirLinhas",new JButton("Excluir Linhas"));
-        optionLinhas.put("ListarLinhas",new JButton("Linhas Linhas"));
+        optionLinhas.put("ListarLinhas",new JButton("Listar Linhas"));
         optionLinhas.put("AtualizarLinhas",new JButton("Atualizar Linhas"));
 
         JButton LinhasButtonPanel= new JButton();

@@ -38,7 +38,10 @@ public class addescala extends JFrame{
  }
   JButton BEnviar ;
  public void Carg(){
+  
+  
   JLabel Vi = new JLabel("Adicionar Escala",JLabel.CENTER);
+  Vi.setFont(new Font("Segoe UI",Font.BOLD,30));
    JLabel HI = new JLabel("Horario Inicio",JLabel.CENTER);
    JLabel HF =new JLabel("Horario Fim",JLabel.CENTER);
    HI.setFont(new Font("Segoe UI",Font.BOLD,20));
@@ -60,6 +63,7 @@ public class addescala extends JFrame{
 
 
    form= new JPanel();
+   
   dadospes.add(Vi);
 
    dadospes.add(HI);

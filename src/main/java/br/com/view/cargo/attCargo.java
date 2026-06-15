@@ -22,7 +22,7 @@ public class attCargo extends JFrame{
    JPanel form;
  public  attCargo(){
     super("GestBus :: Atualizar Cargo");
-    setSize(400,200);
+    setSize(400,290);
     setLocationRelativeTo(null);
     setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
       criarPanel();
@@ -38,6 +38,8 @@ public class attCargo extends JFrame{
  }
  JButton BEnviar;
  public void Carg(){
+  JLabel Text_auxiliar = new JLabel("Atualizar Cargo",JLabel.CENTER);
+  Text_auxiliar.setFont(new Font("Segoe UI",Font.BOLD,30));
   JLabel IDCargo = new JLabel("Id do Cargo",JLabel.CENTER);
    IDCargo.setFont(new Font("Segoe UI",Font.BOLD,20));
 IDcarField = new JTextField();
@@ -54,6 +56,7 @@ IDcarField = new JTextField();
    JPanel dadospes = new  JPanel(new GridLayout(0,1,10,10));
 
    form= new JPanel();
+   dadospes.add(Text_auxiliar);
    dadospes.add(IDCargo);
    dadospes.add(IDcarField);
    dadospes.add(NC);

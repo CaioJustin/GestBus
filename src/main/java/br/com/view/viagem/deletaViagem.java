@@ -21,6 +21,7 @@ public class deletaViagem extends JFrame{
         setSize(400,400);
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
+        criarPanel();
     }
 
      public void criarPanel(){
@@ -33,6 +34,8 @@ public class deletaViagem extends JFrame{
  }
 
  public void Carg(){
+   JLabel text_auxiliar= new JLabel("Deletar Viagem",JLabel.CENTER);
+  text_auxiliar.setFont(new Font("Segoe UI",Font.BOLD,30));
    JLabel NC = new JLabel("Id da viagem a ser deletada",JLabel.CENTER);
    NC.setFont(new Font("Segoe UI",Font.BOLD,20));
     corField = new JTextField();
@@ -44,6 +47,7 @@ public class deletaViagem extends JFrame{
    JPanel dadospes = new  JPanel(new GridLayout(0,1,10,10));
 
    form= new JPanel();
+   dadospes.add(text_auxiliar);
    dadospes.add(NC);
    dadospes.add(corField);
    dadospes.add(BEnviar);

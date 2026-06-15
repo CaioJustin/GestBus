@@ -23,7 +23,7 @@ public class listCargo extends JFrame {
     JPanel form;
     public  listCargo(){
         super("GestBus :: Lista de Cargo");
-        setSize(500,200);
+        setSize(500,250);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         createpanel();
@@ -40,6 +40,8 @@ public class listCargo extends JFrame {
     }
  int idC;
     public void BotoesPanel(){
+        JLabel text_auxiliar =new JLabel("Mostra Cargo",JLabel.CENTER);
+        text_auxiliar.setFont(new Font("Segoe UI",Font.BOLD,30));
         JLabel Nometext = new JLabel("Id da cor que deseja Procura! ",JLabel.CENTER);
         Nometext.setFont(new Font("Segou UI",Font.BOLD,20));
         JTextField campoDeTexto=new JTextField();
@@ -49,6 +51,7 @@ public class listCargo extends JFrame {
         botao.setFont(new Font("Segoe UI",Font.BOLD,20));
         
         form =new JPanel(new GridLayout(0,1,10,10));
+        form.add(text_auxiliar);
         form.add(Nometext);
         form.add(campoDeTexto);
         form.add(botao);

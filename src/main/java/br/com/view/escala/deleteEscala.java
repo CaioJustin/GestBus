@@ -38,6 +38,8 @@ JTextField carField;
 
  JButton BEnviar;
  public void Carg(){
+   JLabel text_auxiliar= new JLabel("Deletar Escala",JLabel.CENTER);
+  text_auxiliar.setFont(new Font("Segoe UI",Font.BOLD,30));
    JLabel Vi = new JLabel("Id da Escala",JLabel.CENTER);
      Vi.setFont(new Font("Segoe UI",Font.BOLD,20));
    JLabel NC = new JLabel("Id da escala",JLabel.CENTER);
@@ -51,6 +53,7 @@ JTextField carField;
    JPanel dadospes = new  JPanel(new GridLayout(0,1,10,10));
 
    form= new JPanel();
+   dadospes.add(text_auxiliar);
    dadospes.add(Vi);
    dadospes.add(NC);
    dadospes.add(carField);

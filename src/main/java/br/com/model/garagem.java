@@ -31,6 +31,10 @@ public class garagem {
         
     }
 
+    public garagem(int d ){
+        this.id=d;
+    }
+
     public String getNome(){
         return this.nome;
     }

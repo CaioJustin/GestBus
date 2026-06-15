@@ -44,7 +44,8 @@ public class attescala extends JFrame{
  }
  JButton BEnviar;
  public void Carg(){
-
+   JLabel text_auxiliar= new JLabel("Atualizar Escala",JLabel.CENTER);
+  text_auxiliar.setFont(new Font("Segoe UI",Font.BOLD,30));
     //Criando id label e input
     JLabel IDCargoLabel = new JLabel("Id da Escala",JLabel.CENTER);
    IDCargoLabel.setFont(new Font("Segoe UI",Font.BOLD,20));
@@ -68,6 +69,7 @@ IDcarField = new JTextField();
    JPanel dadospes = new  JPanel(new GridLayout(0,1,10,10));
 
    form= new JPanel();
+   dadospes.add(text_auxiliar);
    dadospes.add(IDCargoLabel);
    dadospes.add(IDcarField);
     dadospes.add(HIL);
@@ -79,6 +81,7 @@ IDcarField = new JTextField();
 
       escalaDao escD=new escalaDao();
     BEnviar.addActionListener(e ->{
+      
       String HF = InputHorarioFim.getText().trim();
       String HI = InputHorarioInicio.getText().trim();
       int IDescala = Integer.parseInt(IDcarField.getText().trim());

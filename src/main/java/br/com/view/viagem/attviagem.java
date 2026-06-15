@@ -38,6 +38,8 @@ public class attviagem extends JFrame{
     }
 
  public void criarPanel(){
+   JLabel text_auxiliar= new JLabel("Atualizar Cor",JLabel.CENTER);
+  text_auxiliar.setFont(new Font("Segoe UI",Font.BOLD,30));
    JPanel painel = new  JPanel();
    painel.setLayout(new GridLayout(0,1,10,10));
    add(painel);
@@ -47,8 +49,8 @@ public class attviagem extends JFrame{
  }
 JButton BEnviar;
  public void Carg(){
-   JLabel NC = new JLabel("Adicionar Viagem",JLabel.CENTER);
-   NC.setFont(new Font("Segoe UI",Font.BOLD,20));
+   JLabel NC = new JLabel("Atualizar Viagem",JLabel.CENTER);
+   NC.setFont(new Font("Segoe UI",Font.BOLD,30));
     
    descricaoField = new JTextField();
    dataPartidaField = new JTextField();

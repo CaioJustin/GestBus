@@ -33,6 +33,7 @@ public class addViagem  extends JFrame{
     }
 
  public void criarPanel(){
+   
    JPanel painel = new  JPanel();
    painel.setLayout(new GridLayout(0,1,10,10));
    add(painel);
@@ -43,7 +44,7 @@ public class addViagem  extends JFrame{
 JButton BEnviar;
  public void Carg(){
    JLabel NC = new JLabel("Adicionar Viagem",JLabel.CENTER);
-   NC.setFont(new Font("Segoe UI",Font.BOLD,20));
+   NC.setFont(new Font("Segoe UI",Font.BOLD,30));
     
    descricaoField = new JTextField();
    dataPartidaField = new JTextField();

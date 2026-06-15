@@ -13,6 +13,10 @@ public class status {
         this.nome=n;
     }
 
+    public status(int d ){
+        this.id=d;
+    }
+
     public String GetNome(){
         return this.nome;
     }

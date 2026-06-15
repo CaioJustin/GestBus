@@ -33,6 +33,8 @@ public class deleteOnibus extends JFrame{
  }
 
  public void Carg(){
+   JLabel text_auxiliar= new JLabel("Deletar Onibus",JLabel.CENTER);
+  text_auxiliar.setFont(new Font("Segoe UI",Font.BOLD,30));
    JLabel NC = new JLabel("ID do Onibus ",JLabel.CENTER);
    NC.setFont(new Font("Segoe UI",Font.BOLD,20));
     corField = new JTextField();
@@ -44,6 +46,7 @@ public class deleteOnibus extends JFrame{
    JPanel dadospes = new  JPanel(new GridLayout(0,1,10,10));
 
    form= new JPanel();
+   dadospes.add(text_auxiliar);
    dadospes.add(NC);
    dadospes.add(corField);
    dadospes.add(BEnviar);

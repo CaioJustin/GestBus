@@ -21,7 +21,7 @@ public class addCargo extends JFrame{
    JPanel form;
  public  addCargo(){
     super("GestBus :: Adicionar Cargo");
-    setSize(400,200);
+    setSize(400,250);
     setLocationRelativeTo(null);
     setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
       criarPanel();
@@ -37,6 +37,8 @@ public class addCargo extends JFrame{
  }
  JButton BEnviar;
  public void Carg(){
+   JLabel Text_auxiliar = new JLabel("Adicionar Cargo",JLabel.CENTER);
+   Text_auxiliar.setFont(new Font("Segoe UI",Font.BOLD,30));
    JLabel NC = new JLabel("Nome do Cargo",JLabel.CENTER);
    NC.setFont(new Font("Segoe UI",Font.BOLD,20));
     carField = new JTextField();
@@ -48,6 +50,7 @@ public class addCargo extends JFrame{
    JPanel dadospes = new  JPanel(new GridLayout(0,1,10,10));
 
    form= new JPanel();
+   dadospes.add(Text_auxiliar);
    dadospes.add(NC);
    dadospes.add(carField);
    dadospes.add(BEnviar);

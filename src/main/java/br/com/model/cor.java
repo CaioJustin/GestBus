@@ -14,6 +14,10 @@ public class cor {
         this.nome=nome;
     }
 
+    public cor(int d){
+        this.id=d;
+    }
+
     public String GetNome(){
         return this.nome;
     }

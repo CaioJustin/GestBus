@@ -39,7 +39,8 @@ public class deleteFuncionario extends JFrame{
     }
 JButton excluir;
     public void CreatInput(){
-
+         JLabel text_auxiliar= new JLabel("Deletar Funcionario",JLabel.CENTER);
+  text_auxiliar.setFont(new Font("Segoe UI",Font.BOLD,30));
         form =new JPanel();
         
         JLabel text =new JLabel("Informe o ID do funcionário a ser excluído.");
@@ -57,7 +58,7 @@ JButton excluir;
 
         
 
-
+        pnDel.add(text_auxiliar);
         pnDel.add(text);
         pnDel.add(Input);
         pnDel.add(excluir);

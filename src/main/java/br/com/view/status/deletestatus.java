@@ -32,6 +32,8 @@ public class deletestatus extends JFrame {
  }
 JButton BDeletar;
  public void Carg(){
+   JLabel text_auxiliar= new JLabel("Deletar Status",JLabel.CENTER);
+  text_auxiliar.setFont(new Font("Segoe UI",Font.BOLD,30));
    JLabel NC = new JLabel("Excluir Status",JLabel.CENTER);
    NC.setFont(new Font("Segoe UI",Font.BOLD,20));
     corField = new JTextField();
@@ -43,6 +45,7 @@ JButton BDeletar;
    JPanel dadospes = new  JPanel(new GridLayout(0,1,10,10));
 
    form= new JPanel();
+   dadospes.add(text_auxiliar);
    dadospes.add(NC);
    dadospes.add(corField);
    dadospes.add(BDeletar);

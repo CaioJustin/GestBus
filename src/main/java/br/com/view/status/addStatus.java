@@ -37,6 +37,8 @@ JLabel NC;
 
 
  public void Carg(){
+   JLabel text_auxiliar= new JLabel("Adicionar Status",JLabel.CENTER);
+  text_auxiliar.setFont(new Font("Segoe UI",Font.BOLD,30));
     NC = new JLabel("Nome do Status",JLabel.CENTER);
    NC.setFont(new Font("Segoe UI",Font.BOLD,20));
     corField = new JTextField();
@@ -48,6 +50,7 @@ JLabel NC;
    JPanel dadospes = new  JPanel(new GridLayout(0,1,10,10));
 
    form= new JPanel();
+   dadospes.add(text_auxiliar);
    dadospes.add(NC);
    dadospes.add(corField);
    dadospes.add(BEnviar);

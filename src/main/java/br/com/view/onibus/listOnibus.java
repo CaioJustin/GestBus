@@ -34,6 +34,8 @@ public class listOnibus extends JFrame{
 
     int idC;
     public void BotoesPanel(){
+         JLabel text_auxiliar= new JLabel("Mostra Onibus",JLabel.CENTER);
+  text_auxiliar.setFont(new Font("Segoe UI",Font.BOLD,30));
         JLabel Nometext = new JLabel("Digite a placa do onibus que deseja Procura! ",JLabel.CENTER);
         Nometext.setFont(new Font("Segou UI",Font.BOLD,20));
         JTextField campoDeTexto=new JTextField();
@@ -43,6 +45,7 @@ public class listOnibus extends JFrame{
         botao.setFont(new Font("Segoe UI",Font.BOLD,20));
         
         form =new JPanel(new GridLayout(0,1,10,10));
+        form.add(text_auxiliar);
         form.add(Nometext);
         form.add(campoDeTexto);
         form.add(botao);

@@ -35,6 +35,8 @@ public class attonibus extends JFrame {
         criarPanel();
     }
  public void criarPanel(){
+   JLabel text_auxiliar= new JLabel("Atualizar Cor",JLabel.CENTER);
+  text_auxiliar.setFont(new Font("Segoe UI",Font.BOLD,30));
    JPanel painel = new  JPanel();
    painel.setLayout(new GridLayout(0,1,10,10));
    add(painel);
@@ -44,8 +46,8 @@ public class attonibus extends JFrame {
  }
 
  public void Carg(){
-   JLabel NC = new JLabel("Adicione o Onibus",JLabel.CENTER);
-   NC.setFont(new Font("Segoe UI",Font.BOLD,20));
+   JLabel NC = new JLabel("Atualizar o Onibus",JLabel.CENTER);
+   NC.setFont(new Font("Segoe UI",Font.BOLD,30));
     
    placaField = new JTextField();
    modeloField = new JTextField();

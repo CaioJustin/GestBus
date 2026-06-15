@@ -46,8 +46,9 @@ public class addGaragem extends JFrame{
  }
 
  public void Carg(){
+  
    JLabel NC = new JLabel("Adicionar Garagem",JLabel.CENTER);
-   NC.setFont(new Font("Segoe UI",Font.BOLD,20));
+   NC.setFont(new Font("Segoe UI",Font.BOLD,30));
 
 
     ArrayList<JLabel> names = new ArrayList<>();

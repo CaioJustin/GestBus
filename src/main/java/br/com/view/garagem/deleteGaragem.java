@@ -34,6 +34,8 @@ public class deleteGaragem extends JFrame{
  }
 
  public void Carg(){
+   JLabel text_auxiliar= new JLabel("Deletar Garagem",JLabel.CENTER);
+  text_auxiliar.setFont(new Font("Segoe UI",Font.BOLD,30));
    JLabel NC = new JLabel("Id da Garagem",JLabel.CENTER);
    NC.setFont(new Font("Segoe UI",Font.BOLD,20));
     corField = new JTextField();
@@ -45,6 +47,7 @@ public class deleteGaragem extends JFrame{
    JPanel dadospes = new  JPanel(new GridLayout(0,1,10,10));
 
    form= new JPanel();
+   dadospes.add(text_auxiliar);
    dadospes.add(NC);
    dadospes.add(corField);
    dadospes.add(BEnviar);

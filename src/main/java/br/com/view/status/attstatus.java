@@ -37,7 +37,8 @@ JLabel NC;
 
 
  public void Carg(){
-
+   JLabel text_auxiliar= new JLabel("Atualizar Status",JLabel.CENTER);
+  text_auxiliar.setFont(new Font("Segoe UI",Font.BOLD,30));
 
    JLabel IdCampo = new JLabel("Id Dos status ",JLabel.CENTER);
    IdCampo.setFont(new Font("Segoe UI",Font.BOLD,20));
@@ -55,6 +56,7 @@ JLabel NC;
    JPanel dadospes = new  JPanel(new GridLayout(0,1,10,10));
 
    form= new JPanel();
+   dadospes.add(text_auxiliar);
    dadospes.add(IdCampo);
    dadospes.add(idField);
    dadospes.add(NC);

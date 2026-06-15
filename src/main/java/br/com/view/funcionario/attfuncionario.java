@@ -48,9 +48,11 @@ public class attfuncionario extends JFrame{
     /*Funcionario deve ter nome,sobrenome,data de nascimento,cpf,cargo	 */
 
     private void CreateForm(){
+     
+
         JPanel dadosPessoa =new JPanel();
 
-         JLabel NC = new JLabel("Adicionar Garagem",JLabel.CENTER);
+         JLabel NC = new JLabel("Atualizar Funcionario",JLabel.CENTER);
         NC.setFont(new Font("Segoe UI",Font.BOLD,20));
 
         Font styleFont = new Font("Segoi UI",Font.BOLD,16);

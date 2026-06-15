@@ -39,6 +39,8 @@ public class attcor  extends JFrame{
  }
  JButton BEnviar;
  public void Carg(){
+  JLabel text_auxiliar= new JLabel("Atualizar Cor",JLabel.CENTER);
+  text_auxiliar.setFont(new Font("Segoe UI",Font.BOLD,30));
   JLabel IDCargo = new JLabel("Id do Cargo",JLabel.CENTER);
    IDCargo.setFont(new Font("Segoe UI",Font.BOLD,20));
 IDcarField = new JTextField();
@@ -55,6 +57,7 @@ IDcarField = new JTextField();
    JPanel dadospes = new  JPanel(new GridLayout(0,1,10,10));
 
    form= new JPanel();
+   dadospes.add(text_auxiliar);
    dadospes.add(IDCargo);
    dadospes.add(IDcarField);
    dadospes.add(NC);
