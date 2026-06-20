@@ -132,9 +132,9 @@ public class addfuncionario extends JFrame {
       String nom = nomeInputFuncionario.getText().trim();
       String sob = sobrenomeInputFuncionario.getText().trim();
       String cpfs = cpfInputFuncionario.getText().trim();
-      int EscId = Integer.parseInt(cargoInputFuncionario.getText().trim());
+      int EscId = Integer.parseInt(escalaInputFuncionario.getText().trim());
       int StsId = Integer.parseInt(statusInputFuncionario.getText().trim());
-      int CarId =Integer.parseInt(escalaInputFuncionario.getText().trim());
+      int CarId =Integer.parseInt(cargoInputFuncionario.getText().trim());
 
        // meche na data e coloca arruamar deposis
        /*   
@@ -142,7 +142,7 @@ public class addfuncionario extends JFrame {
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
              String dataString = sdf.format(dataNascimento);*/
       
-      funcionario funf = new funcionario(nom,sob,cpfs,EscId,StsId,CarId);
+      funcionario funf = new funcionario(nom,sob,cpfs,StsId,CarId,EscId);
       if((nom.isEmpty())||(sob.isEmpty())||(cpfs.isEmpty())||(EscId==0)||(StsId==0)||(CarId==0)){
         JOptionPane.showMessageDialog(null,"Erro no input  !!");
       }else{
