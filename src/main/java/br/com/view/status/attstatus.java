@@ -9,17 +9,17 @@ import javax.swing.WindowConstants;
 
 import br.com.dao.statusDao;
 import br.com.model.status;
-
+import java.awt.GridLayout;
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.GridLayout;
-public class addStatus extends JFrame {
-     JTextField corField;
+public class attstatus  extends JFrame{
+      JTextField nameStatusField;
+      JTextField idField;
    JPanel form;
    JButton BEnviar;
 JLabel NC;
-    public addStatus(){
-        super("GestBus :: Adicionar Status");
+    public attstatus(){
+        super("GestBus :: Atualizar Status");
         setSize(400,600);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
@@ -37,11 +37,17 @@ JLabel NC;
 
 
  public void Carg(){
-   JLabel text_auxiliar= new JLabel("Adicionar Status",JLabel.CENTER);
+   JLabel text_auxiliar= new JLabel("Atualizar Status",JLabel.CENTER);
   text_auxiliar.setFont(new Font("Segoe UI",Font.BOLD,30));
+
+   JLabel IdCampo = new JLabel("Id Dos status ",JLabel.CENTER);
+   IdCampo.setFont(new Font("Segoe UI",Font.BOLD,20));
+    idField = new JTextField();
+
+
     NC = new JLabel("Nome do Status",JLabel.CENTER);
    NC.setFont(new Font("Segoe UI",Font.BOLD,20));
-    corField = new JTextField();
+    nameStatusField = new JTextField();
      BEnviar = new JButton("Adicionar");
     BEnviar.setBackground(Color.blue);
     BEnviar.setForeground(Color.WHITE);
@@ -51,8 +57,10 @@ JLabel NC;
 
    form= new JPanel();
    dadospes.add(text_auxiliar);
+   dadospes.add(IdCampo);
+   dadospes.add(idField);
    dadospes.add(NC);
-   dadospes.add(corField);
+   dadospes.add(nameStatusField);
    dadospes.add(BEnviar);
    form.add(dadospes);
   
@@ -62,11 +70,12 @@ JLabel NC;
    statusDao StatusDao = new statusDao();
 
   BEnviar.addActionListener(e ->{
-      String nomeStats = corField.getText().trim();
-    status stats = new status(nomeStats);
+      String nomeStats = nameStatusField.getText().trim();
+      int idcampo = Integer.parseInt(idField.getText().trim());
+    status stats = new status(idcampo,nomeStats);
     
     try {
-      StatusDao.Salvar(stats); 
+      StatusDao.Atualizar(stats); 
       System.err.println("Salvo com Sucesso no banco de dados!! ");
     } catch (Exception d) {
       System.err.println("Error ao salvar :  "+d.getMessage());
@@ -75,10 +84,8 @@ JLabel NC;
 
   });
 
-   corField.setText("");
+   nameStatusField.setText("");
 
  }
-
-
 
 }

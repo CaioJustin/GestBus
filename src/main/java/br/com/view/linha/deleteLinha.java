@@ -3,9 +3,13 @@ package br.com.view.linha;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
+
+import br.com.dao.garagemDao;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -17,6 +21,7 @@ public class deleteLinha extends JFrame{
         setSize(400,400);
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
+        criarPanel();
     }
 
      public void criarPanel(){
@@ -29,6 +34,8 @@ public class deleteLinha extends JFrame{
  }
 
  public void Carg(){
+   JLabel text_auxiliar= new JLabel("Deletar Linha",JLabel.CENTER);
+  text_auxiliar.setFont(new Font("Segoe UI",Font.BOLD,30));
    JLabel NC = new JLabel("Id da linha",JLabel.CENTER);
    NC.setFont(new Font("Segoe UI",Font.BOLD,20));
     corField = new JTextField();
@@ -40,9 +47,30 @@ public class deleteLinha extends JFrame{
    JPanel dadospes = new  JPanel(new GridLayout(0,1,10,10));
 
    form= new JPanel();
+   dadospes.add(text_auxiliar);
    dadospes.add(NC);
    dadospes.add(corField);
    dadospes.add(BEnviar);
    form.add(dadospes);
+
+
+
+
+    garagemDao garaD =new garagemDao();
+    BEnviar.addActionListener(e ->{
+      int GD = Integer.parseInt(corField.getText().trim());
+      if(GD !=0){
+          garaD.Deletar(GD);
+          JOptionPane.showMessageDialog(null,"Adicionado com Sucesso !!");
+      }else{
+        JOptionPane.showMessageDialog(null,"Erro no input  !!");
+      }
+
+    });
+
+
+
+
+
  }
 }

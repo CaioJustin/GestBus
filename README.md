@@ -3,8 +3,8 @@ Projeto feito tem java(Swing) Conectado ao MYSQL utilizando o JDBC Usando
  o Maven para importa os 
 
 ## Descrição do Projeto
- Projeto feito tem java(Swing) Conectado ao MYSQL utilizando o JDBC Usando
- o Maven para importa os 
+ Junção de 2 Atividades feito na sala de aula do senai de java swing e banco de dados eu reaproveitei e juntei os dois 
+ Projeto feito tem java(Swing) Conectado ao MYSQL utilizando o JDBC Usando o Maven para importa os 
 
  ## Ferramentas Utilizadas
  - Linguagem java
@@ -15,6 +15,7 @@ Projeto feito tem java(Swing) Conectado ao MYSQL utilizando o JDBC Usando
  - Padrões DAO
 
  ## Funcionalidades
+<<<<<<< HEAD
  - [x] Adicionar Status -Feito
  - [x] Deletar Status   -Feito
  - [] Listar Status
@@ -54,6 +55,21 @@ Projeto feito tem java(Swing) Conectado ao MYSQL utilizando o JDBC Usando
  
 ## Status
  Esse Sistema ainda esta em Construção 70% 
+=======
+ - [x] Crud Status
+ - [x] Crud Cor
+ - [x] Crud Cargo
+ - [x] Crud Escala
+ - [x] Crud Funcionario
+ - [x] Crud Garagem
+ - [x] Crud Linha
+ - [x] Crud Onibus
+ - [x] Crud Viagem
+ 
+## Status
+ Em Construção 100%
+ Fase de Teste 30%
+>>>>>>> telas
 
 ## Observação
  Este projeto está sendo desenvolvido com foco em portfólio e para

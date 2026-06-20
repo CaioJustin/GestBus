@@ -11,6 +11,10 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> telas
 import br.com.dao.escalaDao;
 
 public class deleteEscala extends JFrame{
@@ -35,8 +39,14 @@ JTextField carField;
  }
 
 
+<<<<<<< HEAD
 JButton BEnviar;
+=======
+ JButton BEnviar;
+>>>>>>> telas
  public void Carg(){
+   JLabel text_auxiliar= new JLabel("Deletar Escala",JLabel.CENTER);
+  text_auxiliar.setFont(new Font("Segoe UI",Font.BOLD,30));
    JLabel Vi = new JLabel("Id da Escala",JLabel.CENTER);
      Vi.setFont(new Font("Segoe UI",Font.BOLD,20));
    JLabel NC = new JLabel("Id da escala",JLabel.CENTER);
@@ -50,12 +60,14 @@ JButton BEnviar;
    JPanel dadospes = new  JPanel(new GridLayout(0,1,10,10));
 
    form= new JPanel();
+   dadospes.add(text_auxiliar);
    dadospes.add(Vi);
    dadospes.add(NC);
    dadospes.add(carField);
    dadospes.add(BEnviar);
    form.add(dadospes);
 
+<<<<<<< HEAD
    escalaDao escD = new escalaDao();
    BEnviar.addActionListener(e ->{
       int idE =Integer.parseInt(carField.getText().trim());
@@ -68,6 +80,21 @@ JButton BEnviar;
 
 
    });  
+=======
+
+  
+      escalaDao escd =new escalaDao();
+    BEnviar.addActionListener(e ->{
+      int CN = Integer.parseInt(carField.getText().trim());
+      if(CN !=0){
+          escd.Deletar(CN);
+          JOptionPane.showMessageDialog(null,"Adicionado com Sucesso !!");
+      }else{
+        JOptionPane.showMessageDialog(null,"Erro no input  !!");
+      }
+
+    });
+>>>>>>> telas
 
 
    }

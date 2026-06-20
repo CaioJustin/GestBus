@@ -11,7 +11,14 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
+<<<<<<< HEAD
 import br.com.dao.corDao;
+=======
+
+import br.com.dao.corDao;
+
+public class deleteCor extends JFrame{
+>>>>>>> telas
 
 public class deleteCor extends JFrame{
  JButton BEnviar;
@@ -35,8 +42,10 @@ JTextField carField;
  }
 
 
-
+JButton BEnviar;
  public void Corex(){
+   JLabel text_auxiliar= new JLabel("Deletar Cor",JLabel.CENTER);
+  text_auxiliar.setFont(new Font("Segoe UI",Font.BOLD,30));
    JLabel NC = new JLabel("Id da Cor",JLabel.CENTER);
    NC.setFont(new Font("Segoe UI",Font.BOLD,20));
     carField = new JTextField();
@@ -48,11 +57,13 @@ JTextField carField;
    JPanel dadospes = new  JPanel(new GridLayout(0,1,10,10));
 
    form= new JPanel();
+   dadospes.add(text_auxiliar);
    dadospes.add(NC);
    dadospes.add(carField);
    dadospes.add(BEnviar);
    form.add(dadospes);
 
+<<<<<<< HEAD
       corDao cd = new corDao();
    BEnviar.addActionListener(e->{
       int del = Integer.parseInt(carField.getText().trim());
@@ -64,6 +75,21 @@ JTextField carField;
       }
 
    });
+=======
+
+      corDao CD =new corDao();
+    BEnviar.addActionListener(e ->{
+      int CN = Integer.parseInt(carField.getText().trim());
+      if(CN !=0){
+          CD.Deletar(CN);
+          JOptionPane.showMessageDialog(null,"Adicionado com Sucesso !!");
+      }else{
+        JOptionPane.showMessageDialog(null,"Erro no input  !!");
+      }
+
+    });
+
+>>>>>>> telas
    }
 
    

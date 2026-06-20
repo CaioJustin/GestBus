@@ -1,5 +1,10 @@
 package br.com.view.onibus;
 
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.util.ArrayList;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -8,16 +13,11 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
-
 import br.com.dao.onibusDao;
 import br.com.model.onibus;
 
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.GridLayout;
-import java.util.ArrayList;
-public class addOnibus extends JFrame{
-    
+public class attonibus extends JFrame {
+   
   JTextField placaField;
    JTextField modeloField;
     JTextField anoField;
@@ -27,8 +27,8 @@ public class addOnibus extends JFrame{
          JTextField garagemIdField;
 
    JPanel form;
-        public addOnibus(){
-        super("GestBus :: Adicionar Onibus ");
+        public attonibus(){
+        super("GestBus :: Atualizar Onibus ");
         setSize(400,400);
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
@@ -46,7 +46,7 @@ public class addOnibus extends JFrame{
  }
 
  public void Carg(){
-   JLabel NC = new JLabel("Adicione o Onibus",JLabel.CENTER);
+   JLabel NC = new JLabel("Atualizar o Onibus",JLabel.CENTER);
    NC.setFont(new Font("Segoe UI",Font.BOLD,30));
     
    placaField = new JTextField();
@@ -56,6 +56,7 @@ public class addOnibus extends JFrame{
    statusIdField = new JTextField();
    corIdField = new JTextField();
    garagemIdField = new JTextField();
+   
 
   ArrayList<JLabel> labels = new ArrayList<>();
    JLabel placa = new JLabel("Placa",JLabel.CENTER);
@@ -65,6 +66,7 @@ public class addOnibus extends JFrame{
    JLabel status = new JLabel("status",JLabel.CENTER);
    JLabel cor = new JLabel("cor",JLabel.CENTER);
    JLabel garagem = new JLabel("garagem",JLabel.CENTER);
+  
     labels.add(placa);
     labels.add(modelo);
     labels.add(ano);
@@ -72,6 +74,7 @@ public class addOnibus extends JFrame{
     labels.add(status);
     labels.add(cor);
     labels.add(garagem);
+   
 
     for (JLabel l : labels) {
         l.setFont(new Font("Segoi UI",Font.BOLD,20));
@@ -88,6 +91,8 @@ public class addOnibus extends JFrame{
 
    form= new JPanel();
    dadospes.add(NC);
+
+
 
     dadospes.add(placa);
     dadospes.add(placaField);
@@ -129,7 +134,7 @@ public class addOnibus extends JFrame{
 
       
       onibus lin = new onibus(PF,mF,aF,cap,SIF,CIF,GIF); 
-      lindao.Salvar(lin);
+      lindao.Atualizar(lin);
       JOptionPane.showMessageDialog(null,"Adicionado com Sucesso !!");
       
 

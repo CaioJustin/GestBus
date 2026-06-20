@@ -11,6 +11,10 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> telas
 import br.com.dao.escalaDao;
 import br.com.model.escala;
 
@@ -35,9 +39,12 @@ public class addescala extends JFrame{
       painel.add(form);
    
  }
-
+  JButton BEnviar ;
  public void Carg(){
+  
+  
   JLabel Vi = new JLabel("Adicionar Escala",JLabel.CENTER);
+  Vi.setFont(new Font("Segoe UI",Font.BOLD,30));
    JLabel HI = new JLabel("Horario Inicio",JLabel.CENTER);
    JLabel HF =new JLabel("Horario Fim",JLabel.CENTER);
    HI.setFont(new Font("Segoe UI",Font.BOLD,20));
@@ -59,6 +66,7 @@ public class addescala extends JFrame{
 
 
    form= new JPanel();
+   
   dadospes.add(Vi);
 
    dadospes.add(HI);
@@ -71,6 +79,7 @@ public class addescala extends JFrame{
    form.add(dadospes);
 
 
+<<<<<<< HEAD
     escalaDao escDao = new escalaDao();
 
   
@@ -88,6 +97,22 @@ public class addescala extends JFrame{
 
 
    });
+=======
+       escalaDao escdao=new escalaDao();
+    BEnviar.addActionListener(e ->{
+      String hi = InputHorarioInicio.getText().trim();
+      String hf = InputHorarioFim.getText().trim();
+      
+      escala esc = new escala(hi,hf);
+      if((hi.isEmpty())|| (hf.isEmpty())){
+        JOptionPane.showMessageDialog(null,"Erro no input  !!");
+      }else{
+          escdao.Salvar(esc);
+          JOptionPane.showMessageDialog(null,"Adicionado com Sucesso !!");
+      }
+
+    });
+>>>>>>> telas
 
  }
 

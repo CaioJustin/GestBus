@@ -38,8 +38,10 @@ public class addCor extends JFrame{
    painel.add(form);
    
  }
-
+JButton BEnviar;
  public void Carg(){
+  JLabel text_auxiliar = new JLabel("Adicionar Cor",JLabel.CENTER);
+  text_auxiliar.setFont(new Font("Segoe UI",Font.BOLD,30));
    JLabel NC = new JLabel("Nome da Cor",JLabel.CENTER);
    NC.setFont(new Font("Segoe UI",Font.BOLD,20));
     corField = new JTextField();
@@ -51,11 +53,13 @@ public class addCor extends JFrame{
    JPanel dadospes = new  JPanel(new GridLayout(0,1,10,10));
 
    form= new JPanel();
+   dadospes.add(text_auxiliar);
    dadospes.add(NC);
    dadospes.add(corField);
    dadospes.add(BEnviar);
    form.add(dadospes);
 
+<<<<<<< HEAD
    
   
    corDao CorDao = new corDao();
@@ -75,6 +79,21 @@ public class addCor extends JFrame{
     
   });
 
+=======
+
+       corDao cD=new corDao();
+    BEnviar.addActionListener(e ->{
+      String CN = corField.getText().trim();
+      cor car = new cor(CN);
+      if(CN.isEmpty()){
+        JOptionPane.showMessageDialog(null,"Erro no input  !!");
+      }else{
+          cD.Salvar(car);
+          JOptionPane.showMessageDialog(null,"Adicionado com Sucesso !!");
+      }
+
+    });
+>>>>>>> telas
 
 
  }

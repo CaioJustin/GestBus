@@ -3,9 +3,13 @@ package br.com.view.onibus;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
+
+import br.com.dao.onibusDao;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -17,6 +21,7 @@ public class deleteOnibus extends JFrame{
         setSize(400,400);
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
+        criarPanel();
     }
  public void criarPanel(){
    JPanel painel = new  JPanel();
@@ -28,6 +33,8 @@ public class deleteOnibus extends JFrame{
  }
 
  public void Carg(){
+   JLabel text_auxiliar= new JLabel("Deletar Onibus",JLabel.CENTER);
+  text_auxiliar.setFont(new Font("Segoe UI",Font.BOLD,30));
    JLabel NC = new JLabel("ID do Onibus ",JLabel.CENTER);
    NC.setFont(new Font("Segoe UI",Font.BOLD,20));
     corField = new JTextField();
@@ -39,9 +46,25 @@ public class deleteOnibus extends JFrame{
    JPanel dadospes = new  JPanel(new GridLayout(0,1,10,10));
 
    form= new JPanel();
+   dadospes.add(text_auxiliar);
    dadospes.add(NC);
    dadospes.add(corField);
    dadospes.add(BEnviar);
    form.add(dadospes);
+
+
+ onibusDao garaD =new onibusDao();
+    BEnviar.addActionListener(e ->{
+      int GD = Integer.parseInt(corField.getText().trim());
+      if(GD !=0){
+          garaD.Deletar(GD);
+          JOptionPane.showMessageDialog(null,"Deletado com Sucesso !!");
+      }else{
+        JOptionPane.showMessageDialog(null,"Erro no input  !!");
+      }
+
+    });
+
+
  }
 }

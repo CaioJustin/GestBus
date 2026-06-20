@@ -8,9 +8,13 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
+
+import br.com.dao.funcionarioDao;
+
 
 public class deleteFuncionario extends JFrame{
     
@@ -33,9 +37,10 @@ public class deleteFuncionario extends JFrame{
         painel.add(form);
         
     }
-
+JButton excluir;
     public void CreatInput(){
-
+         JLabel text_auxiliar= new JLabel("Deletar Funcionario",JLabel.CENTER);
+  text_auxiliar.setFont(new Font("Segoe UI",Font.BOLD,30));
         form =new JPanel();
         
         JLabel text =new JLabel("Informe o ID do funcionário a ser excluído.");
@@ -43,7 +48,7 @@ public class deleteFuncionario extends JFrame{
 
         JTextField Input = new JTextField();
 
-        JButton excluir =new JButton("Excluir Funcionario");
+         excluir =new JButton("Excluir Funcionario");
         excluir.setFont(new Font("Segoe UI",Font.BOLD,20));
         excluir.setBackground(Color.BLUE);
         excluir.setForeground(Color.white);
@@ -53,11 +58,27 @@ public class deleteFuncionario extends JFrame{
 
         
 
-
+        pnDel.add(text_auxiliar);
         pnDel.add(text);
         pnDel.add(Input);
         pnDel.add(excluir);
         form.add(pnDel);
+
+
+          funcionarioDao funfDao =new funcionarioDao();
+    excluir.addActionListener(e ->{
+      int F_id = Integer.parseInt(Input.getText().trim());
+      if(F_id !=0){
+          funfDao.Deletar(F_id);
+          JOptionPane.showMessageDialog(null,"Funcionario Deletado com Sucesso !!");
+      }else{
+        JOptionPane.showMessageDialog(null,"Erro no input  !!");
+      }
+
+    });
+
+
+
     }
 
 }

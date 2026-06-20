@@ -9,6 +9,7 @@ public class onibus {
     private int Status_id;
     private int Cor_id;
     private int Garagem_id;
+    private String dataCriacao;
 
     public onibus(int p ,String m,String a ,int capa,int Sta,int cor,int gara){
         this.placa=p;
@@ -20,7 +21,16 @@ public class onibus {
         this.Garagem_id=gara;
     }
 
-
+      public onibus(int p ,String m,String a ,int capa,int Sta,int cor,int gara,String dc){
+        this.placa=p;
+        this.modelo=m;
+        this.anoDeFabrica=a;
+        this.capacidade=capa;
+        this.Status_id=Sta;
+        this.Cor_id=cor;
+        this.Garagem_id=gara;
+        this.dataCriacao=dc;
+    }
 
     public int getPlaca(){
         return this.placa;
@@ -85,6 +95,15 @@ public class onibus {
     
     public void setGaragem(int gar){
         this.Garagem_id= gar;
+    }
+
+       public String getdataCriacao(){
+        return this.dataCriacao;
+    }   
+
+    
+    public void setdataCriacao(String gar){
+        this.dataCriacao= gar;
     }
 
 

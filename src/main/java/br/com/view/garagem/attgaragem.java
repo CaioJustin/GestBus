@@ -1,6 +1,5 @@
 package br.com.view.garagem;
 
-
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -14,35 +13,20 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
-<<<<<<< HEAD
 import br.com.dao.garagemDao;
-=======
-
-import br.com.dao.garagemDao;
-
->>>>>>> telas
 import br.com.model.garagem;
 
-public class addGaragem extends JFrame{
-       JTextField nomeField;
+public class attgaragem  extends JFrame{
+      JTextField nomeField;
         JTextField cidadeField;
          JTextField ruaField;
           JTextField bairroField;
            JTextField cepField;
             JTextField vagasField;
-          
+               JTextField IdInputGaragem;
      JPanel form;
- JButton BEnviar;
 
-    
-         String Nome ;
-     String Cidade;
-     String Rua;
-     String Bairro;
-     String Cep;
-     int Vagas;
-
-    public addGaragem(){
+    public attgaragem(){
         super("GstBus :: Garagem");
         setSize(400,800);
         setLocationRelativeTo(null);
@@ -60,7 +44,7 @@ public class addGaragem extends JFrame{
 
  public void Carg(){
   
-   JLabel NC = new JLabel("Adicionar Garagem",JLabel.CENTER);
+   JLabel NC = new JLabel("Atualizar Garagem",JLabel.CENTER);
    NC.setFont(new Font("Segoe UI",Font.BOLD,30));
 
 
@@ -71,7 +55,7 @@ public class addGaragem extends JFrame{
     JLabel bairro =new JLabel("Bairro",JLabel.CENTER);
     JLabel cep =new JLabel("Cep",JLabel.CENTER);
     JLabel vagas =new JLabel("Vagas",JLabel.CENTER);
-   
+     JLabel id =new JLabel("Id",JLabel.CENTER);
 
     names.add(nome);
     names.add(cidade);
@@ -79,31 +63,26 @@ public class addGaragem extends JFrame{
     names.add(bairro);
     names.add(cep);
     names.add(vagas);
-    
-
-     nomeField = new JTextField();
-    cidadeField = new JTextField();
-    ruaField = new JTextField();
-    bairroField = new JTextField();
-    cepField = new JTextField();
-    vagasField = new JTextField();
-    
-
-
+names.add(id);
 
     for (JLabel n : names) {
         n.setFont(new Font("Segoi UI",Font.BOLD,20));
     }
 
 
-   
-
+    nomeField = new JTextField();
+    cidadeField = new JTextField();
+    ruaField = new JTextField();
+    bairroField = new JTextField();
+    cepField = new JTextField();
+    vagasField = new JTextField();
+IdInputGaragem = new JTextField();
     
 
    JPanel dadospes = new  JPanel(new GridLayout(0,1,10,10));
 
 
-    BEnviar = new JButton("Enviar");
+   JButton BEnviar = new JButton("Enviar");
     BEnviar.setBackground(Color.blue);
     BEnviar.setForeground(Color.WHITE);
     BEnviar.setFont(new Font("Segoe UI",Font.BOLD,20));
@@ -111,8 +90,8 @@ public class addGaragem extends JFrame{
    form= new JPanel();
    dadospes.add(NC);
 
-    
-
+     dadospes.add(id);
+  dadospes.add(IdInputGaragem);
 
    dadospes.add(nome);
   dadospes.add(nomeField);
@@ -137,29 +116,6 @@ public class addGaragem extends JFrame{
 
 
 
-<<<<<<< HEAD
-   
-     garagemDao GaragemDao = new garagemDao();
-
-     BEnviar.addActionListener(e ->{
-
-      Nome =nomeField.getText().trim();
-      Cidade=cidadeField.getText().trim();
-      Rua=ruaField.getText().trim();
-      Bairro=bairroField.getText().trim();
-      Cep=cepField.getText().trim();
-      Vagas= Integer.parseInt(vagasField.getText().trim());
-        garagem gam = new garagem(Nome,Cidade,Rua,Bairro,Cep,Vagas);
-      
-       try {
-         GaragemDao.Salvar(gam);
-         JOptionPane.showMessageDialog(null,"Informações da Garagem Adicionada");
-       } catch (Exception d) {
-        JOptionPane.showMessageDialog(null,"Error de : "+d.getMessage());
-       }
-
-     });
-=======
        garagemDao garaDao=new garagemDao();
     BEnviar.addActionListener(e ->{
       String n = nomeField.getText().trim();
@@ -168,12 +124,13 @@ public class addGaragem extends JFrame{
       String b = bairroField.getText().trim();
       String ceps = cepField.getText().trim();
       int vags =Integer.parseInt(vagasField.getText().trim());
+      int i = Integer.parseInt(IdInputGaragem.getText().trim());
       
-      garagem ga = new garagem(n,c,r,b,ceps,vags);
+      garagem ga = new garagem(i,n,c,r,b,ceps,vags);
       if((n.isEmpty())||(c.isEmpty())||(r.isEmpty())||(b.isEmpty())||(ceps.isEmpty())|| (vags==0)){
         JOptionPane.showMessageDialog(null,"Erro no input  !!");
       }else{
-          garaDao.Salvar(ga);
+          garaDao.Atualizar(ga);
           JOptionPane.showMessageDialog(null,"Adicionado com Sucesso !!");
       }
 
@@ -185,7 +142,6 @@ public class addGaragem extends JFrame{
 
 
 
->>>>>>> telas
 
  }
 

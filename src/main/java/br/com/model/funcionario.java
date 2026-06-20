@@ -4,7 +4,7 @@ public class funcionario {
     
 
     
-    
+     private int id;
     private String nome;
     private String sobrenome;
     private String cpf;
@@ -13,17 +13,25 @@ public class funcionario {
     private int Cargo_id;
     private int Escala_id;
 
-    public funcionario(String n,String s ,String cpf,String datanasc,int sta,int car,int esc){
+    public funcionario(String n,String s ,String cpf,int sta,int car,int esc){
         this.nome=n;
         this.sobrenome=s;
         this.cpf=cpf;
-        this.dataNascimento=datanasc;
         this.Status_id=sta;
         this.Cargo_id=car;
         this.Escala_id=esc;
     }
 
-
+     public funcionario(int id,String n,String s ,String cpf,int sta,int car,int esc,String nasc){
+         this.id=id;
+        this.nome=n;
+        this.sobrenome=s;
+        this.cpf=cpf;
+        this.Status_id=sta;
+        this.Cargo_id=car;
+        this.Escala_id=esc;
+        this.dataNascimento=nasc;
+    }
 
     public String getNome(){
         return this.nome;
@@ -90,6 +98,12 @@ public class funcionario {
         this.Escala_id= Esc;
     }
 
+     public int Getid(){
+        return this.id;
+    }
 
+    public void Setid(int d){
+        this.id= d;
+    }
     
 }

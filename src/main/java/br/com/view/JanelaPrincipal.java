@@ -13,30 +13,39 @@ import javax.swing.border.LineBorder;
 
 
 import br.com.view.cargo.addCargo;
+import br.com.view.cargo.attCargo;
 import br.com.view.cargo.deleteCargo;
 import br.com.view.cargo.listCargo;
 import br.com.view.cor.addCor;
+import br.com.view.cor.attcor;
 import br.com.view.cor.deleteCor;
 import br.com.view.cor.listCor;
 import br.com.view.escala.addescala;
+import br.com.view.escala.attescala;
 import br.com.view.escala.deleteEscala;
 import br.com.view.escala.listEscala;
 import br.com.view.funcionario.addfuncionario;
+import br.com.view.funcionario.attfuncionario;
 import br.com.view.funcionario.deleteFuncionario;
 import br.com.view.funcionario.listFuncionario;
 import br.com.view.garagem.addGaragem;
+import br.com.view.garagem.attgaragem;
 import br.com.view.garagem.deleteGaragem;
 import br.com.view.garagem.listGaragem;
 import br.com.view.linha.addLinha;
+import br.com.view.linha.attlinha;
 import br.com.view.linha.deleteLinha;
 import br.com.view.linha.listLinha;
 import br.com.view.onibus.addOnibus;
+import br.com.view.onibus.attonibus;
 import br.com.view.onibus.deleteOnibus;
 import br.com.view.onibus.listOnibus;
 import br.com.view.status.addStatus;
+import br.com.view.status.attstatus;
 import br.com.view.status.deletestatus;
 import br.com.view.status.listStatus;
 import br.com.view.viagem.addViagem;
+import br.com.view.viagem.attviagem;
 import br.com.view.viagem.deletaViagem;
 import br.com.view.viagem.listViagem;
 
@@ -113,8 +122,7 @@ public class JanelaPrincipal extends JFrame {
 
     //Criando o painel do centro
     
-      private Map<String,JButton> OptionFunc;
-
+    private Map<String,JButton> OptionFunc;
     public void panelFuncionario() {
 
         OptionFunc = new HashMap<>();
@@ -127,6 +135,8 @@ public class JanelaPrincipal extends JFrame {
        OptionFunc.put("CreateFuncionario",new JButton("Adicionar Funcionario"));
        OptionFunc.put("DeleteFunc",new JButton("Deletar Funcionario"));
        OptionFunc.put("ReadFunc",new JButton("Listar Funcionario"));
+       OptionFunc.put("AtualizarFunc",new JButton("Atualizar Funcionario")); 
+       
        
 
         JPanel botaoPainel = new JPanel();
@@ -172,6 +182,8 @@ public class JanelaPrincipal extends JFrame {
         optionStatus.put("AdicionaStatus",new JButton("Adicionar novo Status"));
         optionStatus.put("DeletarStatus",new JButton("Deletar um Status"));
         optionStatus.put("ListarStatus",new JButton("Listar Status"));
+optionStatus.put("AtualizarStatus",new JButton("Atualizar Status"));
+        
 
         JPanel statusbutton = new JPanel();
         statusbutton.setPreferredSize(new Dimension(500,300));
@@ -202,7 +214,7 @@ public class JanelaPrincipal extends JFrame {
 
     private Map <String,JButton> optionCargo;
     public void panelCargo(){
-        optionCargo=new HashMap();
+        optionCargo=new HashMap<>();
 
         centerpanel.removeAll();
 
@@ -211,6 +223,7 @@ public class JanelaPrincipal extends JFrame {
         optionCargo.put("AdicionarCargo",new JButton("Adicionar Cargo"));
         optionCargo.put("ExcluirCargo",new JButton("Excluir Cargo"));
         optionCargo.put("ListarCargo",new JButton("Listar Cargo"));
+        optionCargo.put("AtualizarCargo",new JButton("Atualizar Cargo"));
 
         JButton CargoButtonPanel= new JButton();
         CargoButtonPanel.setPreferredSize(new Dimension(500,300));
@@ -241,7 +254,7 @@ public class JanelaPrincipal extends JFrame {
 
     private Map <String,JButton> optionOnibus;
     public void panelOnibus(){
-        optionOnibus=new HashMap();
+        optionOnibus=new HashMap<>();
 
         centerpanel.removeAll();
 
@@ -250,6 +263,7 @@ public class JanelaPrincipal extends JFrame {
         optionOnibus.put("AdicionarOnibus",new JButton("Adicionar Onibus"));
         optionOnibus.put("ExcluirOnibus",new JButton("Excluir Cor"));
         optionOnibus.put("ListarOnibus",new JButton("Listar Onibus"));
+        optionOnibus.put("AtualizarOnibus",new JButton("Atualizar Onibus"));
 
         JButton OnibusButtonPanel= new JButton();
         OnibusButtonPanel.setPreferredSize(new Dimension(500,300));
@@ -281,7 +295,7 @@ public class JanelaPrincipal extends JFrame {
 
     private Map <String,JButton> optionViagem;
     public void panelViagem(){
-        optionViagem=new HashMap();
+        optionViagem=new HashMap<>();
 
         centerpanel.removeAll();
 
@@ -290,6 +304,7 @@ public class JanelaPrincipal extends JFrame {
         optionViagem.put("AdicionarViagem",new JButton("Adicionar Viagem"));
         optionViagem.put("ExcluirViagem",new JButton("Excluir Viagem"));
         optionViagem.put("ListarViagem",new JButton("listar Viagem"));
+        optionViagem.put("AtualizarViagem",new JButton("Atualizar Viagem"));
 
         JButton ViagemButtonPanel= new JButton();
         ViagemButtonPanel.setPreferredSize(new Dimension(500,300));
@@ -320,7 +335,7 @@ public class JanelaPrincipal extends JFrame {
 
     private Map <String,JButton> optionGaragem;
     public void panelGaragem(){
-        optionGaragem=new HashMap();
+        optionGaragem=new HashMap<>();
 
         centerpanel.removeAll();
 
@@ -329,6 +344,7 @@ public class JanelaPrincipal extends JFrame {
         optionGaragem.put("AdicionarGarage",new JButton("Adicionar Garage"));
         optionGaragem.put("ExcluirGarage",new JButton("Excluir Garage"));
         optionGaragem.put("ListarGarage",new JButton("Listar Garage"));
+        optionGaragem.put("AtualizarGarage",new JButton("Atualizar Garage"));
 
         JPanel GarageButtonPanel= new JPanel();
         GarageButtonPanel.setPreferredSize(new Dimension(500,300));
@@ -359,7 +375,7 @@ public class JanelaPrincipal extends JFrame {
 
     private Map <String,JButton> optionLinhas;
     public void panelLinhas(){
-        optionLinhas=new HashMap();
+        optionLinhas=new HashMap<>();
 
         centerpanel.removeAll();
 
@@ -367,7 +383,8 @@ public class JanelaPrincipal extends JFrame {
 
         optionLinhas.put("AdicionarLinhas",new JButton("Adicionar Linhas"));
         optionLinhas.put("ExcluirLinhas",new JButton("Excluir Linhas"));
-        optionLinhas.put("ListarLinhas",new JButton("Linhas Linhas"));
+        optionLinhas.put("ListarLinhas",new JButton("Listar Linhas"));
+        optionLinhas.put("AtualizarLinhas",new JButton("Atualizar Linhas"));
 
         JButton LinhasButtonPanel= new JButton();
         LinhasButtonPanel.setPreferredSize(new Dimension(500,300));
@@ -397,7 +414,7 @@ public class JanelaPrincipal extends JFrame {
 
     private Map <String,JButton> optionEscala;
     public void panelEscala(){
-        optionEscala=new HashMap();
+        optionEscala=new HashMap<>();
 
         centerpanel.removeAll();
 
@@ -406,6 +423,8 @@ public class JanelaPrincipal extends JFrame {
         optionEscala.put("AdicionarEscala",new JButton("Adicionar Escala"));
         optionEscala.put("ExcluirEscala",new JButton("Excluir Escala"));
         optionEscala.put("ListarEscala",new JButton("Listar Escala"));
+        optionEscala.put("AtualizarEscala",new JButton("Atualizar Escala"));
+        
 
         JButton EscalaButtonPanel= new JButton();
         EscalaButtonPanel.setPreferredSize(new Dimension(500,300));
@@ -435,7 +454,7 @@ public class JanelaPrincipal extends JFrame {
 
     private Map <String,JButton> optionCor;
     public void panelCor(){
-        optionCor=new HashMap();
+        optionCor=new HashMap<>();
 
         centerpanel.removeAll();
 
@@ -444,6 +463,8 @@ public class JanelaPrincipal extends JFrame {
         optionCor.put("AdicionarCor",new JButton("Adicionar Cor"));
         optionCor.put("ExcluirCor",new JButton("Excluir Cor"));
         optionCor.put("ListarCor",new JButton("Listar Cor"));
+        optionCor.put("AtualizarCor",new JButton("Atualizar Cor"));
+        
 
         JPanel CorButtonPanel= new JPanel();
         CorButtonPanel.setPreferredSize(new Dimension(500,300));
@@ -613,6 +634,15 @@ public class JanelaPrincipal extends JFrame {
 
         });
 
+                 OptionFunc.get("AtualizarFunc").addActionListener(e ->{
+            try {
+                attfuncionario atualizarFuncionario= new attfuncionario();
+                atualizarFuncionario.setVisible(true);
+            } catch (Exception m) {
+                System.out.println("Error de : "+m.getMessage());
+            }
+        });
+
     }
 
 
@@ -650,7 +680,15 @@ public class JanelaPrincipal extends JFrame {
             }
         });
 
-
+        
+         optionStatus.get("AtualizarStatus").addActionListener(e ->{
+            try {
+                attstatus atualizarStatus= new attstatus();
+                atualizarStatus.setVisible(true);
+            } catch (Exception m) {
+                System.out.println("Error de : "+m.getMessage());
+            }
+        });
 
 
 
@@ -694,7 +732,14 @@ public class JanelaPrincipal extends JFrame {
             }
         });
 
-
+         optionCor.get("AtualizarCor").addActionListener(e ->{
+            try {
+                attcor atualizarCor= new attcor();
+                atualizarCor.setVisible(true);
+            } catch (Exception m) {
+                System.out.println("Error de : "+m.getMessage());
+            }
+        });
 
 
 
@@ -740,7 +785,14 @@ public class JanelaPrincipal extends JFrame {
         });
 
 
-
+         optionLinhas.get("AtualizarLinhas").addActionListener(e ->{
+            try {
+                attlinha atualizarLinhas= new attlinha();
+                atualizarLinhas.setVisible(true);
+            } catch (Exception m) {
+                System.out.println("Error de : "+m.getMessage());
+            }
+        });
 
 
 
@@ -784,6 +836,15 @@ public class JanelaPrincipal extends JFrame {
             }
         });
 
+           optionViagem.get("AtualizarViagem").addActionListener(e ->{
+            try {
+                attviagem atualizarViagem= new attviagem();
+                atualizarViagem.setVisible(true);
+            } catch (Exception m) {
+                System.out.println("Error de : "+m.getMessage());
+            }
+        });
+
     }
 
 
@@ -821,7 +882,14 @@ public class JanelaPrincipal extends JFrame {
             }
         });
 
-       
+          optionGaragem.get("AtualizarGarage").addActionListener(e ->{
+            try {
+                attgaragem atualizargaragem= new attgaragem();
+                atualizargaragem.setVisible(true);
+            } catch (Exception m) {
+                System.out.println("Error de : "+m.getMessage());
+            }
+        });
     }
 
 
@@ -859,7 +927,14 @@ public class JanelaPrincipal extends JFrame {
             }
         });
 
-
+        optionCargo.get("AtualizarCargo").addActionListener(e ->{
+            try {
+                attCargo atualizarCargo = new attCargo();
+                atualizarCargo.setVisible(true);
+            } catch (Exception m) {
+                System.out.println("Error de : "+m.getMessage());
+            }
+        });
 
 
 
@@ -904,6 +979,14 @@ public class JanelaPrincipal extends JFrame {
             }
         });
 
+        optionEscala.get("AtualizarEscala").addActionListener(e ->{
+            try {
+                attescala atualizarEscala = new attescala();
+                atualizarEscala.setVisible(true);
+            } catch (Exception m) {
+                System.out.println("Error de : "+m.getMessage());
+            }
+        });
 
        
     }
@@ -946,7 +1029,14 @@ public class JanelaPrincipal extends JFrame {
 
 
 
-
+          optionOnibus.get("AtualizarOnibus").addActionListener(e ->{
+            try {
+                attonibus atualizarOnibus = new attonibus();
+                atualizarOnibus.setVisible(true);
+            } catch (Exception m) {
+                System.out.println("Error de : "+m.getMessage());
+            }
+        });
 
 
 

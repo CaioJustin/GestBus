@@ -3,9 +3,18 @@ package br.com.model;
 public class cargo {
     
     private String nome ;
+    private int id;
 
-    public cargo(String n){
+    public cargo(String n){ 
         this.nome=n;
+<<<<<<< HEAD
+=======
+    }
+
+    public cargo(int id,String nome){
+        this.id=id;
+        this.nome=nome;
+>>>>>>> telas
     }
 
     public String GetNome(){
@@ -14,6 +23,15 @@ public class cargo {
 
     public void SetNome(String name){
         this.nome= name;
+    }
+
+    
+    public int Getid(){
+        return this.id;
+    }
+
+    public void Setid(int d){
+        this.id= d;
     }
 
 }

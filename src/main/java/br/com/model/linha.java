@@ -3,7 +3,7 @@ package br.com.model;
 public class linha {
     
     
-
+    private int id;
     private String nome;
     private String origem;
     private String destino;
@@ -14,6 +14,12 @@ public class linha {
         this.destino=d;
     }
 
+     public linha(int id,String n,String o ,String d){
+        this.id=id;
+        this.nome=n;
+        this.origem=o;
+        this.destino=d;
+    }
 
 
     
@@ -44,7 +50,13 @@ public class linha {
         this.destino= d;
     }
 
-    
+    public int Getid(){
+        return this.id;
+    }
+
+    public void Setid(int d){
+        this.id= d;
+    }
     
 
     

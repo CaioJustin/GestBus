@@ -15,14 +15,14 @@ import javax.swing.WindowConstants;
 import br.com.dao.cargoDao;
 import br.com.model.cargo;
 
-public class addCargo extends JFrame{
+public class attCargo extends JFrame{
     
    JTextField carField;
+   JTextField IDcarField;
    JPanel form;
-   JButton BEnviar;
- public  addCargo(){
-    super("GestBus :: Adicionar Cargo");
-    setSize(400,250);
+ public  attCargo(){
+    super("GestBus :: Atualizar Cargo");
+    setSize(400,290);
     setLocationRelativeTo(null);
     setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
       criarPanel();
@@ -38,11 +38,16 @@ public class addCargo extends JFrame{
  }
  JButton BEnviar;
  public void Carg(){
-   JLabel Text_auxiliar = new JLabel("Adicionar Cargo",JLabel.CENTER);
-   Text_auxiliar.setFont(new Font("Segoe UI",Font.BOLD,30));
+  JLabel Text_auxiliar = new JLabel("Atualizar Cargo",JLabel.CENTER);
+  Text_auxiliar.setFont(new Font("Segoe UI",Font.BOLD,30));
+  JLabel IDCargo = new JLabel("Id do Cargo",JLabel.CENTER);
+   IDCargo.setFont(new Font("Segoe UI",Font.BOLD,20));
+IDcarField = new JTextField();
+
    JLabel NC = new JLabel("Nome do Cargo",JLabel.CENTER);
    NC.setFont(new Font("Segoe UI",Font.BOLD,20));
     carField = new JTextField();
+    
      BEnviar = new JButton("Enviar");
     BEnviar.setBackground(Color.blue);
     BEnviar.setForeground(Color.WHITE);
@@ -52,56 +57,29 @@ public class addCargo extends JFrame{
 
    form= new JPanel();
    dadospes.add(Text_auxiliar);
+   dadospes.add(IDCargo);
+   dadospes.add(IDcarField);
    dadospes.add(NC);
    dadospes.add(carField);
    dadospes.add(BEnviar);
    form.add(dadospes);
 
-<<<<<<< HEAD
-
-
-   cargoDao CargoDao = new cargoDao();
-
-   BEnviar.addActionListener(e ->{
-      String cargoNome =carField.getText();
-      cargo cargs= new cargo(cargoNome);
-       
-   if(cargoNome.isEmpty()){
-    JOptionPane.showMessageDialog(null,"Input vazio");
-   }else{
-    
-     try {
-      CargoDao.Salvar(cargs);
-       JOptionPane.showMessageDialog(null,"Adicionado Com Sucesso!!");  
-       carField.setText("");
-    } catch (Exception d) {
-      System.out.println("Cargo adicionado com sucesso : "+d.getMessage());
-    }
-    
-   }
-
-      carField.setText("");
-
-   });
-
-
-=======
       cargoDao cD=new cargoDao();
     BEnviar.addActionListener(e ->{
       String CN = carField.getText().trim();
-      cargo car = new cargo(CN);
+      int Ci = Integer.parseInt(IDcarField.getText().trim());
+      cargo car = new cargo(Ci,CN);
       if(CN.isEmpty()){
         JOptionPane.showMessageDialog(null,"Erro no input  !!");
       }else{
-          cD.Salvar(car);
-          JOptionPane.showMessageDialog(null,"Adicionado com Sucesso !!");
+          cD.Atualizar(car);
+          JOptionPane.showMessageDialog(null,"Atualizado com Sucesso !!");
       }
 
     });
 
 
 
->>>>>>> telas
  }
 
 

@@ -7,9 +7,13 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
+<<<<<<< HEAD
 
 import br.com.dao.statusDao;
 import br.com.model.status;
+=======
+import br.com.dao.statusDao;
+>>>>>>> telas
 
 import java.awt.Color;
 import java.awt.Font;
@@ -33,8 +37,10 @@ public class deletestatus extends JFrame {
    painel.add(form);
    
  }
-
+JButton BDeletar;
  public void Carg(){
+   JLabel text_auxiliar= new JLabel("Deletar Status",JLabel.CENTER);
+  text_auxiliar.setFont(new Font("Segoe UI",Font.BOLD,30));
    JLabel NC = new JLabel("Excluir Status",JLabel.CENTER);
    NC.setFont(new Font("Segoe UI",Font.BOLD,20));
     corField = new JTextField();
@@ -46,11 +52,13 @@ public class deletestatus extends JFrame {
    JPanel dadospes = new  JPanel(new GridLayout(0,1,10,10));
 
    form= new JPanel();
+   dadospes.add(text_auxiliar);
    dadospes.add(NC);
    dadospes.add(corField);
    dadospes.add(BDeletar);
    form.add(dadospes);
 
+<<<<<<< HEAD
    statusDao StatusDao= new statusDao();
 
   BDeletar.addActionListener(e ->{
@@ -64,6 +72,21 @@ public class deletestatus extends JFrame {
     }
 
   });
+=======
+
+         statusDao statsD =new statusDao();
+    BDeletar.addActionListener(e ->{
+      int CN = Integer.parseInt(BDeletar.getText().trim());
+      if(CN !=0){
+          statsD.Deletar(CN);
+          JOptionPane.showMessageDialog(null,"Adicionado com Sucesso !!");
+      }else{
+        JOptionPane.showMessageDialog(null,"Erro no input  !!");
+      }
+
+    });
+
+>>>>>>> telas
 
  }
 

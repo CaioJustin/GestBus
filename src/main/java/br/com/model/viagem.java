@@ -3,7 +3,7 @@ package br.com.model;
 public class viagem {
     
   
-    
+    private int id;
     private String descricao;
     private String data_partida;
     private String data_chegara;
@@ -12,6 +12,16 @@ public class viagem {
    
 
     public viagem(String des,String datap ,String dataC,int escal,int linha){
+        this.descricao=des;
+        this.data_partida=datap;
+        this.data_chegara=dataC;
+        this.Escala_id=escal;
+        this.Linha_id=linha;
+        
+    }
+
+     public viagem(int id,String des,String datap ,String dataC,int escal,int linha){
+        this.id=id;
         this.descricao=des;
         this.data_partida=datap;
         this.data_chegara=dataC;
@@ -66,7 +76,13 @@ public class viagem {
         this.Escala_id= Esc;
     }
 
+      public int Getid(){
+        return this.id;
+    }
 
+    public void Setid(int d){
+        this.id= d;
+    }
     
 
 }
