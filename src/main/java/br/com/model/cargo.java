@@ -7,14 +7,11 @@ public class cargo {
 
     public cargo(String n){ 
         this.nome=n;
-<<<<<<< HEAD
-=======
     }
 
     public cargo(int id,String nome){
         this.id=id;
         this.nome=nome;
->>>>>>> telas
     }
 
     public String GetNome(){

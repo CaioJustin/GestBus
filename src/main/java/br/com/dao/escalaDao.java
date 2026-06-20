@@ -1,30 +1,9 @@
 package br.com.dao;
 
-<<<<<<< HEAD
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-=======
-
->>>>>>> telas
 
 import br.com.conexao.connect;
 import br.com.model.escala;
 
-<<<<<<< HEAD
-public class escalaDao {
-    
-    String sql ="Insert into escala(horario_inicio,horario_fim) values(?,?)";
-    public void Salvar(escala esc){
-
-        try(Connection conn =connect.obterConexao(); PreparedStatement stmt = conn.prepareStatement(sql)){
-
-            stmt.setString(1,esc.getHorarioInicio());
-            stmt.setString(2,esc.getHorarioFim());
-            stmt.executeUpdate();
-
-        } catch (SQLException e) {
-=======
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -97,29 +76,10 @@ public class escalaDao {
             stmt.setInt(3, idc.Getid());
             stmt.executeUpdate();
         } catch (Exception e) {
->>>>>>> telas
             System.err.println("Error de : "+e.getMessage());
         }
 
 
-<<<<<<< HEAD
-    }
-
-    public void Deletar(int del){
-
-        String sql = "delete from escala where id_escala = ?";
-        try(Connection conn = connect.obterConexao(); PreparedStatement stmt = conn.prepareStatement(sql)){
-                stmt.setInt(1,del);
-                stmt.executeUpdate();
-        } catch (Exception e) {
-             System.err.println("Error de : "+e.getMessage());
-        }
 
     }
-
-
-=======
-
-    }
->>>>>>> telas
 }

@@ -7,13 +7,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
-<<<<<<< HEAD
-
 import br.com.dao.statusDao;
-import br.com.model.status;
-=======
-import br.com.dao.statusDao;
->>>>>>> telas
 
 import java.awt.Color;
 import java.awt.Font;
@@ -21,7 +15,7 @@ import java.awt.GridLayout;
 public class deletestatus extends JFrame {
  JTextField corField;
    JPanel form;
-   JButton BDeletar;
+   
     public deletestatus(){
         super("GestBus :: Deletar Status");
         setSize(400,300);
@@ -58,21 +52,6 @@ JButton BDeletar;
    dadospes.add(BDeletar);
    form.add(dadospes);
 
-<<<<<<< HEAD
-   statusDao StatusDao= new statusDao();
-
-  BDeletar.addActionListener(e ->{
-    int id_Deleter = Integer.parseInt(corField.getText().trim());
-  
-    if (id_Deleter !=0) {
-      StatusDao.Deletar(id_Deleter);
-      JOptionPane.showMessageDialog(null,"Status Deletado com Sucesso!!");
-    }else{
-      JOptionPane.showMessageDialog(null,"Error no Input vazio ou e texto ");
-    }
-
-  });
-=======
 
          statusDao statsD =new statusDao();
     BDeletar.addActionListener(e ->{
@@ -86,7 +65,6 @@ JButton BDeletar;
 
     });
 
->>>>>>> telas
 
  }
 

@@ -11,10 +11,6 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
-<<<<<<< HEAD
-=======
-
->>>>>>> telas
 import br.com.dao.escalaDao;
 
 public class deleteEscala extends JFrame{
@@ -39,11 +35,7 @@ JTextField carField;
  }
 
 
-<<<<<<< HEAD
-JButton BEnviar;
-=======
  JButton BEnviar;
->>>>>>> telas
  public void Carg(){
    JLabel text_auxiliar= new JLabel("Deletar Escala",JLabel.CENTER);
   text_auxiliar.setFont(new Font("Segoe UI",Font.BOLD,30));
@@ -67,20 +59,6 @@ JButton BEnviar;
    dadospes.add(BEnviar);
    form.add(dadospes);
 
-<<<<<<< HEAD
-   escalaDao escD = new escalaDao();
-   BEnviar.addActionListener(e ->{
-      int idE =Integer.parseInt(carField.getText().trim());
-    if(idE !=0){
-       escD.Deletar(idE);
-      JOptionPane.showMessageDialog(null,"Deletado com Sucesso !!");
-    }else{
-      JOptionPane.showMessageDialog(null,"Erroar ao enviar !!");
-    }
-
-
-   });  
-=======
 
   
       escalaDao escd =new escalaDao();
@@ -94,7 +72,6 @@ JButton BEnviar;
       }
 
     });
->>>>>>> telas
 
 
    }

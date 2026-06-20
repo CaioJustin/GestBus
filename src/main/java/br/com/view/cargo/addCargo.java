@@ -36,7 +36,7 @@ public class addCargo extends JFrame{
    painel.add(form);
    
  }
- JButton BEnviar;
+ 
  public void Carg(){
    JLabel Text_auxiliar = new JLabel("Adicionar Cargo",JLabel.CENTER);
    Text_auxiliar.setFont(new Font("Segoe UI",Font.BOLD,30));
@@ -57,35 +57,6 @@ public class addCargo extends JFrame{
    dadospes.add(BEnviar);
    form.add(dadospes);
 
-<<<<<<< HEAD
-
-
-   cargoDao CargoDao = new cargoDao();
-
-   BEnviar.addActionListener(e ->{
-      String cargoNome =carField.getText();
-      cargo cargs= new cargo(cargoNome);
-       
-   if(cargoNome.isEmpty()){
-    JOptionPane.showMessageDialog(null,"Input vazio");
-   }else{
-    
-     try {
-      CargoDao.Salvar(cargs);
-       JOptionPane.showMessageDialog(null,"Adicionado Com Sucesso!!");  
-       carField.setText("");
-    } catch (Exception d) {
-      System.out.println("Cargo adicionado com sucesso : "+d.getMessage());
-    }
-    
-   }
-
-      carField.setText("");
-
-   });
-
-
-=======
       cargoDao cD=new cargoDao();
     BEnviar.addActionListener(e ->{
       String CN = carField.getText().trim();
@@ -101,7 +72,6 @@ public class addCargo extends JFrame{
 
 
 
->>>>>>> telas
  }
 
 

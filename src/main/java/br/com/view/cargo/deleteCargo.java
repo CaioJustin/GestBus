@@ -14,10 +14,6 @@ import javax.swing.WindowConstants;
 
 import br.com.dao.cargoDao;
 
-<<<<<<< HEAD
-=======
-
->>>>>>> telas
 public class deleteCargo extends JFrame{
 
    JTextField carField;
@@ -62,21 +58,6 @@ text_auxiliar.setFont(new Font("Segoe UI",Font.BOLD,30));
    dadospes.add(BEnviar);
    form.add(dadospes);
 
-<<<<<<< HEAD
-   cargoDao cd = new cargoDao();
-
-  BEnviar.addActionListener(e->{
-     int idC= Integer.parseInt(carField.getText().trim());
-    if(idC !=0){
-       cd.Deletar(idC);
-       JOptionPane.showMessageDialog(null,"Deletado com Sucesso");
-    } else{
-      JOptionPane.showMessageDialog(null,"Error ao deletar");
-    }
-  
-  });
-
-=======
 
 
     cargoDao CD =new cargoDao();
@@ -91,7 +72,6 @@ text_auxiliar.setFont(new Font("Segoe UI",Font.BOLD,30));
 
     });
 
->>>>>>> telas
 
 
    }

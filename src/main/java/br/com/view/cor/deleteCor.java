@@ -11,14 +11,10 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
-<<<<<<< HEAD
-import br.com.dao.corDao;
-=======
 
 import br.com.dao.corDao;
 
-public class deleteCor extends JFrame{
->>>>>>> telas
+
 
 public class deleteCor extends JFrame{
  JButton BEnviar;
@@ -42,7 +38,7 @@ JTextField carField;
  }
 
 
-JButton BEnviar;
+
  public void Corex(){
    JLabel text_auxiliar= new JLabel("Deletar Cor",JLabel.CENTER);
   text_auxiliar.setFont(new Font("Segoe UI",Font.BOLD,30));
@@ -63,19 +59,6 @@ JButton BEnviar;
    dadospes.add(BEnviar);
    form.add(dadospes);
 
-<<<<<<< HEAD
-      corDao cd = new corDao();
-   BEnviar.addActionListener(e->{
-      int del = Integer.parseInt(carField.getText().trim());
-      if (del !=0){
-         cd.Deletar(del);
-         JOptionPane.showMessageDialog(null,"Deletado com Sucesso cor");
-      } else {
-         JOptionPane.showMessageDialog(null,"Erro na hora de envia");
-      }
-
-   });
-=======
 
       corDao CD =new corDao();
     BEnviar.addActionListener(e ->{
@@ -89,8 +72,8 @@ JButton BEnviar;
 
     });
 
->>>>>>> telas
    }
 
    
+
 }

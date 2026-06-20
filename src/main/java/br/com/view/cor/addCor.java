@@ -38,7 +38,7 @@ public class addCor extends JFrame{
    painel.add(form);
    
  }
-JButton BEnviar;
+
  public void Carg(){
   JLabel text_auxiliar = new JLabel("Adicionar Cor",JLabel.CENTER);
   text_auxiliar.setFont(new Font("Segoe UI",Font.BOLD,30));
@@ -59,27 +59,6 @@ JButton BEnviar;
    dadospes.add(BEnviar);
    form.add(dadospes);
 
-<<<<<<< HEAD
-   
-  
-   corDao CorDao = new corDao();
-
-  BEnviar.addActionListener(e ->{
-     String corText= corField.getText();
-      cor cors = new cor(corText);
-
-    if(corText.isEmpty()){
-      CorDao.Salvar(cors);
-      JOptionPane.showMessageDialog(null,"O Input esta Vazio !!");
-    }else{
-
-      CorDao.Salvar(cors);
-      JOptionPane.showMessageDialog(null,"O adicionada com Sucesso !!");
-    }
-    
-  });
-
-=======
 
        corDao cD=new corDao();
     BEnviar.addActionListener(e ->{
@@ -93,7 +72,6 @@ JButton BEnviar;
       }
 
     });
->>>>>>> telas
 
 
  }

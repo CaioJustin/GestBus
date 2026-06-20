@@ -85,17 +85,12 @@ public class garagem {
         return this.vagas;
     }
 
-<<<<<<< HEAD
-      public void setVagas(int s ){
-        this.vagas=s;
-=======
      public int Getid(){
         return this.id;
     }
 
     public void Setid(int d){
         this.id= d;
->>>>>>> telas
     }
 
 }

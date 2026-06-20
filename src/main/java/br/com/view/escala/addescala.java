@@ -11,10 +11,6 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
-<<<<<<< HEAD
-=======
-
->>>>>>> telas
 import br.com.dao.escalaDao;
 import br.com.model.escala;
 
@@ -39,7 +35,7 @@ public class addescala extends JFrame{
       painel.add(form);
    
  }
-  JButton BEnviar ;
+  
  public void Carg(){
   
   
@@ -79,25 +75,6 @@ public class addescala extends JFrame{
    form.add(dadospes);
 
 
-<<<<<<< HEAD
-    escalaDao escDao = new escalaDao();
-
-  
-
-   BEnviar.addActionListener(e ->{
-      String Hf = InputHorarioFim.getText().trim();
-    String Hi = InputHorarioInicio.getText().trim();
-    escala esc = new escala(Hf,Hi);
-      if((Hf.isEmpty())||(Hi.isEmpty())){
-          JOptionPane.showMessageDialog(null,"Algum Input vazio");
-      }else{
-        JOptionPane.showMessageDialog(null,"ESCALA ADICIONADA");
-        escDao.Salvar(esc);
-      }
-
-
-   });
-=======
        escalaDao escdao=new escalaDao();
     BEnviar.addActionListener(e ->{
       String hi = InputHorarioInicio.getText().trim();
@@ -112,7 +89,6 @@ public class addescala extends JFrame{
       }
 
     });
->>>>>>> telas
 
  }
 

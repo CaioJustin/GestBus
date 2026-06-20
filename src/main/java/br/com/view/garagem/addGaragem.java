@@ -14,13 +14,9 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 
-<<<<<<< HEAD
-import br.com.dao.garagemDao;
-=======
 
 import br.com.dao.garagemDao;
 
->>>>>>> telas
 import br.com.model.garagem;
 
 public class addGaragem extends JFrame{
@@ -137,29 +133,6 @@ public class addGaragem extends JFrame{
 
 
 
-<<<<<<< HEAD
-   
-     garagemDao GaragemDao = new garagemDao();
-
-     BEnviar.addActionListener(e ->{
-
-      Nome =nomeField.getText().trim();
-      Cidade=cidadeField.getText().trim();
-      Rua=ruaField.getText().trim();
-      Bairro=bairroField.getText().trim();
-      Cep=cepField.getText().trim();
-      Vagas= Integer.parseInt(vagasField.getText().trim());
-        garagem gam = new garagem(Nome,Cidade,Rua,Bairro,Cep,Vagas);
-      
-       try {
-         GaragemDao.Salvar(gam);
-         JOptionPane.showMessageDialog(null,"Informações da Garagem Adicionada");
-       } catch (Exception d) {
-        JOptionPane.showMessageDialog(null,"Error de : "+d.getMessage());
-       }
-
-     });
-=======
        garagemDao garaDao=new garagemDao();
     BEnviar.addActionListener(e ->{
       String n = nomeField.getText().trim();
@@ -185,7 +158,6 @@ public class addGaragem extends JFrame{
 
 
 
->>>>>>> telas
 
  }
 

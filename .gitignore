@@ -3,11 +3,7 @@
 target/
 .vscode/
 
-<<<<<<< HEAD
-hs_err_pid*
-replay_pid*
-=======
 hs_err_pid13024.log
 replay_pid13024.log
-
->>>>>>> telas
+replay_pid13024.log
+replay_pid10268.log

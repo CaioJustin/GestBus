@@ -28,18 +28,6 @@ public class statusDao {
 
     }
 
-<<<<<<< HEAD
-    
-    public void Deletar(int id_Deleter){
-        String sql="Delete from status where id_status =? ";
-        try(Connection conn =connect.obterConexao(); PreparedStatement stmt = conn.prepareStatement(sql)){
-           stmt.setInt(1,id_Deleter);
-           stmt.executeUpdate();
-        } catch (Exception e) {
-            System.out.println("na hora de deletar error !!");
-        }
-
-=======
     public void Deletar(int d){
          String sql = "Delete from status where id_status=?";
 
@@ -88,6 +76,5 @@ public class statusDao {
 
 
 
->>>>>>> telas
     }
 }
