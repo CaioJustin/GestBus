@@ -3,7 +3,7 @@
 target/
 .vscode/
 
+hs_err_pid10268.log
 hs_err_pid13024.log
-replay_pid13024.log
-replay_pid13024.log
 replay_pid10268.log
+replay_pid13024.log
