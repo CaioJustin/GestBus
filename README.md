@@ -26,10 +26,10 @@ Projeto feito tem java(Swing) Conectado ao MYSQL utilizando o JDBC Usando
  - [x] Crud Viagem
 
  ## Funcionalidade de Cada Obra
- Create - Adicionar Novo Registro
- Read   - Ler o Registro
- Update - Atualizar Registro
- Delete - Deletar Registro
+ <br>Create - Adicionar Novo Registro
+ <br>Read   - Ler o Registro
+ <br>Update - Atualizar Registro
+ <br>Delete - Deletar Registro
  
 ## Status
  | Fases | Progressão | Status |
