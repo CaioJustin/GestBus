@@ -24,10 +24,18 @@ Projeto feito tem java(Swing) Conectado ao MYSQL utilizando o JDBC Usando
  - [x] Crud Linha
  - [x] Crud Onibus
  - [x] Crud Viagem
+
+ ## Funcionalidade de Cada Obra
+ Create - Adicionar Novo Registro
+ Read   - Ler o Registro
+ Update - Atualizar Registro
+ Delete - Deletar Registro
  
 ## Status
- Em Construção 100%
- Fase de Teste 30%
+ | Fases | Progressão | Status |
+ | :--- | :---: | ---: |
+ |**Em Construção** | 100% | Concluido |
+ |**Fase de Teste** | 30% | Em Andamento |
 
 ## Observação
  Este projeto está sendo desenvolvido com foco em portfólio e para
