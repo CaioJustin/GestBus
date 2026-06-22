@@ -22,7 +22,7 @@ import javax.swing.JOptionPane;
 public class funcionarioDao {
      int idcarg,idescal,idstatus;
     public void Salvar(funcionario func){
-         String sql = "Insert into funcionario(nome,sobrenome,cpf,datanascimento,Cargo_id,Status_id,Escala_id) values (?,?,?,?,?,?)";
+         String sql = "Insert into funcionario(nome,sobrenome,cpf,datanascimento,Cargo_id,Status_id,Escala_id) values (?,?,?,?,?,?,?)";
          String sqlCargo="select * from cargo where id_Cargo=?";
          String sqlstatus="select * from status where id_status =?";
          String sqlEscala="select * from escala where id_escala =?";

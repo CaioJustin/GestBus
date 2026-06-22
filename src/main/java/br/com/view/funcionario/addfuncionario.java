@@ -14,6 +14,8 @@ import java.awt.GridLayout;
 import java.text.SimpleDateFormat;
 //import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.GregorianCalendar;
+
 import org.jdatepicker.JDatePicker;
 
 import br.com.dao.funcionarioDao;
@@ -139,9 +141,9 @@ public class addfuncionario extends JFrame {
 
        // meche na data e coloca arruamar deposis
           
-           java.util.Date dataNascimento = (java.util.Date) datepicker.getModel().getValue();
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-             String dataString = sdf.format(dataNascimento);
+           java.util.Date dataNascimento = ((GregorianCalendar) datepicker.getModel().getValue()).getTime();
+SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+String dataString = sdf.format(dataNascimento);
       
       funcionario funf = new funcionario(nom,sob,cpfs,dataString,StsId,CarId,EscId);
       if((nom.isEmpty())||(sob.isEmpty())||(cpfs.isEmpty())||(EscId==0)||(StsId==0)||(CarId==0)){
