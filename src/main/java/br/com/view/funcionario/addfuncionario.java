@@ -11,6 +11,7 @@ import javax.swing.WindowConstants;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.text.SimpleDateFormat;
 //import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import org.jdatepicker.JDatePicker;
@@ -137,12 +138,12 @@ public class addfuncionario extends JFrame {
       int CarId =Integer.parseInt(cargoInputFuncionario.getText().trim());
 
        // meche na data e coloca arruamar deposis
-       /*   
+          
            java.util.Date dataNascimento = (java.util.Date) datepicker.getModel().getValue();
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-             String dataString = sdf.format(dataNascimento);*/
+             String dataString = sdf.format(dataNascimento);
       
-      funcionario funf = new funcionario(nom,sob,cpfs,StsId,CarId,EscId);
+      funcionario funf = new funcionario(nom,sob,cpfs,dataString,StsId,CarId,EscId);
       if((nom.isEmpty())||(sob.isEmpty())||(cpfs.isEmpty())||(EscId==0)||(StsId==0)||(CarId==0)){
         JOptionPane.showMessageDialog(null,"Erro no input  !!");
       }else{

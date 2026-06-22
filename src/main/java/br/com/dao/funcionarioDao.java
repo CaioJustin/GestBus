@@ -22,7 +22,7 @@ import javax.swing.JOptionPane;
 public class funcionarioDao {
      int idcarg,idescal,idstatus;
     public void Salvar(funcionario func){
-         String sql = "Insert into funcionario(nome,sobrenome,cpf,Cargo_id,Status_id,Escala_id) values (?,?,?,?,?,?)";
+         String sql = "Insert into funcionario(nome,sobrenome,cpf,datanascimento,Cargo_id,Status_id,Escala_id) values (?,?,?,?,?,?)";
          String sqlCargo="select * from cargo where id_Cargo=?";
          String sqlstatus="select * from status where id_status =?";
          String sqlEscala="select * from escala where id_escala =?";
@@ -85,9 +85,10 @@ public class funcionarioDao {
               stmt.setString(1,func.getNome());
             stmt.setString(2,func.getSobrenome());
             stmt.setString(3,func.getCpf());
-            stmt.setInt(4,idcarg);
-            stmt.setInt(5,idstatus);
-            stmt.setInt(6,idescal);
+            stmt.setString(4, func.getDataNas());
+            stmt.setInt(5,idcarg);
+            stmt.setInt(6,idstatus);
+            stmt.setInt(7,idescal);
             stmt.executeUpdate();
             
          } catch (Exception e) {
