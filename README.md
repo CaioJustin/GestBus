@@ -34,10 +34,14 @@ Projeto feito tem java(Swing) Conectado ao MYSQL utilizando o JDBC Usando
 ## Status
  | Fases | Progressão | Status |
  | :--- | :---: | ---: |
- |**Em Construção** | 100% | Concluido |
- |**Fase de Teste** | 100% | Concluido |
- | Concluido                           | 
+ |**Telas** | 100% | Concluído |
+ |**Fase de Teste** | 100% | Concluído |
 
+**Projeto Finalizado**
+
+O projeto foi concluído com sucesso, abrangendo todas as funcionalidades planejadas:
+
+*Última atualização: [27/06/2026]*
 
 ## Observação
  Este projeto está sendo desenvolvido com foco em portfólio e para
