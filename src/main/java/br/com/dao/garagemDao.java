@@ -86,7 +86,7 @@ public class garagemDao {
             stmt.setString(4,idc.getBairro());
             stmt.setString(5,idc.getCep());
             stmt.setInt(6,idc.getVagas());
-            stmt.setInt(8,idc.Getid());
+            stmt.setInt(7,idc.Getid());
             stmt.executeUpdate();
         } catch (Exception e) {
             System.err.println("Error de : "+e.getMessage());

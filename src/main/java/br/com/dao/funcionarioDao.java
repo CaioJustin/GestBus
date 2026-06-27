@@ -150,17 +150,79 @@ public class funcionarioDao {
     
 
     public void Atualizar(funcionario idc){
-            String sql = "update funcionario set nome=?,sobrenome=?,cpf=?,datanascimento=?,Cargo_id=?,Status=?,Escala_id where id=?";
-        try(Connection conn = connect.obterConexao(); PreparedStatement stmt =conn.prepareStatement(sql)){
+            String sql = "update funcionario set nome=?,sobrenome=?,cpf=?,datanascimento=?,Cargo_id=?,Status_id=?,Escala_id=? where id=?";
+             String sqlCargo="select * from cargo where id_Cargo=?";
+         String sqlstatus="select * from status where id_status =?";
+         String sqlEscala="select * from escala where id_escala =?";
+        try(Connection conn = connect.obterConexao()){
+             int idcarg=0;
+             int idescal=0;
+             int idstatus=0;
+              //Buscando o id do Cargo
+         try(PreparedStatement st =conn.prepareStatement(sqlCargo)){
+            st.setInt(1, idc.getCargo());
+            ResultSet rscarg =st.executeQuery();
+
+            if(rscarg.next()){
+                idcarg=rscarg.getInt("id_Cargo");
+                System.out.println("\nCargo encontrado : "+idcarg);
+            }else{
+                System.err.println("\nCargo não encontrado");
+            }
+            
+         } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro de Cargo");
+         }
+            
+         //Buscando o id do Status
+          try(PreparedStatement stmt =conn.prepareStatement(sqlstatus)){
+            stmt.setInt(1, idc.getSta());
+             ResultSet rsStatus = stmt.executeQuery();
+
+             if(rsStatus.next()){
+                idstatus= rsStatus.getInt("id_status");
+                System.err.println("\nStatus encontrado : "+idstatus);
+             }else{
+                System.err.println("\nStatus não encontrado");
+             }
+
+         } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error de Status");
+         }
+
+         //Buscando o id da Escala
+          try(PreparedStatement stmt =conn.prepareStatement(sqlEscala)){
+              stmt.setInt(1, idc.getEscala());
+                ResultSet rsEscala = stmt.executeQuery();
+
+            if(rsEscala.next()){
+                idescal=rsEscala.getInt("id_escala");
+                System.err.println("\nEscala encontrado : "+idescal);
+            }else{
+                System.err.println("\nEscala não encontrado");
+            }
+         } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error de Escala");
+         }
+
+
+            
+                //ATUALIZANDO O FUNCIONARIO
+            try(PreparedStatement stmt =conn.prepareStatement(sql);){
             stmt.setString(1,idc.getNome());
             stmt.setString(2,idc.getSobrenome());
             stmt.setString(3,idc.getCpf());
             stmt.setString(4,idc.getDataNas());
-            stmt.setInt(5,idc.getCargo());
-            stmt.setInt(6,idc.getSta());
-            stmt.setInt(7,idc.getEscala());
+            stmt.setInt(5,idcarg);
+            stmt.setInt(6,idstatus);
+            stmt.setInt(7,idescal);
             stmt.setInt(8,idc.Getid());
             stmt.executeUpdate();
+            } catch (Exception e) {
+               System.err.println("Error de atualizar: "+e.getMessage());
+            }
+
+
         } catch (Exception e) {
             System.err.println("Error de : "+e.getMessage());
         }

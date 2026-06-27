@@ -70,9 +70,9 @@ public class escalaDao {
     }
 
     public void Atualizar(escala idc){
-            String sql = "update escala set horario_inicio=?,horario_fim where id_escala =?";
+            String sql = "update escala set horario_inicio=?,horario_fim=? where id_escala =?";
         try(Connection conn = connect.obterConexao(); PreparedStatement stmt =conn.prepareStatement(sql)){
-            stmt.setString(1,idc.getHorarioFim());
+            stmt.setString(1,idc.getHorarioInicio());
             stmt.setString(2,idc.getHorarioFim());
             stmt.setInt(3, idc.Getid());
             stmt.executeUpdate();

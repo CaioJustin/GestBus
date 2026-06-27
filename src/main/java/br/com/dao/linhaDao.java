@@ -35,7 +35,7 @@ public class linhaDao {
          String sql = "Delete from linha where id_linha=?";
 
         try(Connection conexao =connect.obterConexao(); PreparedStatement stmt =conexao.prepareStatement(sql)){
-            
+            System.out.println("A lINHA DELETAR E : "+d);
             stmt.setInt(1,d);
             stmt.executeUpdate();
             

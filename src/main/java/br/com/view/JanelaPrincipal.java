@@ -842,6 +842,7 @@ optionStatus.put("AtualizarStatus",new JButton("Atualizar Status"));
                 atualizarViagem.setVisible(true);
             } catch (Exception m) {
                 System.out.println("Error de : "+m.getMessage());
+                 m.printStackTrace(); 
             }
         });
 

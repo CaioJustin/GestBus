@@ -14,7 +14,7 @@ import java.sql.SQLException;
 public class corDao {
     
     public void Salvar(cor cors){
-         String sql = "Insert into Status(nome) values (?) ";
+         String sql = "Insert into cor(nome) values (?) ";
 
         try(Connection conexao =connect.obterConexao(); PreparedStatement stmt =conexao.prepareStatement(sql)){
             

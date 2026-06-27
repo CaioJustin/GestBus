@@ -57,6 +57,7 @@ JButton BEnviar;
    dataChegadaField = new JTextField();
    EscalaIdField = new JTextField();
    LinhaIdField = new JTextField();
+   viagemIdField = new JTextField();
 
    ArrayList<JLabel> labels = new ArrayList<>();
    JLabel descricao = new JLabel("Descrição",JLabel.CENTER);

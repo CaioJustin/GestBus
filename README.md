@@ -35,7 +35,9 @@ Projeto feito tem java(Swing) Conectado ao MYSQL utilizando o JDBC Usando
  | Fases | Progressão | Status |
  | :--- | :---: | ---: |
  |**Em Construção** | 100% | Concluido |
- |**Fase de Teste** | 30% | Em Andamento |
+ |**Fase de Teste** | 100% | Concluido |
+ | Concluido                           | 
+
 
 ## Observação
  Este projeto está sendo desenvolvido com foco em portfólio e para

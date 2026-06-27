@@ -13,7 +13,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
 public class deletestatus extends JFrame {
- JTextField corField;
+ JTextField statsField;
    JPanel form;
     public deletestatus(){
         super("GestBus :: Deletar Status");
@@ -36,7 +36,7 @@ JButton BDeletar;
   text_auxiliar.setFont(new Font("Segoe UI",Font.BOLD,30));
    JLabel NC = new JLabel("Excluir Status",JLabel.CENTER);
    NC.setFont(new Font("Segoe UI",Font.BOLD,20));
-    corField = new JTextField();
+    statsField = new JTextField();
      BDeletar = new JButton("Deletar");
     BDeletar.setBackground(Color.RED);
     BDeletar.setForeground(Color.WHITE);
@@ -47,14 +47,14 @@ JButton BDeletar;
    form= new JPanel();
    dadospes.add(text_auxiliar);
    dadospes.add(NC);
-   dadospes.add(corField);
+   dadospes.add(statsField);
    dadospes.add(BDeletar);
    form.add(dadospes);
 
 
          statusDao statsD =new statusDao();
     BDeletar.addActionListener(e ->{
-      int CN = Integer.parseInt(BDeletar.getText().trim());
+      int CN = Integer.parseInt(statsField.getText().trim());
       if(CN !=0){
           statsD.Deletar(CN);
           JOptionPane.showMessageDialog(null,"Adicionado com Sucesso !!");

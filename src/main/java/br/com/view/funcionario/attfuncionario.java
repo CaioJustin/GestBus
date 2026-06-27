@@ -5,6 +5,7 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.GregorianCalendar;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -101,6 +102,9 @@ public class attfuncionario extends JFrame{
         dadosPessoa.setLayout(new GridLayout(0,1,10,10));
 
         dadosPessoa.add(NC);
+
+          dadosPessoa.add(IdFuncionario);
+        dadosPessoa.add(IdInputFuncionario);
       
         dadosPessoa.add(nomeFuncionario);
         dadosPessoa.add(nomeInputFuncionario);
@@ -135,19 +139,19 @@ public class attfuncionario extends JFrame{
       String nom = nomeInputFuncionario.getText().trim();
       String sob = sobrenomeInputFuncionario.getText().trim();
       String cpfs = cpfInputFuncionario.getText().trim();
-      int EscId = Integer.parseInt(cargoInputFuncionario.getText().trim());
+      int EscId = Integer.parseInt(escalaInputFuncionario.getText().trim());
       int StsId = Integer.parseInt(statusInputFuncionario.getText().trim());
-      int CarId =Integer.parseInt(escalaInputFuncionario.getText().trim());
+      int CarId =Integer.parseInt(cargoInputFuncionario.getText().trim());
 
-          java.util.Date dataNascimento = (java.util.Date) datepicker.getModel().getValue();
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-            String dataString = sdf.format(dataNascimento);
+          java.util.Date dataNascimento = ((GregorianCalendar) datepicker.getModel().getValue()).getTime();
+SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+String dataString = sdf.format(dataNascimento);
 
       funcionario funf = new funcionario(idF,nom,sob,cpfs,StsId,CarId,EscId,dataString);
       if((nom.isEmpty())||(sob.isEmpty())||(cpfs.isEmpty())||(EscId==0)||(StsId==0)||(CarId==0)){
         JOptionPane.showMessageDialog(null,"Erro no input  !!");
       }else{
-          FuncDao.Salvar(funf);
+          FuncDao.Atualizar(funf);
           JOptionPane.showMessageDialog(null,"Funcionario Adicionado com Sucesso !!");
       }
 

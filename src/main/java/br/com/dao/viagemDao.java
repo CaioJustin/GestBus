@@ -49,16 +49,16 @@ public class viagemDao {
     }
     
     public viagem ListarInformacao(int idC){
-        String sql = "Select * from viagem where id_status=?";
+        String sql = "Select * from viagem where id_viagem=?";
         try(Connection conn = connect.obterConexao(); PreparedStatement stmt =conn.prepareStatement(sql)){
             stmt.setInt(1, idC);
             ResultSet rs = stmt.executeQuery();
 
             if(rs.next()){
-                int idv=rs.getInt("id_status");
+                int idv=rs.getInt("id_viagem");
                 String descv=rs.getString("descricao");
                 String dataParv=rs.getString("data_partida");
-                String dataCheV=rs.getString("data_chegada");
+                String dataCheV=rs.getString("data_chegara");
                 int EscalaV=rs.getInt("Escala_id");
                 int LinhaV=rs.getInt("Linha_id");
                 return new viagem(idv,descv,dataParv,dataCheV,EscalaV,LinhaV);
@@ -72,7 +72,7 @@ public class viagemDao {
     }
 
     public void Atualizar(viagem idc){
-            String sql = "update viagem set descricao=?,data_partida=?,data_chegada=?,Escala_id,Linha_id where id_viagem =?";
+            String sql = "update viagem set descricao=?,data_partida=?,data_chegara=?,Escala_id=?,Linha_id=? where id_viagem =?";
         try(Connection conn = connect.obterConexao(); PreparedStatement stmt =conn.prepareStatement(sql)){
         
             stmt.setString(1,idc.getDesc());

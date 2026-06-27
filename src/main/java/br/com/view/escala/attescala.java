@@ -85,11 +85,11 @@ IDcarField = new JTextField();
       String HF = InputHorarioFim.getText().trim();
       String HI = InputHorarioInicio.getText().trim();
       int IDescala = Integer.parseInt(IDcarField.getText().trim());
-      escala car = new escala(IDescala,HI,HF);
+      escala esc = new escala(IDescala,HI,HF);
       if(HF.isEmpty() || HI.isEmpty()){
         JOptionPane.showMessageDialog(null,"Erro no input  !!");
       }else{
-          escD.Atualizar(car);
+          escD.Atualizar(esc);
           JOptionPane.showMessageDialog(null,"Atualizado com Sucesso !!");
       }
 

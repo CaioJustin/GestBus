@@ -84,7 +84,7 @@ public class onibusDao {
     }
 
     public void Deletar(int d){
-         String sql = "Delete from onibus where id_onibus=?";
+         String sql = "Delete from onibus where placa=?";
 
         try(Connection conexao =connect.obterConexao(); PreparedStatement stmt =conexao.prepareStatement(sql)){
             

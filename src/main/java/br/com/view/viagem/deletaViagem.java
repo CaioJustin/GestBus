@@ -56,7 +56,7 @@ public class deletaViagem extends JFrame{
     viagemDao vd = new viagemDao();
   BEnviar.addActionListener(e ->{
 
-      int id = Integer.parseInt(BEnviar.getText().trim());
+      int id = Integer.parseInt(corField.getText().trim());
 
       if(id !=0){
           vd.Deletar(id);
