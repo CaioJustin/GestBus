@@ -6,6 +6,15 @@ Projeto feito tem java(Swing) Conectado ao MYSQL utilizando o JDBC Usando
  Junção de 2 Atividades feito na sala de aula do senai de java swing e banco de dados eu reaproveitei e juntei os dois 
  Projeto feito tem java(Swing) Conectado ao MYSQL utilizando o JDBC Usando o Maven para importa os 
 
+## Telas do Sistema
+
+### Tela Principal
+![Tela Principal](screenshots/begins.png)
+
+### Tela de Operações Crud
+![Tela Principal](screenshots/tela-principal.png)
+
+
  ## Ferramentas Utilizadas
  - Linguagem java
  - Java Swing
@@ -41,7 +50,7 @@ Projeto feito tem java(Swing) Conectado ao MYSQL utilizando o JDBC Usando
 
 O projeto foi concluído com sucesso, abrangendo todas as funcionalidades planejadas:
 
-*Última atualização: [27/06/2026]*
+*Última atualização: [28/06/2026]*
 
 ## Observação
  Este projeto está sendo desenvolvido com foco em portfólio e para
