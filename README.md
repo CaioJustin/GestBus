@@ -12,7 +12,7 @@ Projeto feito tem java(Swing) Conectado ao MYSQL utilizando o JDBC Usando
 ![Tela Principal](screenshots/begins.png)
 
 ### Tela de Operações Crud
-![Tela Principal](screenshots/beginfunc.png)
+![Tela Funcionario Crud](screenshots/beginfunc.png)
 
 
  ## Ferramentas Utilizadas
