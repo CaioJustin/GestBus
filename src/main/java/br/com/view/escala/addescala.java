@@ -1,5 +1,7 @@
 package br.com.view.escala;
 import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
 
@@ -37,24 +39,50 @@ public class addescala extends JFrame{
    
  }
   JButton BEnviar ;
+  JButton BLimpar;
  public void Carg(){
   
   
   JLabel Vi = new JLabel("Adicionar Escala",JLabel.CENTER);
   Vi.setFont(new Font("Segoe UI",Font.BOLD,30));
-   JLabel HI = new JLabel("Horario Inicio",JLabel.CENTER);
-   JLabel HF =new JLabel("Horario Fim",JLabel.CENTER);
-   HI.setFont(new Font("Segoe UI",Font.BOLD,20));
-   HF.setFont(new Font("Segoe UI",Font.BOLD,20));
   Vi.setFont(new Font("Segoe UI",Font.BOLD,20));
-    InputHorarioInicio = new JTextField();
-    InputHorarioFim = new JTextField();
-
-     BEnviar = new JButton("Enviar");
    
-    BEnviar.setBackground(Color.blue);
+  
+  JLabel HI = new JLabel("Horario Inicio",JLabel.CENTER);
+  HI.setFont(new Font("Segoe UI",Font.BOLD,20));
+  InputHorarioInicio = new JTextField();
+  InputHorarioInicio.setPreferredSize(new Dimension(200,30));
+  JPanel PainelHI=new JPanel();
+  PainelHI.setLayout(new FlowLayout(FlowLayout.CENTER));
+  PainelHI.add(HI);
+  PainelHI.add(InputHorarioInicio);
+
+
+    InputHorarioFim = new JTextField();
+    InputHorarioFim.setPreferredSize(new Dimension(200,30));
+    JLabel HF =new JLabel("Horario Fim",JLabel.CENTER);
+    HF.setFont(new Font("Segoe UI",Font.BOLD,20));
+    JPanel PainelHF = new JPanel();
+    PainelHF.setLayout(new FlowLayout(FlowLayout.CENTER));
+    PainelHF.add(HF);
+    PainelHF.add(InputHorarioFim);
+
+
+    BEnviar = new JButton("Enviar");
+    BLimpar = new JButton("Limpar");
+   
+    BEnviar.setBackground(Color.green);
     BEnviar.setForeground(Color.WHITE);
     BEnviar.setFont(new Font("Segoe UI",Font.BOLD,20));
+
+    BLimpar.setBackground(Color.BLUE);
+    BLimpar.setForeground(Color.WHITE);
+    BLimpar.setFont(new Font("Segoe UI",Font.BOLD,20));
+
+    JPanel PanelButton = new JPanel();
+    PanelButton.setLayout(new FlowLayout(FlowLayout.CENTER));
+    PanelButton.add(BEnviar);
+    PanelButton.add(BLimpar);
 
    JPanel dadospes = new  JPanel(new GridLayout(0,1,10,10));
 
@@ -65,15 +93,10 @@ public class addescala extends JFrame{
    form= new JPanel();
    
   dadospes.add(Vi);
-
-   dadospes.add(HI);
-   dadospes.add(InputHorarioInicio);
-
-    dadospes.add(HF);
-   dadospes.add(InputHorarioFim);
-
-   dadospes.add(BEnviar);
-   form.add(dadospes);
+  dadospes.add(PainelHI);
+  dadospes.add(PainelHF);
+  dadospes.add(PanelButton);
+  form.add(dadospes);
 
 
        escalaDao escdao=new escalaDao();
@@ -89,6 +112,11 @@ public class addescala extends JFrame{
           JOptionPane.showMessageDialog(null,"Adicionado com Sucesso !!");
       }
 
+    });
+
+    BLimpar.addActionListener(e ->{
+      InputHorarioFim.setText("");
+      InputHorarioInicio.setText("");
     });
 
  }

@@ -1,6 +1,8 @@
 package br.com.view.funcionario;
 
 import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.text.SimpleDateFormat;
@@ -46,6 +48,8 @@ public class attfuncionario extends JFrame{
 
 
   JButton adicionar;
+    JButton BLimpa;
+
     /*Funcionario deve ter nome,sobrenome,data de nascimento,cpf,cargo	 */
 
     private void CreateForm(){
@@ -58,15 +62,81 @@ public class attfuncionario extends JFrame{
 
         Font styleFont = new Font("Segoi UI",Font.BOLD,16);
 
-        //Criando os texto
-        JLabel nomeFuncionario = new JLabel("Nome do Funcionario");
-        JLabel IdFuncionario = new JLabel("ID do Funcionario");
-        JLabel sobrenomeFuncionario = new JLabel("Sobrenome do Funcionario");
-        JLabel datadenascFuncionario= new JLabel("Data de nascimento do funcionario");
-        JLabel cpfFuncionario= new JLabel("Cpf do funcionario");
-        JLabel cargoFuncionario =new JLabel("Cargo do Funcionaro");
-         JLabel statusFuncionario =new JLabel("Status do Funcionaro");
-         JLabel EscalaFuncionario =new JLabel("Escala do Funcionaro");
+        //Criando os text
+      JLabel DadosPessoais = new JLabel("Dados Pessoais");
+        DadosPessoais.setFont(new Font("Segoe UI",Font.BOLD,20));
+        JPanel PainelPessoais= new JPanel();
+        PainelPessoais.add(DadosPessoais);
+
+        JLabel IdFuncionario = new JLabel("ID : ");
+       JTextField IdInputFuncionario = new JTextField();
+        IdInputFuncionario.setPreferredSize(new Dimension(200,30));
+        JPanel PainelIDF = new JPanel();
+        PainelIDF.setLayout(new FlowLayout(FlowLayout.CENTER));
+        PainelIDF.add(IdFuncionario);
+        PainelIDF.add(IdInputFuncionario);
+
+        JLabel nomeFuncionario = new JLabel("Nome : ");
+        JTextField nomeInputFuncionario = new JTextField();
+        nomeInputFuncionario.setPreferredSize(new Dimension(200,30));
+        JPanel PainelNome = new JPanel();
+        PainelNome.setLayout(new FlowLayout(FlowLayout.CENTER));
+        PainelNome.add(nomeFuncionario);
+        PainelNome.add(nomeInputFuncionario);
+
+        JLabel sobrenomeFuncionario = new JLabel("Sobrenome :");
+        JTextField sobrenomeInputFuncionario = new JTextField();
+        sobrenomeInputFuncionario.setPreferredSize(new Dimension(200,30));
+        JPanel PainelSobrenome = new JPanel();
+        PainelSobrenome.setLayout(new FlowLayout(FlowLayout.CENTER));
+        PainelSobrenome.add(sobrenomeFuncionario);
+        PainelSobrenome.add(sobrenomeInputFuncionario);
+        
+        JLabel datadenascFuncionario= new JLabel("Data :");
+        JDatePicker datepicker = new JDatePicker();
+        JPanel PainelData = new JPanel();
+        PainelData.setLayout(new FlowLayout(FlowLayout.CENTER));
+        PainelData.add(datadenascFuncionario);
+        PainelData.add(datepicker);
+
+        JLabel cpfFuncionario= new JLabel("Cpf : ");
+        JTextField cpfInputFuncionario = new JTextField();
+        cpfInputFuncionario.setPreferredSize(new Dimension(200,30));
+        JPanel PainelCpf = new JPanel();
+        PainelCpf.setLayout(new FlowLayout(FlowLayout.CENTER));
+        PainelCpf.add(cpfFuncionario);
+        PainelCpf.add(cpfInputFuncionario);
+
+         JLabel DadosPessoaisTrabalho = new JLabel("Dados de Trabalho");
+        DadosPessoaisTrabalho.setFont(new Font("Segoe UI",Font.BOLD,20));
+
+        JPanel PainelDadosTrabalho= new JPanel();
+        PainelDadosTrabalho.add(DadosPessoaisTrabalho);
+
+
+        JLabel cargoFuncionario =new JLabel("Cargo :");
+        JTextField cargoInputFuncionario = new JTextField();
+        cargoInputFuncionario.setPreferredSize(new Dimension(200,30));
+        JPanel PainelCargo = new JPanel();
+        PainelCargo.setLayout(new FlowLayout(FlowLayout.CENTER));
+        PainelCargo.add(cargoFuncionario);
+        PainelCargo.add(cargoInputFuncionario);
+
+        JLabel statusFuncionario =new JLabel("Status : ");
+        JTextField statusInputFuncionario = new JTextField();
+        statusInputFuncionario.setPreferredSize(new Dimension(200,30));
+        JPanel PainelStatus = new JPanel();
+        PainelStatus.setLayout(new FlowLayout(FlowLayout.CENTER));
+        PainelStatus.add(statusFuncionario);
+        PainelStatus.add(statusInputFuncionario);
+
+        JLabel EscalaFuncionario =new JLabel("Escala : ");
+        JTextField escalaInputFuncionario = new JTextField();
+        escalaInputFuncionario.setPreferredSize(new Dimension(200,30));
+        JPanel PainelEscala = new JPanel();
+        PainelEscala.setLayout(new FlowLayout(FlowLayout.CENTER));
+        PainelEscala.add(EscalaFuncionario);
+        PainelEscala.add(escalaInputFuncionario);
 
         ArrayList<JLabel> texts = new ArrayList<>();
         texts.add(nomeFuncionario);
@@ -83,51 +153,48 @@ public class attfuncionario extends JFrame{
         }
 
         //Criando os Inputs
-        JTextField IdInputFuncionario = new JTextField();
-        JTextField nomeInputFuncionario = new JTextField();
-        JTextField sobrenomeInputFuncionario = new JTextField();
-        JTextField cpfInputFuncionario = new JTextField();
-        JTextField cargoInputFuncionario = new JTextField();
-         JTextField statusInputFuncionario = new JTextField();
-         JTextField escalaInputFuncionario = new JTextField();
         
-        JDatePicker datepicker = new JDatePicker();
+      
 
 
-         adicionar = new JButton("Alterar Funcionario");
+        /*Criando Botoes de Adicionar Limpar e JPanel*/
+            /* Botao de Adicionar */
+        adicionar = new JButton("Adicionar Funcionario");
         adicionar.setFont(styleFont);
-        adicionar.setBackground(Color.blue);
-        adicionar.setForeground(Color.WHITE);
+        adicionar.setBackground(Color.green);
+        adicionar.setForeground(Color.black);
+        
+
+            /* Botao de Limpar */
+        BLimpa = new JButton("Limpar Campos");
+        BLimpa.setFont(styleFont);
+        BLimpa.setBackground(Color.blue);
+        BLimpa.setForeground(Color.WHITE);
+
+        /* JPANEL  aonde os dois botoes vão ficar*/
+        JPanel PanelBotoes =new JPanel();
+        PanelBotoes.setLayout(new FlowLayout(FlowLayout.CENTER));
+        PanelBotoes.add(adicionar);
+        PanelBotoes.add(BLimpa);
 
         dadosPessoa.setLayout(new GridLayout(0,1,10,10));
 
-        dadosPessoa.add(NC);
-
-          dadosPessoa.add(IdFuncionario);
-        dadosPessoa.add(IdInputFuncionario);
       
-        dadosPessoa.add(nomeFuncionario);
-        dadosPessoa.add(nomeInputFuncionario);
 
-        dadosPessoa.add(sobrenomeFuncionario);
-        dadosPessoa.add(sobrenomeInputFuncionario);
 
-        dadosPessoa.add(datadenascFuncionario);
-        dadosPessoa.add(datepicker);
+        dadosPessoa.add(NC);
+        dadosPessoa.add(DadosPessoais);
+        dadosPessoa.add(PainelIDF);
+        dadosPessoa.add(PainelNome);
+        dadosPessoa.add(PainelSobrenome);
+        dadosPessoa.add(PainelData);
+        dadosPessoa.add(PainelCpf);
+        dadosPessoa.add(PainelDadosTrabalho);
+        dadosPessoa.add(PainelCargo);
+        dadosPessoa.add(PainelStatus);
+        dadosPessoa.add(PainelEscala);
 
-         dadosPessoa.add(cpfFuncionario);
-        dadosPessoa.add(cpfInputFuncionario);
-
-         dadosPessoa.add(cargoFuncionario);
-        dadosPessoa.add(cargoInputFuncionario);
-
-         dadosPessoa.add(statusFuncionario);
-        dadosPessoa.add(statusInputFuncionario);
-
-         dadosPessoa.add(EscalaFuncionario);
-        dadosPessoa.add(escalaInputFuncionario);
-
-        dadosPessoa.add(adicionar);
+         dadosPessoa.add(PanelBotoes);
 
         form = new JPanel();
         form.add(dadosPessoa);
@@ -157,6 +224,22 @@ String dataString = sdf.format(dataNascimento);
 
     });
        
+
+    BLimpa.addActionListener(e ->{
+
+      IdInputFuncionario.setText("");
+      nomeInputFuncionario.setText("");
+      sobrenomeInputFuncionario.setText("");
+      cpfInputFuncionario.setText("");
+      escalaInputFuncionario.setText("");
+      statusInputFuncionario.setText("");
+      cargoInputFuncionario.setText("");
+      
+
+
+    });
+
+
     }
 
 }

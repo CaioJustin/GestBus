@@ -24,7 +24,7 @@ public class deleteFuncionario extends JFrame{
 
     public deleteFuncionario(){
         super("Gestbus :: Deletar Funcionario");
-        setSize(400,600);
+        setSize(400,250);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         jpanel();

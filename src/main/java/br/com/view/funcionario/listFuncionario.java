@@ -21,7 +21,7 @@ public class listFuncionario extends JFrame{
     JPanel form;
     public listFuncionario(){
         super("GestBust :: Listar Funcionario");
-        setSize(700,700);
+        setSize(700,250);
          setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         createpainel();
@@ -36,7 +36,7 @@ public class listFuncionario extends JFrame{
 
     int idC;
     public void BotoesPanel(){
-         JLabel text_auxiliar= new JLabel("Atualizar Cor",JLabel.CENTER);
+         JLabel text_auxiliar= new JLabel("Atualizar Funcionario",JLabel.CENTER);
   text_auxiliar.setFont(new Font("Segoe UI",Font.BOLD,30));
         JLabel Nometext = new JLabel("Id da escala que deseja Procura! ",JLabel.CENTER);
         Nometext.setFont(new Font("Segou UI",Font.BOLD,20));

@@ -20,7 +20,7 @@ public class listEscala extends JFrame{
 JPanel form;
         public listEscala(){
         super("GestBus :: Listar Escala ");
-        setSize(400,400);
+        setSize(400,250);
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
         createpanel();
