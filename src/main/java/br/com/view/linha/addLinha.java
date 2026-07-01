@@ -8,6 +8,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
 
@@ -25,7 +27,7 @@ public class addLinha extends JFrame{
    JPanel form;
         public addLinha(){
         super("GestBus :: Adicionar Linha ");
-        setSize(400,500);
+        setSize(400,330);
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
         criarPanel();
@@ -39,32 +41,67 @@ public class addLinha extends JFrame{
    
  }
 
+JButton BEnviar;
+JButton BLimpar;
  public void Carg(){
    
    JLabel NC = new JLabel("Adicionar Linha",JLabel.CENTER);
    NC.setFont(new Font("Segoe UI",Font.BOLD,30));
 
-   ArrayList<JLabel> na = new ArrayList<>();
+  
+
    JLabel Destino = new JLabel("Destino",JLabel.CENTER);
+   destinoField = new JTextField();
+  destinoField.setPreferredSize(new Dimension(200,30));
+  JPanel PainelDestino = new JPanel();
+  PainelDestino.setLayout(new FlowLayout(FlowLayout.CENTER));
+  PainelDestino.add(Destino);
+  PainelDestino.add(destinoField);
+
    JLabel Origem = new JLabel("Origem",JLabel.CENTER);
+   origemField= new JTextField();
+   origemField.setPreferredSize(new Dimension(200,30));
+   JPanel PaineOrigem =new JPanel();
+   PaineOrigem.setLayout(new FlowLayout(FlowLayout.CENTER));
+   PaineOrigem.add(Origem);
+   PaineOrigem.add(origemField);
+
    JLabel Nome = new JLabel("Nome",JLabel.CENTER);
+   nomeField= new JTextField(); 
+   nomeField.setPreferredSize(new Dimension(200,30));
+   JPanel PainelNome= new JPanel();
+   PainelNome.setLayout(new FlowLayout(FlowLayout.CENTER));
+   PainelNome.add(Nome);
+   PainelNome.add(nomeField);
+    
+    
+
+
+    // Crie um ArrayList 
+  ArrayList<JLabel> na = new ArrayList<>();
    na.add(Destino);
    na.add(Origem);
    na.add(Nome);
-
    for (JLabel j : na) {
         j.setFont(new Font("Segoe UI",Font.BOLD,20));
    }
 
 
-    destinoField = new JTextField();
-    origemField= new JTextField();
-    nomeField= new JTextField();
-
-    JButton BEnviar = new JButton("Enviar");
-    BEnviar.setBackground(Color.blue);
-    BEnviar.setForeground(Color.WHITE);
+   //Criando botoes de enviar e limpar
+    BEnviar = new JButton("Enviar");
+    BEnviar.setBackground(Color.GREEN);
+    BEnviar.setForeground(Color.BLACK);
     BEnviar.setFont(new Font("Segoe UI",Font.BOLD,20));
+
+   BLimpar = new JButton("Limpar");
+   BLimpar.setBackground(Color.blue);
+   BLimpar.setForeground(Color.white);
+   BLimpar.setFont(new Font("Segoe UI",Font.BOLD,20));
+
+   JPanel PanelBotao = new JPanel();
+   PanelBotao.setLayout(new FlowLayout(FlowLayout.CENTER));
+   PanelBotao.add(BEnviar);
+   PanelBotao.add(BLimpar);
 
    JPanel dadospes = new  JPanel(new GridLayout(0,1,10,10));
 
@@ -72,18 +109,10 @@ public class addLinha extends JFrame{
 
 
    dadospes.add(NC);
-
-   dadospes.add(Nome);
-    dadospes.add(nomeField);
-
-     dadospes.add(Origem);
-    dadospes.add(origemField);
-
-     dadospes.add(Destino);
-    dadospes.add(destinoField);
-
-
-   dadospes.add(BEnviar);
+   dadospes.add(PainelNome);
+   dadospes.add(PaineOrigem);
+   dadospes.add(PainelDestino);
+   dadospes.add(PanelBotao);
    form.add(dadospes);
 
   linhaDao lindao=new linhaDao();
@@ -103,7 +132,11 @@ public class addLinha extends JFrame{
 
     });
 
-
+    BLimpar.addActionListener(e ->{
+      nomeField.setText("");
+      origemField.setText("");
+      destinoField.setText("");
+    });
 
  }
 }
