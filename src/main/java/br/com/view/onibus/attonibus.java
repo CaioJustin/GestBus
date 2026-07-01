@@ -1,6 +1,8 @@
 package br.com.view.onibus;
 
 import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.util.ArrayList;
@@ -29,7 +31,7 @@ public class attonibus extends JFrame {
    JPanel form;
         public attonibus(){
         super("GestBus :: Atualizar Onibus ");
-        setSize(400,400);
+        setSize(400,600);
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
         criarPanel();
@@ -48,25 +50,72 @@ public class attonibus extends JFrame {
  public void Carg(){
    JLabel NC = new JLabel("Atualizar o Onibus",JLabel.CENTER);
    NC.setFont(new Font("Segoe UI",Font.BOLD,30));
-    
+
+   
+  JLabel placa = new JLabel("Placa",JLabel.CENTER);
    placaField = new JTextField();
+  JPanel Painelplaca = new JPanel();
+   placaField.setPreferredSize(new Dimension(200,30));
+    Painelplaca.setLayout(new FlowLayout(FlowLayout.CENTER));
+    Painelplaca.add(placa);
+    Painelplaca.add(placaField);
+
+  
+    JLabel modelo = new JLabel("modelo",JLabel.CENTER);
    modeloField = new JTextField();
+   modeloField.setPreferredSize(new Dimension(200,30));
+  JPanel Painelmodelo = new JPanel();
+    Painelmodelo.setLayout(new FlowLayout(FlowLayout.CENTER));
+    Painelmodelo.add(modelo);
+    Painelmodelo.add(modeloField);
+
+   JLabel ano = new JLabel("ano",JLabel.CENTER);
    anoField = new JTextField();
+   anoField.setPreferredSize(new Dimension(200,30));
+  JPanel Painelano = new JPanel();
+    Painelano.setLayout(new FlowLayout(FlowLayout.CENTER));
+    Painelano.add(ano);
+    Painelano.add(anoField);
+
+   JLabel capacidade = new JLabel("capacidade",JLabel.CENTER);
    capacidadeField = new JTextField();
+   capacidadeField.setPreferredSize(new Dimension(200,30));
+  JPanel Painelcapacidade = new JPanel();
+    Painelcapacidade.setLayout(new FlowLayout(FlowLayout.CENTER));
+    Painelcapacidade.add(capacidade);
+    Painelcapacidade.add(capacidadeField);
+
+      JLabel status = new JLabel("status",JLabel.CENTER);
    statusIdField = new JTextField();
+   statusIdField.setPreferredSize(new Dimension(200,30));
+  JPanel PainelstatusId = new JPanel();
+    PainelstatusId.setLayout(new FlowLayout(FlowLayout.CENTER));
+    PainelstatusId.add(status);
+    PainelstatusId.add(statusIdField);
+
    corIdField = new JTextField();
-   garagemIdField = new JTextField();
+   JLabel cor = new JLabel("cor",JLabel.CENTER);
+   corIdField.setPreferredSize(new Dimension(200,30));
+  JPanel PainelcorId = new JPanel();
+    PainelcorId.setLayout(new FlowLayout(FlowLayout.CENTER));
+    PainelcorId.add(cor);
+    PainelcorId.add(corIdField);
+
+    garagemIdField = new JTextField();
+   garagemIdField.setPreferredSize(new Dimension(200,30));
+   JLabel garagem = new JLabel("garagem",JLabel.CENTER);
+    JPanel PainelgaragemId = new JPanel();
+    PainelgaragemId.setLayout(new FlowLayout(FlowLayout.CENTER));
+    PainelgaragemId.add(garagem);
+    PainelgaragemId.add(garagemIdField);
+
+   
+   
+   
    
 
+
   ArrayList<JLabel> labels = new ArrayList<>();
-   JLabel placa = new JLabel("Placa",JLabel.CENTER);
-   JLabel modelo = new JLabel("modelo",JLabel.CENTER);
-   JLabel ano = new JLabel("ano",JLabel.CENTER);
-   JLabel capacidade = new JLabel("capacidade",JLabel.CENTER);
-   JLabel status = new JLabel("status",JLabel.CENTER);
-   JLabel cor = new JLabel("cor",JLabel.CENTER);
-   JLabel garagem = new JLabel("garagem",JLabel.CENTER);
-  
     labels.add(placa);
     labels.add(modelo);
     labels.add(ano);
@@ -82,10 +131,19 @@ public class attonibus extends JFrame {
 
 
     JButton BEnviar = new JButton("Enviar");
-    BEnviar.setBackground(Color.blue);
+    BEnviar.setBackground(Color.green);
     BEnviar.setForeground(Color.WHITE);
     BEnviar.setFont(new Font("Segoe UI",Font.BOLD,20));
 
+     JButton BLimpar = new JButton("Limpar");
+    BLimpar.setBackground(Color.blue);
+    BLimpar.setForeground(Color.WHITE);
+    BLimpar.setFont(new Font("Segoe UI",Font.BOLD,20));
+
+    JPanel PainelBotao = new JPanel();
+    PainelBotao.setLayout(new FlowLayout(FlowLayout.CENTER));
+    PainelBotao.add(BEnviar);
+    PainelBotao.add(BLimpar);
 
    JPanel dadospes = new  JPanel(new GridLayout(0,1,10,10));
 
@@ -94,29 +152,14 @@ public class attonibus extends JFrame {
 
 
 
-    dadospes.add(placa);
-    dadospes.add(placaField);
-
-     dadospes.add(modelo);
-    dadospes.add(modeloField);
-    
-     dadospes.add(ano);
-    dadospes.add(anoField);
-
-     dadospes.add(capacidade);
-    dadospes.add(capacidadeField);
-
-     dadospes.add(status);
-    dadospes.add(statusIdField);
-
-     dadospes.add(cor);
-    dadospes.add(corIdField);
-
-     dadospes.add(garagem);
-    dadospes.add(garagemIdField);
-
-
-   dadospes.add(BEnviar);
+ dadospes.add(Painelplaca);
+    dadospes.add(Painelmodelo);
+    dadospes.add(Painelano);
+    dadospes.add(Painelcapacidade);
+    dadospes.add(PainelstatusId);
+    dadospes.add(PainelcorId);
+    dadospes.add(PainelgaragemId);
+   dadospes.add(PainelBotao);
    form.add(dadospes);
 
 
@@ -139,5 +182,16 @@ public class attonibus extends JFrame {
       
 
     });
+
+     BLimpar.addActionListener(e ->{
+           placaField.setText("");
+      modeloField.setText("");
+      anoField.setText("");
+      capacidadeField.setText("");
+      statusIdField.setText("");
+      corIdField.setText("");
+      garagemIdField.setText("");
+    });
+
  }
 }

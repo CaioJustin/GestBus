@@ -50,7 +50,7 @@ Projeto feito tem java(Swing) Conectado ao MYSQL utilizando o JDBC Usando
 
 O projeto foi concluído com sucesso, abrangendo todas as funcionalidades planejadas:
 
-*Última atualização: [29/06/2026]*
+*Última atualização: [01/06/2026]*
 
 ## Observação
  Este projeto foi sendo desenvolvido com foco em portfólio e para
