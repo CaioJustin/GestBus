@@ -1,6 +1,6 @@
 # GestBus
 Projeto feito tem java(Swing) Conectado ao MYSQL utilizando o JDBC Usando
- o Maven para importa os 
+ o Maven para importa as dependência
 
 ## Descrição do Projeto
  Junção de 2 Atividades feito na sala de aula do senai de java swing e banco de dados eu reaproveitei e juntei os dois 
